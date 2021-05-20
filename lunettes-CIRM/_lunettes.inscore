@@ -1,0 +1,194 @@
+
+/ITL/scene/* del;
+
+sc0start 	= -0.025;
+sc0end 		= 1.05;
+sc1start 	= 0.95;
+sc1end 		= 4.2;
+sc2start	= 4.15;
+sc2end		= 7.375;
+sc3start	= 7.325;
+sc3end		= 9.875;
+sc4start 	= 9.85;
+sc4end		= 10.7375;
+sc5start 	= 10.7;
+sc5end		= 12.125;
+sc6start	= 12;
+sc6end		= 16.3;
+
+sc0duree = $sc0end - $sc0start;
+sc1duree = $sc1end - $sc1start;
+sc2duree = $sc2end - $sc2start;
+sc3duree = $sc3end - $sc3start;
+sc4duree = $sc4end - $sc4start;
+sc5duree = $sc5end - $sc5start;
+sc6duree = $sc6end - $sc6start;
+
+/ITL/scene/sc0 set img "imgs/n00.png";
+/ITL/scene/sc1 set img "imgs/n01.png";
+/ITL/scene/sc2 set img "imgs/n02.png";
+/ITL/scene/sc3 set img "imgs/n03.png";
+/ITL/scene/sc4 set img "imgs/n04.png";
+/ITL/scene/sc5 set img "imgs/n05.png";
+/ITL/scene/sc6 set img "imgs/n06.png";
+/ITL/scene/sc* show 0;
+/ITL/scene/sc[01] show 1;
+
+/ITL/scene/son0 set audio "artikulation.wav";
+/ITL/scene/son* show 0;
+
+/ITL/scene/end set txt "The End";
+/ITL/scene/end fontSize 36;
+/ITL/scene/end color 255 255 255;
+/ITL/scene/end show 0;
+
+top = yorigin 1.1;
+bottom = yorigin -1.1;
+/ITL/scene/sc* scale 0.4;
+/ITL/scene/sc0 $top;
+/ITL/scene/sc1 $bottom;
+
+/ITL/scene/sc0 date 	$sc0start;
+/ITL/scene/sc0 duration $sc0duree;
+/ITL/scene/sc1 date 	$sc1start;
+/ITL/scene/sc1 duration $sc1duree;
+/ITL/scene/sc2 date 	$sc2start;
+/ITL/scene/sc2 duration $sc2duree;
+/ITL/scene/sc3 date 	$sc3start;
+/ITL/scene/sc3 duration $sc3duree;
+/ITL/scene/sc4 date 	$sc4start;
+/ITL/scene/sc4 duration $sc4duree;
+/ITL/scene/sc5 date 	$sc5start;
+/ITL/scene/sc5 duration $sc5duree;
+/ITL/scene/sc6 date 	$sc6start;
+/ITL/scene/sc6 duration $sc6duree;
+
+/ITL/scene/sc0 map '( [140, 3949[ [0, 619[ ) ( [0:0:0, 0:4:30[ )';
+/ITL/scene/sc1 map '( [140, 3949[ [0, 619[ ) ( [0:0:0, 0:13:0[ )';
+/ITL/scene/sc2 map '( [140, 3949[ [0, 619[ ) ( [0:0:0, 0:12:90[ )';
+/ITL/scene/sc3 map '( [140, 3949[ [0, 619[ ) ( [0:0:0, 0:10:20[ )';
+/ITL/scene/sc4 map '( [140, 3949[ [0, 619[ ) ( [0:0:0, 0:3:55[ )';
+/ITL/scene/sc5 map '( [140, 3949[ [0, 619[ ) ( [0:0:0, 0:5:70[ )';
+/ITL/scene/sc6 map '( [140, 3949[ [0, 619[ ) ( [0:0:0, 0:17:20[ )';
+
+
+/ITL/scene/cursor set rect 0.03 0.6;
+/ITL/scene/cursor color 255 0 0;
+/ITL/scene color 0 0 0;
+
+
+/ITL/scene/cursor watch timeEnter $sc0start $sc0end (
+	/ITL/scene/sc* show 0,
+	/ITL/scene/sc[01] show 1,
+	/ITL/scene/sc0 $top,
+	/ITL/scene/sc1 $bottom,
+	/ITL/scene/son0 play 1,
+	/ITL/scene/son0 vdate 0
+);
+
+/ITL/scene/cursor watch timeEnter $sc1start $sc1end (
+	/ITL/scene/sc* show 0,
+	/ITL/scene/sc[12] show 1,
+	/ITL/scene/sc1 $bottom,
+	/ITL/scene/sc2 $top
+);
+
+/ITL/scene/cursor watch timeEnter $sc2start $sc2end (
+	/ITL/scene/sc* show 0,
+	/ITL/scene/sc[23] show 1,
+	/ITL/scene/sc2 $top,
+	/ITL/scene/sc3 $bottom
+);
+
+/ITL/scene/cursor watch timeEnter $sc3start $sc3end (
+	/ITL/scene/sc* show 0,
+	/ITL/scene/sc[34] show 1,
+	/ITL/scene/sc3 $bottom,
+	/ITL/scene/sc4 $top
+);
+
+/ITL/scene/cursor watch timeEnter $sc4start $sc4end (
+	/ITL/scene/sc* show 0,
+	/ITL/scene/sc[45] show 1,
+	/ITL/scene/sc4 $top,
+	/ITL/scene/sc5 $bottom
+);
+
+/ITL/scene/cursor watch timeEnter $sc5start $sc5end (
+	/ITL/scene/sc* show 0,
+	/ITL/scene/sc[56] show 1,
+	/ITL/scene/sc5 $bottom,
+	/ITL/scene/sc6 $top
+);
+
+/ITL/scene/cursor watch timeEnter $sc6start $sc6end (
+	/ITL/scene/sc* show 0,
+	/ITL/scene/sc6 show 1,
+	/ITL/scene/sc6 $top
+);
+
+/ITL/scene/cursor watch timeEnter $sc6start $sc6end (
+	/ITL/scene/sc* show 0,
+	/ITL/scene/sc6 show 1,
+	/ITL/scene/sc6 $top
+);
+
+/ITL/scene/cursor watch timeEnter $sc0start $sc6end (
+	/ITL/scene/end show 0
+);
+
+/ITL/scene/cursor watch timeLeave $sc6start $sc6end (
+	/ITL/scene/sc* show 0,
+	/ITL/scene/cursor tempo 0,
+	/ITL/scene/end show 1,
+	/ITL/scene/son* play 0
+);
+
+/ITL/scene/sync cursor sc* v relative;
+
+msg = ( /ITL/scene/cursor date "$date",
+		/ITL/scene/son0 vdate "$date%f" );
+
+/ITL/scene/sc* watch touchBegin $msg;
+/ITL/scene/sc* watch mouseDown $msg;
+
+/ITL/scene watch START (
+	/ITL/scene/cursor date 0,
+	/ITL/scene/cursor tempo 60,
+	/ITL/scene/son0 play 1
+);
+
+/ITL/scene watch STOP (
+	/ITL/scene/cursor tempo 0,
+	/ITL/scene/son0 play 0
+);
+
+/ITL/scene event START;
+
+__END__
+
+/ITL/scene/cursor tempo 60;
+/ITL/scene/cursor tempo -60;
+/ITL/scene/son play 0;
+/ITL/scene/cursor tempo 0;
+/ITL/scene/cursor date 0;
+/ITL/scene/cursor date 1;
+/ITL/scene/cursor get date;
+
+/ITL/scene/sc*/debug map 1;
+/ITL/scene/sc*/debug map 0;
+
+/ITL/scene get;
+
+/ITL/log level 2;
+
+
+/ITL/log write $sc0duree;
+/ITL/log write $sc1duree;
+/ITL/log write $sc2duree;
+/ITL/log write $sc3duree;
+
+/ITL/conductor new;
+
+
+
