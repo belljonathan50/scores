@@ -425,8 +425,6 @@ sc100duree = $sc100end - $sc100start;
 /ITL/scene/sc* show 0;
 /ITL/scene/sc[01] show 1;
 
-/ITL/scene/son0 set audio "artikulation.wav";
-/ITL/scene/son* show 0;
 
 /ITL/scene/end set txt "The End";
 /ITL/scene/end fontSize 36;
@@ -653,9 +651,7 @@ bottom = yorigin -1.1;
 	/ITL/scene/sc* show 0,
 	/ITL/scene/sc[01] show 1,
 	/ITL/scene/sc0 $top,
-	/ITL/scene/sc1 $bottom,
-	/ITL/scene/son0 play 1,
-	/ITL/scene/son0 vdate 0
+	/ITL/scene/sc1 $bottom
 );
 
 /ITL/scene/cursor watch timeEnter $sc1start $sc1end (
@@ -1479,27 +1475,23 @@ bottom = yorigin -1.1;
 /ITL/scene/cursor watch timeLeave $sc100start $sc100end (
 	/ITL/scene/sc* show 0,
 	/ITL/scene/cursor tempo 0,
-	/ITL/scene/end show 1,
-	/ITL/scene/son* play 0
+	/ITL/scene/end show 1
 );
 
 /ITL/scene/sync cursor sc* v relative;
 
-msg = ( /ITL/scene/cursor date "$date",
-		/ITL/scene/son0 vdate "$date%f" );
+msg = ( /ITL/scene/cursor date "$date" );
 
 /ITL/scene/sc* watch touchBegin $msg;
 /ITL/scene/sc* watch mouseDown $msg;
 
 /ITL/scene watch START (
 	/ITL/scene/cursor date 0,
-	/ITL/scene/cursor tempo 60,
-	/ITL/scene/son0 play 1
+	/ITL/scene/cursor tempo 60
 );
 
 /ITL/scene watch STOP (
-	/ITL/scene/cursor tempo 0,
-	/ITL/scene/son0 play 0
+	/ITL/scene/cursor tempo 0
 );
 
 /ITL/scene event START;
@@ -1508,7 +1500,6 @@ __END__
 
 /ITL/scene/cursor tempo 60;
 /ITL/scene/cursor tempo -60;
-/ITL/scene/son play 0;
 /ITL/scene/cursor tempo 0;
 /ITL/scene/cursor date 0;
 /ITL/scene/cursor date 1;
