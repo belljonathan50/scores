@@ -1487,7 +1487,7 @@ msg = ( /ITL/scene/cursor date "$date" );
 
 /ITL/scene watch START (
 	/ITL/scene/cursor date 0,
-	/ITL/scene/cursor tempo 60
+	/ITL/scene/cursor tempo 240
 );
 
 /ITL/scene watch STOP (
