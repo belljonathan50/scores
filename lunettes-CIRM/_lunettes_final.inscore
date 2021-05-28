@@ -546,7 +546,7 @@ bottom = yorigin -1.1;
 /ITL/scene/sc53 date 	$sc53start;
 /ITL/scene/sc53 duration 	$sc53duree;
 /ITL/scene/sc54 date 	$sc54start;
-/ITL/scene/sc54 duration 	$sc54start;
+/ITL/scene/sc54 duration 	$sc54duree;
 /ITL/scene/sc55 date $sc55start;
 /ITL/scene/sc55 duration $sc55duree;
 /ITL/scene/sc56 date 	$sc56start;
