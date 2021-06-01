@@ -1,21 +1,20 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
-	<title>INScoreJS Template 2</title>
+	<title>Fantaisie</title>
 
 	<link href="node_modules/@grame/inscorejs/fonts/fonts.css" rel="stylesheet">
 	<script src="node_modules/@grame/inscorejs/libINScore.js"></script>
 	<script src="node_modules/@grame/inscorejs/INScoreJS.js"></script>
 	<style>
 	body { margin: 50; background-color: black; color: white}
-	.inscore { background-color: white; border-color: grey; width: 100%; height: 90%; }
+	.inscore { background-color: white; border-color: grey; width: 100%; height: 90%; font-size: 1px;}
 	</style>
 </head>
 
 <body>
 
-	<h1>Fantaisie</h1>
-	<h2>Jonathan Bell</h2>
+	<h1>Fantaisie - Jonathan Bell</h1>
 <div class="inscore" id="scene">
 <!-- /ITL/scene/* del; -->
 
@@ -443,6 +442,22 @@ sc100duree = $sc100end - $sc100start;
 /ITL/scene/sc99 set img "imgs/n99.png";
 /ITL/scene/sc100 set img "imgs/n100.png";
 
+/ITL/scene watch START (
+	/ITL/log write START,
+	/ITL/scene/sync cursor sc* v relative,
+	/ITL/scene/cursor date 0,
+	/ITL/scene/cursor tempo 240
+);
+
+/ITL/scene watch STOP (
+	/ITL/scene/cursor tempo 0
+);
+
+/ITL/scene/sc100 watch show (
+	/ITL/scene/sc100 watch show,
+	/ITL/scene event START
+);
+
 
 /ITL/scene/sc* show 0;
 /ITL/scene/sc[01] show 1;
@@ -455,7 +470,8 @@ sc100duree = $sc100end - $sc100start;
 
 top = yorigin 1.1;
 bottom = yorigin -1.1;
-/ITL/scene/sc* scale 0.4;
+<!-- /ITL/scene/sc* scale 0.4; -->
+/ITL/scene/sc* width 1.95;
 /ITL/scene/sc0 $top;
 /ITL/scene/sc1 $bottom;
 
@@ -723,7 +739,6 @@ bottom = yorigin -1.1;
 /ITL/scene/sc54 map "([120, 3949[ [0, 619[) ([0/4, 7/1[)";
 /ITL/scene/sc55 map "([150, 3949[ [0, 619[) ([0/4, 7/1[)";
 /ITL/scene/sc56 map "([150, 3949[ [0, 619[) ([0/4, 8/1[)";
-# sc57 à vérifier 
 /ITL/scene/sc57 map "([150, 3949[ [0, 619[) ([0/4, 9/1[)";
 /ITL/scene/sc58 map "([150, 3949[ [0, 619[) ([0/4, 27/1[)";
 /ITL/scene/sc59 map "([190, 3949[ [0, 619[) ([0/4, 3/1[)";
@@ -768,8 +783,6 @@ bottom = yorigin -1.1;
 /ITL/scene/sc98 map "([150, 3949[ [0, 619[) ([0/4, 16/1[)";
 /ITL/scene/sc99 map "([150, 3949[ [0, 619[) ([0/4, 14/1[)";
 /ITL/scene/sc100 map "([150, 3949[ [0, 619[) ([0/4, 17/1[)";
-
-
 
 
 /ITL/scene/cursor watch timeEnter $sc0start $sc0end (
@@ -1603,23 +1616,10 @@ bottom = yorigin -1.1;
 	/ITL/scene/end show 1
 );
 
-/ITL/scene/sync cursor sc* v relative;
-
 msg = ( /ITL/scene/cursor date "$date" );
 
 /ITL/scene/sc* watch touchBegin $msg;
 /ITL/scene/sc* watch mouseDown $msg;
-
-/ITL/scene watch START (
-	/ITL/scene/cursor date 0,
-	/ITL/scene/cursor tempo 240
-);
-
-/ITL/scene watch STOP (
-	/ITL/scene/cursor tempo 0
-);
-
-/ITL/scene event START;
 
 __END__
 

@@ -1576,6 +1576,7 @@ bottom = yorigin -1.1;
 ## last system
 
 /ITL/scene/cursor watch timeEnter $sc100start $sc100end (
+	/ITL/scene/sc99 show 0,
 	/ITL/scene/end show 0
 );
 
@@ -1583,6 +1584,10 @@ bottom = yorigin -1.1;
 	/ITL/scene/sc* show 0,
 	/ITL/scene/cursor tempo 0,
 	/ITL/scene/end show 1
+);
+
+/ITL/scene/cursor watch timeLeave $sc100end 100000000 (
+	/ITL/scene/end show 0
 );
 
 /ITL/scene/sync cursor sc* v relative;
