@@ -1606,7 +1606,7 @@ msg = ( /ITL/scene/cursor date "$date" );
 	/ITL/scene/cursor tempo 0
 );
 
-/ITL/scene event START;
+#/ITL/scene event START;
 
 __END__
 
