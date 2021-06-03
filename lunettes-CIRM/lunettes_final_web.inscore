@@ -1,0 +1,74 @@
+
+/ITL load "_lunettes_final.inscore";
+
+/ITL/scene/title set txt "Fantaisie";
+/ITL/scene/title fontSize 36;
+/ITL/scene/title y -0.8;
+/ITL/scene/title color white;
+
+/ITL/scene/cursor tempo 0;
+/ITL/scene/cursor date 0;
+
+/ITL/scene/timeline set rect 2.5 0.06;
+/ITL/scene/timeline color 30 30 30;
+/ITL/scene/timeline y 0.73;
+/ITL/scene/timeline duration 772 1;
+
+/ITL/scene/timeline watch mouseDown ( /ITL/scene/cursor date '$date');
+/ITL/scene/timeline watch mouseMove ( /ITL/scene/cursor date '$date');
+
+/ITL/scene/sync cursor timeline v;
+
+/ITL/scene/tm0 set txt "0'";
+/ITL/scene/tm2 set txt "2'";
+/ITL/scene/tm4 set txt "4'";
+/ITL/scene/tm6 set txt "6'";
+/ITL/scene/tm8 set txt "8'";
+/ITL/scene/tm10 set txt "10'";
+/ITL/scene/tm12 set txt "12'";
+/ITL/scene/tm0 date 0;
+/ITL/scene/tm2 date 120;
+/ITL/scene/tm4 date 240;
+/ITL/scene/tm6 date 360;
+/ITL/scene/tm8 date 480;
+/ITL/scene/tm10 date 600;
+/ITL/scene/tm12 date 720;
+/ITL/scene/tm* color white;
+/ITL/scene/sync tm* timeline syncBottom;
+
+/ITL/scene/ctrlplay set img "imgs/play.png";
+/ITL/scene/ctrlstop set img "imgs/stop.png";
+/ITL/scene/ctrlplay xorigin 1.2;
+/ITL/scene/ctrlstop xorigin -1.2;
+/ITL/scene/ctrl* width 0.085;
+/ITL/scene/ctrl* y 0.88;
+alpha = 150; 
+/ITL/scene/ctrl* alpha $alpha;
+/ITL/scene/ctrl* watch mouseEnter ( /ITL/scene/$self alpha 255); 
+/ITL/scene/ctrl* watch mouseLeave ( /ITL/scene/$self alpha $alpha); 
+
+/ITL/scene/ctrlplay watch mouseDown (
+	/ITL/scene/ctrlplay push,
+	/ITL/scene/cursor tempo 240,
+	/ITL/scene/ctrlplay set img "imgs/pause.png", 
+	/ITL/scene/ctrlplay watch mouseDown (
+		/ITL/scene/cursor tempo 0,
+		/ITL/scene/ctrlplay set img "imgs/play.png",
+		/ITL/scene/ctrlplay pop
+	)
+);
+
+/ITL/scene/ctrlstop watch mouseDown (
+	/ITL/scene/cursor tempo 0,
+	/ITL/scene/cursor date 0,
+	/ITL/scene/ctrlplay set img "imgs/play.png",
+	/ITL/scene/ctrlplay pop
+);
+
+
+__END__
+
+/ITL/scene/timeline get duration;
+/ITL/scene/cursor tempo 240;
+/ITL/scene load "_lunettes_final.inscore";
+

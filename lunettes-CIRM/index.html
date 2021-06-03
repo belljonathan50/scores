@@ -7,16 +7,14 @@
 	<script src="node_modules/@grame/inscorejs/libINScore.js"></script>
 	<script src="node_modules/@grame/inscorejs/INScoreJS.js"></script>
 	<style>
-	body { margin: 50; background-color: black; color: white}
-	.inscore { background-color: white; border-color: grey; width: 100%; height: 90%; font-size: 1px;}
+	body { margin: 20; background-color: black; color: white}
+	.inscore { background-color: white; border-color: grey; width: 100%; height: 100%; font-size: 1px; }
 	</style>
 </head>
 
 <body>
 
-	<h1>Fantaisie - Jonathan Bell</h1>
 <div class="inscore" id="scene">
-<!-- /ITL/scene/* del; -->
 
 /ITL/scene/cursor set rect 0.03 0.6;
 /ITL/scene/cursor color 255 0 0;
@@ -442,26 +440,129 @@ sc100duree = $sc100end - $sc100start;
 /ITL/scene/sc99 set img "imgs/n99.png";
 /ITL/scene/sc100 set img "imgs/n100.png";
 
+/ITL/scene watch MAP (
+	/ITL/scene/sc0 map "([530, 3540[ [0, 619[) ([0/4, 80250/10000[)",
+	/ITL/scene/sc1 map "([150, 3949[ [0, 619[) ([0/4, 35000/10000[)",
+	/ITL/scene/sc2 map "([150, 3949[ [0, 619[) ([0/4, 40000/10000[)",
+	/ITL/scene/sc3 map "([120, 3949[ [0, 619[) ([0/4, 25000/10000[)",
+	/ITL/scene/sc4 map "([120, 3949[ [0, 619[) ([0/4, 5/1[)",
+	/ITL/scene/sc5 map "([150, 3949[ [0, 619[) ([0/4, 10/1[)",
+	/ITL/scene/sc6 map "([150, 3949[ [0, 619[) ([0/4, 14/1[)",
+	/ITL/scene/sc7 map "([120, 3949[ [0, 619[) ([0/4, 9/1[)",
+	/ITL/scene/sc8 map "([150, 3949[ [0, 619[) ([0/4, 5/1[)",
+	/ITL/scene/sc9 map "([100, 3949[ [0, 619[) ([0/4, 4/1[)",
+	/ITL/scene/sc10 map "([120, 3949[ [0, 619[) ([0/4, 7/1[)",
+	/ITL/scene/sc11 map "([150, 3949[ [0, 619[) ([0/4, 12/1[)",
+	/ITL/scene/sc12 map "([190, 3949[ [0, 619[) ([0/4, 8/1[)",
+	/ITL/scene/sc13 map "([0, 3949[ [0, 619[) ([0/4, 55000/10000[)",
+	/ITL/scene/sc14 map "([150, 3949[ [0, 619[) ([0/4, 45000/10000[)",
+	/ITL/scene/sc15 map "([150, 3949[ [0, 619[) ([0/4, 6/1[)",
+	/ITL/scene/sc16 map "([110, 3949[ [0, 619[) ([0/4, 12/1[)",
+	/ITL/scene/sc17 map "([150, 3949[ [0, 619[) ([0/4, 65000/10000[)",
+	/ITL/scene/sc18 map "([120, 3949[ [0, 619[) ([0/4, 35000/10000[)",
+	/ITL/scene/sc19 map "([120, 3949[ [0, 619[) ([0/4, 7/1[)",
+	/ITL/scene/sc20 map "([120, 3949[ [0, 619[) ([0/4, 7/1[)",
+	/ITL/scene/sc21 map "([120, 3949[ [0, 619[) ([0/4, 7/1[)",
+	/ITL/scene/sc22 map "([90, 3949[ [0, 619[) ([0/4, 5/1[)",
+	/ITL/scene/sc23 map "([90, 3949[ [0, 619[) ([0/4, 45000/10000[)",
+	/ITL/scene/sc24 map "([125, 3949[ [0, 619[) ([0/4, 35000/10000[)",
+	/ITL/scene/sc25 map "([150, 3949[ [0, 619[) ([0/4, 6/1[)",
+	/ITL/scene/sc26 map "([110, 3949[ [0, 619[) ([0/4, 12/1[)",
+	/ITL/scene/sc27 map "([140, 3949[ [0, 619[) ([0/4, 16/1[)",
+	/ITL/scene/sc28 map "([160, 3949[ [0, 619[) ([0/4, 115000/10000[)",
+	/ITL/scene/sc29 map "([110, 3949[ [0, 619[) ([0/4, 35000/10000[)",
+	/ITL/scene/sc30 map "([150, 3949[ [0, 619[) ([0/4, 3/1[)",
+	/ITL/scene/sc31 map "([100, 3949[ [0, 619[) ([0/4, 8/1[)",
+	/ITL/scene/sc32 map "([140, 3949[ [0, 619[) ([0/4, 9/1[)",
+	/ITL/scene/sc33 map "([110, 3949[ [0, 619[) ([0/4, 7/1[)",
+	/ITL/scene/sc34 map "([110, 3949[ [0, 619[) ([0/4, 7/1[)",
+	/ITL/scene/sc35 map "([110, 3949[ [0, 619[) ([0/4, 9/1[)",
+	/ITL/scene/sc36 map "([150, 3949[ [0, 619[) ([0/4, 15/1[)",
+	/ITL/scene/sc37 map "([150, 3949[ [0, 619[) ([0/4, 11/1[)",
+	/ITL/scene/sc38 map "([100, 3949[ [0, 619[) ([0/4, 11/1[)",
+	/ITL/scene/sc39 map "([120, 3949[ [0, 619[) ([0/4, 17/1[)",
+	/ITL/scene/sc40 map "([150, 3949[ [0, 619[) ([0/4, 8/1[)",
+	/ITL/scene/sc41 map "([150, 3949[ [0, 619[) ([0/4, 14/1[)",
+	/ITL/scene/sc42 map "([130, 3949[ [0, 619[) ([0/4, 8/1[)",
+	/ITL/scene/sc43 map "([140, 3949[ [0, 619[) ([0/4, 14/1[)",
+	/ITL/scene/sc44 map "([150, 3949[ [0, 619[) ([0/4, 11/1[)",
+	/ITL/scene/sc45 map "([130, 3949[ [0, 619[) ([0/4, 20/1[)",
+	/ITL/scene/sc46 map "([180, 3949[ [0, 619[) ([0/4, 18/1[)",
+	/ITL/scene/sc47 map "([100, 3949[ [0, 619[) ([0/4, 9/1[)",
+	/ITL/scene/sc48 map "([140, 3949[ [0, 619[) ([0/4, 55000/10000[)",
+	/ITL/scene/sc49 map "([150, 3949[ [0, 619[) ([0/4, 40000/10000[)",
+	/ITL/scene/sc50 map "([120, 3949[ [0, 619[) ([0/4, 60000/10000[)",
+	/ITL/scene/sc51 map "([150, 3949[ [0, 619[) ([0/4, 45000/10000[)",
+	/ITL/scene/sc52 map "([110, 3949[ [0, 619[) ([0/4, 6/1[)",
+	/ITL/scene/sc53 map "([110, 3949[ [0, 619[) ([0/4, 4/1[)",
+	/ITL/scene/sc54 map "([120, 3949[ [0, 619[) ([0/4, 7/1[)",
+	/ITL/scene/sc55 map "([150, 3949[ [0, 619[) ([0/4, 7/1[)",
+	/ITL/scene/sc56 map "([150, 3949[ [0, 619[) ([0/4, 8/1[)",
+	/ITL/scene/sc57 map "([150, 3949[ [0, 619[) ([0/4, 9/1[)",
+	/ITL/scene/sc58 map "([150, 3949[ [0, 619[) ([0/4, 7/1[)",
+	/ITL/scene/sc59 map "([190, 3949[ [0, 619[) ([0/4, 3/1[)",
+	/ITL/scene/sc60 map "([150, 3949[ [0, 619[) ([0/4, 35000/10000[)",
+	/ITL/scene/sc61 map "([150, 3949[ [0, 619[) ([0/4, 50000/10000[)",
+	/ITL/scene/sc62 map "([130, 3949[ [0, 619[) ([0/4, 65000/10000[)",
+	/ITL/scene/sc63 map "([130, 3949[ [0, 619[) ([0/4, 45000/10000[)",
+	/ITL/scene/sc64 map "([150, 3949[ [0, 619[) ([0/4, 35000/10000[)",
+	/ITL/scene/sc65 map "([150, 3949[ [0, 619[) ([0/4, 4/1[)",
+	/ITL/scene/sc66 map "([150, 3949[ [0, 619[) ([0/4, 3/1[)",
+	/ITL/scene/sc67 map "([150, 3949[ [0, 619[) ([0/4, 45999/10000[)",
+	/ITL/scene/sc68 map "([150, 3949[ [0, 619[) ([0/4, 29000/10000[)",
+	/ITL/scene/sc69 map "([120, 3949[ [0, 619[) ([0/4, 45000/10000[)",
+	/ITL/scene/sc70 map "([150, 3949[ [0, 619[) ([0/4, 10/1[)",
+	/ITL/scene/sc71 map "([150, 3949[ [0, 619[) ([0/4, 11/1[)",
+	/ITL/scene/sc72 map "([110, 3949[ [0, 619[) ([0/4, 11/1[)",
+	/ITL/scene/sc73 map "([150, 3949[ [0, 619[) ([0/4, 6/1[)",
+	/ITL/scene/sc74 map "([150, 3949[ [0, 619[) ([0/4, 7/1[)",
+	/ITL/scene/sc75 map "([150, 3949[ [0, 619[) ([0/4, 8/1[)",
+	/ITL/scene/sc76 map "([150, 3949[ [0, 619[) ([0/4, 6/1[)",
+	/ITL/scene/sc77 map "([150, 3949[ [0, 619[) ([0/4, 7/1[)",
+	/ITL/scene/sc78 map "([120, 3949[ [0, 619[) ([0/4, 7/1[)",
+	/ITL/scene/sc79 map "([150, 3949[ [0, 619[) ([0/4, 6/1[)",
+	/ITL/scene/sc80 map "([150, 3949[ [0, 619[) ([0/4, 9/1[)",
+	/ITL/scene/sc81 map "([150, 3949[ [0, 619[) ([0/4, 6/1[)",
+	/ITL/scene/sc82 map "([150, 3949[ [0, 619[) ([0/4, 6/1[)",
+	/ITL/scene/sc83 map "([150, 3949[ [0, 619[) ([0/4, 11/1[)",
+	/ITL/scene/sc84 map "([150, 3949[ [0, 619[) ([0/4, 5/1[)",
+	/ITL/scene/sc85 map "([150, 3949[ [0, 619[) ([0/4, 55000/10000[)",
+	/ITL/scene/sc86 map "([150, 3949[ [0, 619[) ([0/4, 45000/10000[)",
+	/ITL/scene/sc87 map "([150, 3949[ [0, 619[) ([0/4, 45000/10000[)",
+	/ITL/scene/sc88 map "([150, 3949[ [0, 619[) ([0/4, 50000/10000[)",
+	/ITL/scene/sc89 map "([150, 3949[ [0, 619[) ([0/4, 60000/10000[)",
+	/ITL/scene/sc90 map "([150, 3949[ [0, 619[) ([0/4, 50000/10000[)",
+	/ITL/scene/sc91 map "([150, 3949[ [0, 619[) ([0/4, 50000/10000[)",
+	/ITL/scene/sc92 map "([150, 3949[ [0, 619[) ([0/4, 35000/10000[)",
+	/ITL/scene/sc93 map "([150, 3949[ [0, 619[) ([0/4, 10/1[)",
+	/ITL/scene/sc94 map "([150, 3949[ [0, 619[) ([0/4, 8/1[)",
+	/ITL/scene/sc95 map "([150, 3949[ [0, 619[) ([0/4, 6/1[)",
+	/ITL/scene/sc96 map "([150, 3949[ [0, 619[) ([0/4, 115000/10000[)",
+	/ITL/scene/sc97 map "([150, 3949[ [0, 619[) ([0/4, 165000/10000[)",
+	/ITL/scene/sc98 map "([150, 3949[ [0, 619[) ([0/4, 16/1[)",
+	/ITL/scene/sc99 map "([150, 3949[ [0, 619[) ([0/4, 14/1[)",
+	/ITL/scene/sc100 map "([150, 3949[ [0, 619[) ([0/4, 17/1[)"
+);
+
+
 /ITL/scene watch START (
-	/ITL/log write START,
-	/ITL/scene/sync cursor sc* v relative,
-	/ITL/scene/cursor date 0,
-	/ITL/scene/cursor tempo 240
+	/ITL/scene/sync cursor sc* v relative
 );
 
 /ITL/scene watch STOP (
 	/ITL/scene/cursor tempo 0
 );
 
+
 /ITL/scene/sc100 watch show (
 	/ITL/scene/sc100 watch show,
+	/ITL/scene event MAP,
 	/ITL/scene event START
 );
 
 
 /ITL/scene/sc* show 0;
 /ITL/scene/sc[01] show 1;
-
 
 /ITL/scene/end set txt "The End";
 /ITL/scene/end fontSize 36;
@@ -470,8 +571,7 @@ sc100duree = $sc100end - $sc100start;
 
 top = yorigin 1.1;
 bottom = yorigin -1.1;
-<!-- /ITL/scene/sc* scale 0.4; -->
-/ITL/scene/sc* width 1.95;
+/ITL/scene/sc* width 2;
 /ITL/scene/sc0 $top;
 /ITL/scene/sc1 $bottom;
 
@@ -678,112 +778,6 @@ bottom = yorigin -1.1;
 /ITL/scene/sc100 date 	$sc100start;
 /ITL/scene/sc100 duration 	$sc100duree;
 
-## mapping
-
-
-
-/ITL/scene/sc0 map "([530, 3540[ [0, 619[) ([0/4, 80250/10000[)";
-/ITL/scene/sc1 map "([150, 3949[ [0, 619[) ([0/4, 35000/10000[)";
-/ITL/scene/sc2 map "([150, 3949[ [0, 619[) ([0/4, 40000/10000[)";
-/ITL/scene/sc3 map "([120, 3949[ [0, 619[) ([0/4, 25000/10000[)";
-/ITL/scene/sc4 map "([120, 3949[ [0, 619[) ([0/4, 5/1[)";
-/ITL/scene/sc5 map "([150, 3949[ [0, 619[) ([0/4, 10/1[)";
-/ITL/scene/sc6 map "([150, 3949[ [0, 619[) ([0/4, 14/1[)";
-/ITL/scene/sc7 map "([120, 3949[ [0, 619[) ([0/4, 9/1[)";
-/ITL/scene/sc8 map "([150, 3949[ [0, 619[) ([0/4, 5/1[)";
-/ITL/scene/sc9 map "([100, 3949[ [0, 619[) ([0/4, 4/1[)";
-/ITL/scene/sc10 map "([120, 3949[ [0, 619[) ([0/4, 7/1[)";
-/ITL/scene/sc11 map "([150, 3949[ [0, 619[) ([0/4, 12/1[)";
-/ITL/scene/sc12 map "([190, 3949[ [0, 619[) ([0/4, 8/1[)";
-/ITL/scene/sc13 map "([0, 3949[ [0, 619[) ([0/4, 55000/10000[)";
-/ITL/scene/sc14 map "([150, 3949[ [0, 619[) ([0/4, 45000/10000[)";
-/ITL/scene/sc15 map "([150, 3949[ [0, 619[) ([0/4, 6/1[)";
-/ITL/scene/sc16 map "([110, 3949[ [0, 619[) ([0/4, 12/1[)";
-/ITL/scene/sc17 map "([150, 3949[ [0, 619[) ([0/4, 65000/10000[)";
-/ITL/scene/sc18 map "([120, 3949[ [0, 619[) ([0/4, 35000/10000[)";
-/ITL/scene/sc19 map "([120, 3949[ [0, 619[) ([0/4, 7/1[)";
-/ITL/scene/sc20 map "([120, 3949[ [0, 619[) ([0/4, 7/1[)";
-/ITL/scene/sc21 map "([120, 3949[ [0, 619[) ([0/4, 7/1[)";
-/ITL/scene/sc22 map "([90, 3949[ [0, 619[) ([0/4, 5/1[)";
-/ITL/scene/sc23 map "([90, 3949[ [0, 619[) ([0/4, 45000/10000[)";
-/ITL/scene/sc24 map "([125, 3949[ [0, 619[) ([0/4, 35000/10000[)";
-/ITL/scene/sc25 map "([150, 3949[ [0, 619[) ([0/4, 6/1[)";
-/ITL/scene/sc26 map "([110, 3949[ [0, 619[) ([0/4, 12/1[)";
-/ITL/scene/sc27 map "([140, 3949[ [0, 619[) ([0/4, 16/1[)";
-/ITL/scene/sc28 map "([160, 3949[ [0, 619[) ([0/4, 115000/10000[)";
-/ITL/scene/sc29 map "([110, 3949[ [0, 619[) ([0/4, 35000/10000[)";
-/ITL/scene/sc30 map "([150, 3949[ [0, 619[) ([0/4, 3/1[)";
-/ITL/scene/sc31 map "([100, 3949[ [0, 619[) ([0/4, 8/1[)";
-/ITL/scene/sc32 map "([140, 3949[ [0, 619[) ([0/4, 9/1[)";
-/ITL/scene/sc33 map "([110, 3949[ [0, 619[) ([0/4, 7/1[)";
-/ITL/scene/sc34 map "([110, 3949[ [0, 619[) ([0/4, 7/1[)";
-/ITL/scene/sc35 map "([110, 3949[ [0, 619[) ([0/4, 9/1[)";
-/ITL/scene/sc36 map "([150, 3949[ [0, 619[) ([0/4, 15/1[)";
-/ITL/scene/sc37 map "([150, 3949[ [0, 619[) ([0/4, 11/1[)";
-/ITL/scene/sc38 map "([100, 3949[ [0, 619[) ([0/4, 11/1[)";
-/ITL/scene/sc39 map "([120, 3949[ [0, 619[) ([0/4, 17/1[)";
-/ITL/scene/sc40 map "([150, 3949[ [0, 619[) ([0/4, 8/1[)";
-/ITL/scene/sc41 map "([150, 3949[ [0, 619[) ([0/4, 14/1[)";
-/ITL/scene/sc42 map "([130, 3949[ [0, 619[) ([0/4, 8/1[)";
-/ITL/scene/sc43 map "([140, 3949[ [0, 619[) ([0/4, 14/1[)";
-/ITL/scene/sc44 map "([150, 3949[ [0, 619[) ([0/4, 11/1[)";
-/ITL/scene/sc45 map "([130, 3949[ [0, 619[) ([0/4, 20/1[)";
-/ITL/scene/sc46 map "([180, 3949[ [0, 619[) ([0/4, 18/1[)";
-/ITL/scene/sc47 map "([100, 3949[ [0, 619[) ([0/4, 9/1[)";
-/ITL/scene/sc48 map "([140, 3949[ [0, 619[) ([0/4, 55000/10000[)";
-/ITL/scene/sc49 map "([150, 3949[ [0, 619[) ([0/4, 40000/10000[)";
-/ITL/scene/sc50 map "([120, 3949[ [0, 619[) ([0/4, 60000/10000[)";
-/ITL/scene/sc51 map "([150, 3949[ [0, 619[) ([0/4, 45000/10000[)";
-/ITL/scene/sc52 map "([110, 3949[ [0, 619[) ([0/4, 6/1[)";
-/ITL/scene/sc53 map "([110, 3949[ [0, 619[) ([0/4, 4/1[)";
-/ITL/scene/sc54 map "([120, 3949[ [0, 619[) ([0/4, 7/1[)";
-/ITL/scene/sc55 map "([150, 3949[ [0, 619[) ([0/4, 7/1[)";
-/ITL/scene/sc56 map "([150, 3949[ [0, 619[) ([0/4, 8/1[)";
-/ITL/scene/sc57 map "([150, 3949[ [0, 619[) ([0/4, 9/1[)";
-/ITL/scene/sc58 map "([150, 3949[ [0, 619[) ([0/4, 27/1[)";
-/ITL/scene/sc59 map "([190, 3949[ [0, 619[) ([0/4, 3/1[)";
-/ITL/scene/sc60 map "([150, 3949[ [0, 619[) ([0/4, 35000/10000[)";
-/ITL/scene/sc61 map "([150, 3949[ [0, 619[) ([0/4, 50000/10000[)";
-/ITL/scene/sc62 map "([130, 3949[ [0, 619[) ([0/4, 65000/10000[)";
-/ITL/scene/sc63 map "([130, 3949[ [0, 619[) ([0/4, 45000/10000[)";
-/ITL/scene/sc64 map "([150, 3949[ [0, 619[) ([0/4, 35000/10000[)";
-/ITL/scene/sc65 map "([150, 3949[ [0, 619[) ([0/4, 4/1[)";
-/ITL/scene/sc66 map "([150, 3949[ [0, 619[) ([0/4, 3/1[)";
-/ITL/scene/sc67 map "([150, 3949[ [0, 619[) ([0/4, 45999/10000[)";
-/ITL/scene/sc68 map "([150, 3949[ [0, 619[) ([0/4, 29000/10000[)";
-/ITL/scene/sc69 map "([120, 3949[ [0, 619[) ([0/4, 45000/10000[)";
-/ITL/scene/sc70 map "([150, 3949[ [0, 619[) ([0/4, 10/1[)";
-/ITL/scene/sc71 map "([150, 3949[ [0, 619[) ([0/4, 11/1[)";
-/ITL/scene/sc72 map "([110, 3949[ [0, 619[) ([0/4, 11/1[)";
-/ITL/scene/sc73 map "([150, 3949[ [0, 619[) ([0/4, 6/1[)";
-/ITL/scene/sc74 map "([150, 3949[ [0, 619[) ([0/4, 7/1[)";
-/ITL/scene/sc75 map "([150, 3949[ [0, 619[) ([0/4, 8/1[)";
-/ITL/scene/sc76 map "([150, 3949[ [0, 619[) ([0/4, 6/1[)";
-/ITL/scene/sc77 map "([150, 3949[ [0, 619[) ([0/4, 7/1[)";
-/ITL/scene/sc78 map "([120, 3949[ [0, 619[) ([0/4, 7/1[)";
-/ITL/scene/sc79 map "([150, 3949[ [0, 619[) ([0/4, 6/1[)";
-/ITL/scene/sc80 map "([150, 3949[ [0, 619[) ([0/4, 9/1[)";
-/ITL/scene/sc81 map "([150, 3949[ [0, 619[) ([0/4, 6/1[)";
-/ITL/scene/sc82 map "([150, 3949[ [0, 619[) ([0/4, 6/1[)";
-/ITL/scene/sc83 map "([150, 3949[ [0, 619[) ([0/4, 11/1[)";
-/ITL/scene/sc84 map "([150, 3949[ [0, 619[) ([0/4, 5/1[)";
-/ITL/scene/sc85 map "([150, 3949[ [0, 619[) ([0/4, 55000/10000[)";
-/ITL/scene/sc86 map "([150, 3949[ [0, 619[) ([0/4, 45000/10000[)";
-/ITL/scene/sc87 map "([150, 3949[ [0, 619[) ([0/4, 45000/10000[)";
-/ITL/scene/sc88 map "([150, 3949[ [0, 619[) ([0/4, 50000/10000[)";
-/ITL/scene/sc89 map "([150, 3949[ [0, 619[) ([0/4, 60000/10000[)";
-/ITL/scene/sc90 map "([150, 3949[ [0, 619[) ([0/4, 50000/10000[)";
-/ITL/scene/sc91 map "([150, 3949[ [0, 619[) ([0/4, 50000/10000[)";
-/ITL/scene/sc92 map "([150, 3949[ [0, 619[) ([0/4, 35000/10000[)";
-/ITL/scene/sc93 map "([150, 3949[ [0, 619[) ([0/4, 10/1[)";
-/ITL/scene/sc94 map "([150, 3949[ [0, 619[) ([0/4, 8/1[)";
-/ITL/scene/sc95 map "([150, 3949[ [0, 619[) ([0/4, 6/1[)";
-/ITL/scene/sc96 map "([150, 3949[ [0, 619[) ([0/4, 115000/10000[)";
-/ITL/scene/sc97 map "([150, 3949[ [0, 619[) ([0/4, 165000/10000[)";
-/ITL/scene/sc98 map "([150, 3949[ [0, 619[) ([0/4, 16/1[)";
-/ITL/scene/sc99 map "([150, 3949[ [0, 619[) ([0/4, 14/1[)";
-/ITL/scene/sc100 map "([150, 3949[ [0, 619[) ([0/4, 17/1[)";
-
 
 /ITL/scene/cursor watch timeEnter $sc0start $sc0end (
 	/ITL/scene/sc* show 0,
@@ -858,8 +852,6 @@ bottom = yorigin -1.1;
 	/ITL/scene/sc9 $bottom,
 	/ITL/scene/sc10 $top
 );
-
-## 10s
 
 
 /ITL/scene/cursor watch timeEnter $sc10start $sc10end (
@@ -942,10 +934,6 @@ bottom = yorigin -1.1;
 	/ITL/scene/sc20 $top
 );
 
-
-
-## 20s
-
 /ITL/scene/cursor watch timeEnter $sc20start $sc20end (
 	/ITL/scene/sc* show 0,
 	/ITL/scene/sc20 show 1,
@@ -1025,8 +1013,6 @@ bottom = yorigin -1.1;
 	/ITL/scene/sc29 $bottom,
 	/ITL/scene/sc30 $top
 );
-
-## 30s
 
 /ITL/scene/cursor watch timeEnter $sc30start $sc30end (
 	/ITL/scene/sc* show 0,
@@ -1108,8 +1094,6 @@ bottom = yorigin -1.1;
 	/ITL/scene/sc40 $top
 );
 
-## 40s
-
 /ITL/scene/cursor watch timeEnter $sc40start $sc40end (
 	/ITL/scene/sc* show 0,
 	/ITL/scene/sc40 show 1,
@@ -1189,8 +1173,6 @@ bottom = yorigin -1.1;
 	/ITL/scene/sc49 $bottom,
 	/ITL/scene/sc50 $top
 );
-
-## 50s
 
 /ITL/scene/cursor watch timeEnter $sc50start $sc50end (
 	/ITL/scene/sc* show 0,
@@ -1272,9 +1254,6 @@ bottom = yorigin -1.1;
 	/ITL/scene/sc60 $top
 );
 
-
-## 60s
-
 /ITL/scene/cursor watch timeEnter $sc60start $sc60end (
 	/ITL/scene/sc* show 0,
 	/ITL/scene/sc60 show 1,
@@ -1354,8 +1333,6 @@ bottom = yorigin -1.1;
 	/ITL/scene/sc69 $bottom,
 	/ITL/scene/sc70 $top
 );
-
-## 70s
 
 /ITL/scene/cursor watch timeEnter $sc70start $sc70end (
 	/ITL/scene/sc* show 0,
@@ -1437,8 +1414,6 @@ bottom = yorigin -1.1;
 	/ITL/scene/sc80 $top
 );
 
-## 80s
-
 /ITL/scene/cursor watch timeEnter $sc80start $sc80end (
 	/ITL/scene/sc* show 0,
 	/ITL/scene/sc80 show 1,
@@ -1518,8 +1493,6 @@ bottom = yorigin -1.1;
 	/ITL/scene/sc89 $bottom,
 	/ITL/scene/sc90 $top
 );
-
-## 90s
 
 /ITL/scene/cursor watch timeEnter $sc90start $sc90end (
 	/ITL/scene/sc* show 0,
@@ -1603,10 +1576,9 @@ bottom = yorigin -1.1;
 
 
 
-
-## last system
-
+<!-- ## last system -->
 /ITL/scene/cursor watch timeEnter $sc100start $sc100end (
+	/ITL/scene/sc99 show 0,
 	/ITL/scene/end show 0
 );
 
@@ -1616,34 +1588,80 @@ bottom = yorigin -1.1;
 	/ITL/scene/end show 1
 );
 
-msg = ( /ITL/scene/cursor date "$date" );
+/ITL/scene/cursor watch timeLeave $sc100end 100000000 (
+	/ITL/scene/end show 0
+);
 
-/ITL/scene/sc* watch touchBegin $msg;
-/ITL/scene/sc* watch mouseDown $msg;
 
-__END__
+/ITL/scene/sc* watch mouseDown (/ITL/scene/cursor date "$date");
 
-/ITL/scene/cursor tempo 60;
-/ITL/scene/cursor tempo -60;
+<!-- user interface settings -->
+/ITL/scene/title set txt "Fantaisie";
+/ITL/scene/title fontSize 42;
+/ITL/scene/title y -0.8;
+/ITL/scene/title color white;
+
 /ITL/scene/cursor tempo 0;
 /ITL/scene/cursor date 0;
-/ITL/scene/cursor date 1;
-/ITL/scene/cursor get date;
 
-/ITL/scene/sc*/debug map 1;
-/ITL/scene/sc*/debug map 0;
+/ITL/scene/timeline set rect 2.0 0.06;
+/ITL/scene/timeline color 30 30 30;
+/ITL/scene/timeline y 0.73;
+/ITL/scene/timeline duration 772 1;
 
-/ITL/scene get;
+/ITL/scene/timeline watch mouseDown ( /ITL/scene/cursor date '$date');
+/ITL/scene/timeline watch mouseMove ( /ITL/scene/cursor date '$date');
 
-/ITL/log level 2;
+/ITL/scene/sync cursor timeline v;
 
+/ITL/scene/tm0 set txt "0'";
+/ITL/scene/tm2 set txt "2'";
+/ITL/scene/tm4 set txt "4'";
+/ITL/scene/tm6 set txt "6'";
+/ITL/scene/tm8 set txt "8'";
+/ITL/scene/tm10 set txt "10'";
+/ITL/scene/tm12 set txt "12'";
+/ITL/scene/tm0 date 0;
+/ITL/scene/tm2 date 120;
+/ITL/scene/tm4 date 240;
+/ITL/scene/tm6 date 360;
+/ITL/scene/tm8 date 480;
+/ITL/scene/tm10 date 600;
+/ITL/scene/tm12 date 720;
+/ITL/scene/tm* color white;
+/ITL/scene/tm* scale 0.03;
+/ITL/scene/sync tm* timeline syncBottom;
+/ITL/scene/tm* dy 0.3;
 
-/ITL/log write $sc0duree;
-/ITL/log write $sc1duree;
-/ITL/log write $sc2duree;
-/ITL/log write $sc3duree;
+/ITL/scene/ctrlplay set img "imgs/play.png";
+/ITL/scene/ctrlstop set img "imgs/stop.png";
+/ITL/scene/ctrlplay xorigin 1.2;
+/ITL/scene/ctrlstop xorigin -1.2;
+/ITL/scene/ctrl* width 0.080;
+/ITL/scene/ctrl* y 0.88;
+alpha = 150; 
+/ITL/scene/ctrl* alpha $alpha;
+/ITL/scene/ctrl* watch mouseEnter ( /ITL/scene/$self alpha 255); 
+/ITL/scene/ctrl* watch mouseLeave ( /ITL/scene/$self alpha $alpha); 
 
-/ITL/conductor new;
+/ITL/scene/ctrlplay watch mouseDown (
+	/ITL/scene/ctrlplay push,
+	/ITL/scene/cursor tempo 240,
+	/ITL/scene/ctrlplay set img "imgs/pause.png", 
+	/ITL/scene/ctrlplay watch mouseDown (
+		/ITL/scene/cursor tempo 0,
+		/ITL/scene/ctrlplay set img "imgs/play.png",
+		/ITL/scene/ctrlplay pop
+	)
+);
+
+/ITL/scene/ctrlstop watch mouseDown (
+	/ITL/scene/cursor tempo 0,
+	/ITL/scene/cursor date 0,
+	/ITL/scene/ctrlplay set img "imgs/play.png",
+	/ITL/scene/ctrlplay pop
+);
+
 
 </div>
 </body>
