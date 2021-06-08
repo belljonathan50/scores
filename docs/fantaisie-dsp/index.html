@@ -16,317 +16,320 @@
 
 <div class="inscore" id="scene">
 
-/ITL/scene/cursor set rect 0.03 0.6;
-/ITL/scene/cursor color 255 0 0;
-/ITL/scene color 0 0 0;
+/ITL/scene/* del;
 
-sc0start 	= -0.025;
-sc0end 		= 8;
-sc1start 	= 8;
-sc1end 		= 11.5;
-sc2start	= 11.5;
-sc2end		= 15.5;
-sc3start	= 15.5;
-sc3end		= 18;
-sc4start 	= 18;
-sc4end		= 23;
-sc5start 	= 23;
-sc5end		= 33;
-sc6start	= 32;
-sc6end		= 46;
-sc7start 	= 46;
-sc7end 		= 55;
-sc8start 	= 55;
-sc8end 		= 60;
-sc9start	= 60;
-sc9end		= 64;
-sc10start	= 64;
-sc10end		= 71;
+/ITL/scene/htitle set txt "Perspectives Temporelles";
+/ITL/scene/htitle fontSize 24;
+/ITL/scene/htitle y -0.8;
+/ITL/scene/hcomposer set txt "Jonathan Bell";
+/ITL/scene/hcomposer fontSize 18;
+/ITL/scene/hcomposer y -0.73;
+/ITL/scene/h* fontFamily Helvetica;
+/ITL/scene/h* color darkgrey;
 
-sc99start	= 747;
-sc99end		= 761;
-sc100start	= 761;
-sc100end	= 778;
+# the variables below represent the end date of each page
+d1 = 5.75 / 4;
+d2 = 11.0 / 4;
+d3 = 16.66 / 4;
+d4 = 23.00 / 4;
+d5 = 28.60 / 4;
+d6 = 36.53 / 4;
+d7 = 41.5 / 4;
+d8 = 46.2 / 4;
 
+rsrc = "https://inscoreweb.grame.fr/imgs/";
+pages = $rsrc + "bell/";
+audiorsrc = $rsrc + "bell/";
+/ITL/scene/p1 set img $pages + '1.png';
+/ITL/scene/p2 set img $pages + '2.png';
+/ITL/scene/p3 set img $pages + '3.png';
+/ITL/scene/p4 set img $pages + '4.png';
+/ITL/scene/p5 set img $pages + '5.png';
+/ITL/scene/p6 set img $pages + '6.png';
+/ITL/scene/p7 set img $pages + '7.png';
+/ITL/scene/p8 set img $pages + '8.png';
+/ITL/scene/p1 map '( [470, 540[ [280, 1684[ ) 	( [0:0:0,  0:0:81[ )
+				   ( [540, 2880[ [280, 1684[ )	( [0:0:81, 0:5:75[ )';
+/ITL/scene/p2 map '( [1, 2769[ [101, 1649[ ) 	( [0:5:75, 0:11:0[ )';
+/ITL/scene/p3 map '( [458, 2879[ [144, 1664[ )	( [0:11:0, 0:16:66[ )';
+/ITL/scene/p4 map '( [4, 2828[ [89, 1590[ ) 	( [0:16:66, 0:23:00[ )';
+/ITL/scene/p5 map '( [563, 2879[ [194, 1676[ )	( [0:23:00, 0:28:60[ )';
+/ITL/scene/p6 map '( [5, 2880[ [190, 1670[ ) 	( [0:28:60, 0:36:53[ )';
+/ITL/scene/p7 map '( [567, 2880[ [210, 1745[ ) 	( [0:36:53, 0:41:50[ )';
+/ITL/scene/p8 map '( [1, 2825[ [190, 1570[ ) 	( [0:41:50, 0:46:20[ )';
 
-sc0duree = $sc0end - $sc0start;
-sc1duree = $sc1end - $sc1start;
-sc2duree = $sc2end - $sc2start;
-sc3duree = $sc3end - $sc3start;
-sc4duree = $sc4end - $sc4start;
-sc5duree = $sc5end - $sc5start;
-sc6duree = $sc6end - $sc6start;
-sc7duree = $sc7end - $sc7start;
-sc8duree = $sc8end - $sc8start;
-sc9duree = $sc9end - $sc9start;
-sc10duree = $sc10end - $sc10start;
+/ITL/scene/p* width 1.8;
+/ITL/scene/p* show 0;
+/ITL/scene/p1 show 1;
+click = (/ITL/scene/cursor date '$date', /ITL/scene/audio vdate '$date');
+/ITL/scene/p* watch mouseMove $click;
+/ITL/scene/p* watch mouseDown $click;
 
-sc100duree = $sc100end - $sc100start;
+/ITL/scene/audio set audio $audiorsrc +'perspectives.mp3';
+/ITL/scene/audio show 0;
+/ITL/scene/audio watch ready ( /ITL/scene event READY );
 
+#==================================================
+# cursor and synchronisation
+#==================================================
+w = 0.01;
+/ITL/scene/cursor set rect $w 0.9;
+/ITL/scene/cursor color 0xff0000aa;
+/ITL/scene/sync cursor p* v; 
 
-/ITL/scene/sc0 set img "imgs/n00.png";
-/ITL/scene/sc1 set img "imgs/n01.png";
-/ITL/scene/sc2 set img "imgs/n02.png";
-/ITL/scene/sc3 set img "imgs/n03.png";
-/ITL/scene/sc4 set img "imgs/n04.png";
-/ITL/scene/sc5 set img "imgs/n05.png";
-/ITL/scene/sc6 set img "imgs/n06.png";
-/ITL/scene/sc7 set img "imgs/n07.png";
-/ITL/scene/sc8 set img "imgs/n08.png";
-/ITL/scene/sc9 set img "imgs/n09.png";
-/ITL/scene/sc10 set img "imgs/n10.png";
-
-/ITL/scene/sc100 set img "imgs/n100.png";
-
-/ITL/scene watch MAP (
-	/ITL/scene/sc0 map "([530, 3540[ [0, 619[) ([0/4, 80250/10000[)",
-	/ITL/scene/sc1 map "([150, 3949[ [0, 619[) ([0/4, 35000/10000[)",
-	/ITL/scene/sc2 map "([150, 3949[ [0, 619[) ([0/4, 40000/10000[)",
-	/ITL/scene/sc3 map "([120, 3949[ [0, 619[) ([0/4, 25000/10000[)",
-	/ITL/scene/sc4 map "([120, 3949[ [0, 619[) ([0/4, 5/1[)",
-	/ITL/scene/sc5 map "([150, 3949[ [0, 619[) ([0/4, 10/1[)",
-	/ITL/scene/sc6 map "([150, 3949[ [0, 619[) ([0/4, 14/1[)",
-	/ITL/scene/sc7 map "([120, 3949[ [0, 619[) ([0/4, 9/1[)",
-	/ITL/scene/sc8 map "([150, 3949[ [0, 619[) ([0/4, 5/1[)",
-	/ITL/scene/sc9 map "([100, 3949[ [0, 619[) ([0/4, 4/1[)",
-	/ITL/scene/sc10 map "([120, 3949[ [0, 619[) ([0/4, 7/1[)",
-	
-	/ITL/scene/sc100 map "([150, 3949[ [0, 619[) ([0/4, 17/1[)"
+#==================================================
+# time events
+#==================================================
+/ITL/scene/vnext set txt "next page";
+/ITL/scene/vprev set txt "prev page";
+/ITL/scene/v* show 0;
+/ITL/scene watch PAGECHGE (
+	/ITL/scene/vprev date '$1',
+	/ITL/scene/vnext date '$2'
 );
+/ITL/scene event PAGECHGE 0. $d1;
+/ITL/scene/cursor watch timeEnter 0 $d1 	( /ITL/scene/p* show 0, /ITL/scene/p1 show 1, /ITL/scene event PAGECHGE 0. $d1);
+/ITL/scene/cursor watch timeEnter $d1 $d2 	( /ITL/scene/p* show 0, /ITL/scene/p2 show 1, /ITL/scene event PAGECHGE 0  $d2 );
+/ITL/scene/cursor watch timeEnter $d2 $d3 	( /ITL/scene/p* show 0, /ITL/scene/p3 show 1, /ITL/scene event PAGECHGE $d1 $d3 );
+/ITL/scene/cursor watch timeEnter $d3 $d4 	( /ITL/scene/p* show 0, /ITL/scene/p4 show 1, /ITL/scene event PAGECHGE $d2 $d4 );
+/ITL/scene/cursor watch timeEnter $d4 $d5 	( /ITL/scene/p* show 0, /ITL/scene/p5 show 1, /ITL/scene event PAGECHGE $d3 $d5 );
+/ITL/scene/cursor watch timeEnter $d5 $d6 	( /ITL/scene/p* show 0, /ITL/scene/p6 show 1, /ITL/scene event PAGECHGE $d4 $d6 );
+/ITL/scene/cursor watch timeEnter $d6 $d7 	( /ITL/scene/p* show 0, /ITL/scene/p7 show 1, /ITL/scene event PAGECHGE $d5 $d7 );
+/ITL/scene/cursor watch timeEnter $d7 $d8 	( /ITL/scene/p* show 0, /ITL/scene/p8 show 1, /ITL/scene event PAGECHGE $d6 $d8 );
+/ITL/scene/cursor watch timeEnter $d8 100 	( /ITL/scene event END, /ITL/scene event PAGECHGE $d7 0 );
 
+#==================================================
+# play control
+#==================================================
+origin = 1.2;
+alpha = 120;
+play  = $rsrc + 'play.png';
+pause = $rsrc + 'pause.png';
+stop  = $rsrc + 'stop.png';
+w = 0.09;
 
-/ITL/scene watch START (
-	/ITL/scene/sync cursor sc* v relative
+initplay =	(/ITL/scene/ctrlplay push,
+			/ITL/scene/ctrlplay set img $pause,
+			/ITL/scene/ctrlplay width $w,
+			/ITL/scene/cursor tempo 60,
+			/ITL/scene/audio play 1,
+			/ITL/scene/ctrlplay watch mouseDown ( 
+				/ITL/scene/ctrlplay set img $play,
+				/ITL/scene/ctrlplay width $w,
+				/ITL/scene/cursor tempo 0,
+				/ITL/scene/audio play 0,
+				/ITL/scene/ctrlplay pop
+			));
+
+/ITL/scene watch READY (
+	/ITL/scene/ctrlplay set img $play,
+	/ITL/scene/ctrlstop set img $stop,
+	/ITL/scene/ctrlplay xorigin $origin,
+	/ITL/scene/ctrlstop xorigin $origin * -1,
+	/ITL/scene/ctrl* y 0.8,
+	/ITL/scene/ctrl* width $w,
+	/ITL/scene/ctrl* alpha $alpha,
+	/ITL/scene/ctrl* watch mouseEnter ( /ITL/scene/$self alpha 255 ),
+	/ITL/scene/ctrl* watch mouseLeave ( /ITL/scene/$self alpha $alpha ),
+	/ITL/scene/ctrlstop watch mouseDown ( /ITL/scene event STOP ),
+	/ITL/scene/ctrlplay watch mouseDown $initplay,
+	/ITL/scene/ctrlstop event mouseDown 0 0
 );
 
 /ITL/scene watch STOP (
-	/ITL/scene/cursor tempo 0
-);
-
-
-/ITL/scene/sc100 watch show (
-	/ITL/scene/sc100 watch show,
-	/ITL/scene event MAP,
-	/ITL/scene event START
-);
-
-
-/ITL/scene/sc* show 0;
-/ITL/scene/sc[01] show 1;
-
-/ITL/scene/end set txt "The End";
-/ITL/scene/end fontSize 36;
-/ITL/scene/end color 255 255 255;
-/ITL/scene/end show 0;
-
-top = yorigin 1.1;
-bottom = yorigin -1.1;
-/ITL/scene/sc* width 2;
-/ITL/scene/sc0 $top;
-/ITL/scene/sc1 $bottom;
-
-/ITL/scene/sc0 date 	$sc0start;
-/ITL/scene/sc0 duration $sc0duree;
-/ITL/scene/sc1 date 	$sc1start;
-/ITL/scene/sc1 duration $sc1duree;
-/ITL/scene/sc2 date 	$sc2start;
-/ITL/scene/sc2 duration $sc2duree;
-/ITL/scene/sc3 date 	$sc3start;
-/ITL/scene/sc3 duration $sc3duree;
-/ITL/scene/sc4 date 	$sc4start;
-/ITL/scene/sc4 duration $sc4duree;
-/ITL/scene/sc5 date 	$sc5start;
-/ITL/scene/sc5 duration $sc5duree;
-/ITL/scene/sc6 date 	$sc6start;
-/ITL/scene/sc6 duration $sc6duree;
-/ITL/scene/sc7 date 	$sc7start;
-/ITL/scene/sc7 duration $sc7duree;
-/ITL/scene/sc8 date 	$sc8start;
-/ITL/scene/sc8 duration $sc8duree;
-/ITL/scene/sc9 date 	$sc9start;
-/ITL/scene/sc9 duration $sc9duree;
-/ITL/scene/sc10 date 	$sc10start;
-/ITL/scene/sc10 duration $sc10duree;
-/ITL/scene/sc100 duration 	$sc100duree;
-
-
-/ITL/scene/cursor watch timeEnter $sc0start $sc0end (
-	/ITL/scene/sc* show 0,
-	/ITL/scene/sc[01] show 1,
-	/ITL/scene/sc0 $top,
-	/ITL/scene/sc1 $bottom
-);
-
-/ITL/scene/cursor watch timeEnter $sc1start $sc1end (
-	/ITL/scene/sc* show 0,
-	/ITL/scene/sc[12] show 1,
-	/ITL/scene/sc1 $bottom,
-	/ITL/scene/sc2 $top
-);
-
-/ITL/scene/cursor watch timeEnter $sc2start $sc2end (
-	/ITL/scene/sc* show 0,
-	/ITL/scene/sc[23] show 1,
-	/ITL/scene/sc2 $top,
-	/ITL/scene/sc3 $bottom
-);
-
-/ITL/scene/cursor watch timeEnter $sc3start $sc3end (
-	/ITL/scene/sc* show 0,
-	/ITL/scene/sc[34] show 1,
-	/ITL/scene/sc3 $bottom,
-	/ITL/scene/sc4 $top
-);
-
-/ITL/scene/cursor watch timeEnter $sc4start $sc4end (
-	/ITL/scene/sc* show 0,
-	/ITL/scene/sc[45] show 1,
-	/ITL/scene/sc4 $top,
-	/ITL/scene/sc5 $bottom
-);
-
-/ITL/scene/cursor watch timeEnter $sc5start $sc5end (
-	/ITL/scene/sc* show 0,
-	/ITL/scene/sc[56] show 1,
-	/ITL/scene/sc5 $bottom,
-	/ITL/scene/sc6 $top
-);
-
-/ITL/scene/cursor watch timeEnter $sc6start $sc6end (
-	/ITL/scene/sc* show 0,
-	/ITL/scene/sc6 show 1,
-	/ITL/scene/sc7 show 1,
-	/ITL/scene/sc6 $top,
-	/ITL/scene/sc7 $bottom
-);
-
-/ITL/scene/cursor watch timeEnter $sc7start $sc7end (
-	/ITL/scene/sc* show 0,
-	/ITL/scene/sc7 show 1,
-	/ITL/scene/sc8 show 1,
-	/ITL/scene/sc7 $bottom,
-	/ITL/scene/sc8 $top
-);
-
-/ITL/scene/cursor watch timeEnter $sc8start $sc8end (
-	/ITL/scene/sc* show 0,
-	/ITL/scene/sc8 show 1,
-	/ITL/scene/sc9 show 1,
-	/ITL/scene/sc8 $top,
-	/ITL/scene/sc9 $bottom
-);
-
-/ITL/scene/cursor watch timeEnter $sc9start $sc9end (
-	/ITL/scene/sc* show 0,
-	/ITL/scene/sc9 show 1,
-	/ITL/scene/sc10 show 1,
-	/ITL/scene/sc9 $bottom,
-	/ITL/scene/sc10 $top
-);
-
-
-/ITL/scene/cursor watch timeEnter $sc10start $sc10end (
-	/ITL/scene/sc* show 0,
-	/ITL/scene/sc10 show 1,
-	/ITL/scene/sc11 show 1,
-	/ITL/scene/sc10 $top,
-	/ITL/scene/sc11 $bottom
-);
-
-/ITL/scene/cursor watch timeEnter $sc11start $sc11end (
-	/ITL/scene/sc* show 0,
-	/ITL/scene/sc11 show 1,
-	/ITL/scene/sc12 show 1,
-	/ITL/scene/sc11 $bottom,
-	/ITL/scene/sc12 $top
-);
-
-
-<!-- ## last system -->
-/ITL/scene/cursor watch timeEnter $sc100start $sc100end (
-	/ITL/scene/sc99 show 0,
-	/ITL/scene/end show 0
-);
-
-/ITL/scene/cursor watch timeLeave $sc100start $sc100end (
-	/ITL/scene/sc* show 0,
+	/ITL/scene/ctrlplay set img $play,
+	/ITL/scene/ctrlplay width $w,
+	/ITL/scene/ctrlplay pop,
+	/ITL/scene/ctrlplay watch mouseDown $initplay,
+	/ITL/scene/ctrl* watch mouseEnter ( /ITL/scene/$self alpha 255 ),
+	/ITL/scene/ctrl* watch mouseLeave ( /ITL/scene/$self alpha $alpha ),
 	/ITL/scene/cursor tempo 0,
-	/ITL/scene/end show 1
+	/ITL/scene/audio play 0,
+	/ITL/scene/audio vdate 0,
+	/ITL/scene/cursor date 1000,
+	/ITL/scene/cursor date 0
 );
 
-/ITL/scene/cursor watch timeLeave $sc100end 100000000 (
-	/ITL/scene/end show 0
+/ITL/scene watch END (
+	/ITL/scene/ctrlplay set img $play,
+	/ITL/scene/ctrlplay width $w,
+	/ITL/scene/ctrlplay pop,
+	/ITL/scene/ctrlplay watch mouseDown $initplay,
+	/ITL/scene/cursor tempo 0,
+	/ITL/scene/audio play 0
 );
 
+#==================================================
+# browsing
+#==================================================
+next = $rsrc + 'next.png';
+prev = $rsrc + 'prev.png';
+x = 0.2;
+/ITL/scene/bnext set img $next;
+/ITL/scene/bprev set img $prev;
+/ITL/scene/bnext x $x;
+/ITL/scene/bprev x $x * -1;
+/ITL/scene/b* width $w * 1.2;
+/ITL/scene/b* y 0.8;
+/ITL/scene/b* alpha $alpha;
+/ITL/scene/b* watch mouseEnter ( /ITL/scene/$self alpha 255 );
+/ITL/scene/b* watch mouseLeave ( /ITL/scene/$self alpha $alpha );
+/ITL/scene/bnext watch mouseDown ( 
+	/ITL/scene/cursor date '$(/ITL/scene/vnext get date)', 
+	/ITL/scene/audio vdate '$(/ITL/scene/vnext get date)'
+);
+/ITL/scene/bprev watch mouseDown ( 
+	/ITL/scene/cursor date '$(/ITL/scene/vprev get date)', 
+	/ITL/scene/audio vdate '$(/ITL/scene/vprev get date)'
+);
 
-/ITL/scene/sc* watch mouseDown (/ITL/scene/cursor date "$date");
+#==================================================
+# faust part
+#==================================================
+/ITL/scene/echo set faust 'import("stdfaust.lib"); process =  ef.echo1s, ef.echo1s;';
+/ITL/scene/echo/echo__1000/feedback 80;
+/ITL/scene/echo/echo__1000/millisecond 80;
+/ITL/scene/echo show 0;
 
-<!-- user interface settings -->
-/ITL/scene/title set txt "state of guts";
-/ITL/scene/title fontSize 42;
-/ITL/scene/title y -0.8;
-/ITL/scene/title color white;
+#==================================================
+# faust control part
+#==================================================
+w = 0.055;
+xo = 1.08;
+/ITL/scene/button1 set rect $w $w;
+/ITL/scene/button1 radius 5 5;
+/ITL/scene/button1 color white;
+/ITL/scene/button1 penWidth 1;
+/ITL/scene/button1 xorigin $xo * -1;
+/ITL/scene/button1 watch mouseDown (
+	/ITL/scene/$self push,
+	/ITL/scene/$self color green,
+	/ITL/scene/layer show 1,
+	/ITL/scene/dsp* show 1,
+	/ITL/scene/value* show 1,
+	/ITL/scene/$self watch mouseDown (
+		/ITL/scene/layer show 0,
+		/ITL/scene/dsp* show 0,
+		/ITL/scene/value* show 0,
+		/ITL/scene/$self color white,
+		/ITL/scene/$self pop
+	)
+);
+/ITL/scene/label1 set txt "Dsp control:";
+/ITL/scene/label1 xorigin $xo;
+/ITL/scene/label1 	x -0.8;
+/ITL/scene/button1  x -0.8;
+/ITL/scene/label1 	y 0.8;
+/ITL/scene/button1 	y 0.8;
 
-/ITL/scene/cursor tempo 0;
-/ITL/scene/cursor date 0;
 
-/ITL/scene/timeline set rect 2.0 0.06;
-/ITL/scene/timeline color 30 30 30;
-/ITL/scene/timeline y 0.73;
-/ITL/scene/timeline duration 772 1;
+w = 0.055;
+yt = -0.04;
+yb = $yt * -1;
+/ITL/scene/layer set layer;
+/ITL/scene/layer/button1 set rect $w $w;
+/ITL/scene/layer/button2 set rect $w $w;
+/ITL/scene/layer/button* radius 5 5;
+/ITL/scene/layer/button* color white;
+/ITL/scene/layer/button* penWidth 1;
+/ITL/scene/layer/button* xorigin $xo * -1;
+/ITL/scene/layer/button1 y $yt;
+/ITL/scene/layer/button2 y $yb;
 
-/ITL/scene/timeline watch mouseDown ( /ITL/scene/cursor date '$date');
-/ITL/scene/timeline watch mouseMove ( /ITL/scene/cursor date '$date');
+/ITL/scene/layer/label1 set txt "Diagram:";
+/ITL/scene/layer/label2 set txt "Connect:";
+/ITL/scene/layer/label* xorigin $xo;
+/ITL/scene/layer/label1 y $yt;
+/ITL/scene/layer/label2 y $yb;
 
-/ITL/scene/sync cursor timeline v;
+/ITL/scene/layer x -0.8;
+/ITL/scene/layer y -0.63;
+/ITL/scene/layer show 0;
 
-/ITL/scene/tm0 set txt "0'";
-/ITL/scene/tm2 set txt "2'";
-/ITL/scene/tm4 set txt "4'";
-/ITL/scene/tm6 set txt "6'";
-/ITL/scene/tm8 set txt "8'";
-/ITL/scene/tm10 set txt "10'";
-/ITL/scene/tm12 set txt "12'";
-/ITL/scene/tm0 date 0;
-/ITL/scene/tm2 date 120;
-/ITL/scene/tm4 date 240;
-/ITL/scene/tm6 date 360;
-/ITL/scene/tm8 date 480;
-/ITL/scene/tm10 date 600;
-/ITL/scene/tm12 date 720;
-/ITL/scene/tm* color white;
-/ITL/scene/tm* scale 0.03;
-/ITL/scene/sync tm* timeline syncBottom;
-/ITL/scene/tm* dy 0.3;
-
-/ITL/scene/ctrlplay set img "imgs/play.png";
-/ITL/scene/ctrlstop set img "imgs/stop.png";
-/ITL/scene/ctrlplay xorigin 1.2;
-/ITL/scene/ctrlstop xorigin -1.2;
-/ITL/scene/ctrl* width 0.080;
-/ITL/scene/ctrl* y 0.88;
-alpha = 150; 
-/ITL/scene/ctrl* alpha $alpha;
-/ITL/scene/ctrl* watch mouseEnter ( /ITL/scene/$self alpha 255); 
-/ITL/scene/ctrl* watch mouseLeave ( /ITL/scene/$self alpha $alpha); 
-
-/ITL/scene/ctrlplay watch mouseDown (
-	/ITL/scene/ctrlplay push,
-	/ITL/scene/cursor tempo 240,
-	/ITL/scene/ctrlplay set img "imgs/pause.png", 
-	/ITL/scene/ctrlplay watch mouseDown (
-		/ITL/scene/cursor tempo 0,
-		/ITL/scene/ctrlplay set img "imgs/play.png",
-		/ITL/scene/ctrlplay pop
+/ITL/scene/layer/button1 watch mouseDown (
+	/ITL/scene/layer/$self push,
+	/ITL/scene/layer/$self color green,
+	/ITL/scene/echo show 1,
+	/ITL/scene/layer/$self watch mouseDown (
+		/ITL/scene/echo show 0,
+		/ITL/scene/layer/$self color white,
+		/ITL/scene/layer/$self pop
 	)
 );
 
-/ITL/scene/ctrlstop watch mouseDown (
-	/ITL/scene/cursor tempo 0,
-	/ITL/scene/cursor date 0,
-	/ITL/scene/ctrlplay set img "imgs/play.png",
-	/ITL/scene/ctrlplay pop
+/ITL/scene/layer/button2 watch mouseDown (
+	/ITL/scene/layer/$self push,
+	/ITL/scene/layer/$self color green,
+	/ITL/scene/echo connect audioOutput,
+	/ITL/scene/audio connect echo,
+	/ITL/scene/layer/$self watch mouseDown (
+		/ITL/scene/echo disconnect audioOutput,
+		/ITL/scene/audio disconnect echo,
+		/ITL/scene/layer/$self color white,
+		/ITL/scene/layer/$self pop
+	)
 );
+
+x = 0.30;
+y1 = -0.7;
+y2 = $y1 + 0.075;
+/ITL/scene/dspdelay set rect 0.6 0.04;
+/ITL/scene/dspfeedback set rect 0.6 0.04;
+/ITL/scene/dsp[df]* penWidth 1;
+/ITL/scene/dsp[df]* brushStyle none;
+/ITL/scene/dsp[df]* xorigin -1;
+/ITL/scene/dspdelay duration 1000 ;
+/ITL/scene/dspfeedback duration 100 ;
+
+/ITL/scene/dsplabel1 set txt "Delay:";
+/ITL/scene/dsplabel2 set txt "Feedback:";
+/ITL/scene/dsplabel* xorigin 1.1;
+/ITL/scene/dspdelay y $y1;
+/ITL/scene/dspfeedback y $y2;
+
+/ITL/scene/dsplabel1 y $y1;
+/ITL/scene/dsplabel2 y $y2;
+/ITL/scene/dsp[fdl]* x $x;
+
+/ITL/scene/dspvalue1  set txt " ";
+/ITL/scene/dspvalue2  set txt " ";
+/ITL/scene/dspvalue1  y $y1;
+/ITL/scene/dspvalue2  y $y2;
+/ITL/scene/dspvalue*  xorigin -1;
+/ITL/scene/dspvalue*  x $x + 0.62;
+
+/ITL/scene/dsp* show 0;
+
+w = 0.03;
+/ITL/scene/valuedelay set rect $w 0.5;
+/ITL/scene/valuefeedback set rect $w 0.5;
+/ITL/scene/value* color red;
+/ITL/scene/valuedelay date 80 ;
+/ITL/scene/valuefeedback date 80 ;
+/ITL/scene/sync valuedelay dspdelay v;
+/ITL/scene/sync valuefeedback dspfeedback v;
+
+delay = (
+	/ITL/scene/valuedelay date "$date",
+	/ITL/scene/dspvalue1 set txt "$date%f",
+	/ITL/scene/echo/echo__1000/millisecond "$date%f"
+);
+/ITL/scene/dspdelay watch mouseDown $delay;
+/ITL/scene/dspdelay watch mouseMove $delay;
+
+feedback = (
+	/ITL/scene/valuefeedback date "$date",
+	/ITL/scene/dspvalue2 set txt "$date%f",
+	/ITL/scene/echo/echo__1000/feedback "$date%f"
+);
+/ITL/scene/dspfeedback watch mouseDown $feedback;
+/ITL/scene/dspfeedback watch mouseMove $feedback;
+
+
+__END__
+
+/ITL/scene/sync cursor;
+/ITL/scene/sync cursor p1;
 
 
 </div>
