@@ -1,7 +1,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
-	<title>State of Guta</title>
+	<title>State of Guts</title>
 
 	<link href="libs/fonts/fonts.css" rel="stylesheet">
 	<script src="libs/libINScore.js"></script>
@@ -63,13 +63,7 @@ sc10duree = $sc10end - $sc10start;
 
 sc100duree = $sc100end - $sc100start;
 
-/ITL/scene/clef set img "imgs/clef.png";
-/ITL/scene/clef x -5.3;
-/ITL/scene/clef y -1;
 
-/ITL/scene/clef2 set img "imgs/clef.png";
-/ITL/scene/clef2 x -5.3;
-/ITL/scene/clef2 y 1;
 	
 /ITL/scene/sc0 set img "imgs/n00.png";
 /ITL/scene/sc1 set img "imgs/n01.png";
@@ -294,6 +288,16 @@ alpha = 150;
 /ITL/scene/ctrl* alpha $alpha;
 /ITL/scene/ctrl* watch mouseEnter ( /ITL/scene/$self alpha 255); 
 /ITL/scene/ctrl* watch mouseLeave ( /ITL/scene/$self alpha $alpha); 
+	
+/ITL/scene/clefa set img "imgs/clef.png";
+/ITL/scene/clefa x -5.3;
+/ITL/scene/clefa y -1;
+
+/ITL/scene/clefb set img "imgs/clef.png";
+/ITL/scene/clefb x -5.3;
+/ITL/scene/clefb y 1;
+	
+/ITL/scene/clef* width 0.080;
 
 /ITL/scene/ctrlplay watch mouseDown (
 	/ITL/scene/ctrlplay push,
