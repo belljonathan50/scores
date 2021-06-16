@@ -68,8 +68,7 @@ var AIOScanner = /** @class */ (function () {
         })
             .catch(function (err) {
             AIOScanner.send(address, AIOScanner.kInputName, null);
-            // silently ignore missing input device
-            //            console.log("AIOScanner can't get input device: " + err);
+            console.log("AIOScanner can't get input device: " + err);
         });
     }; // Get All Physical in/out and populate finput & foutput
     AIOScanner.send = function (address, name, node) {
@@ -99,7 +98,6 @@ var AIOScanner = /** @class */ (function () {
     return AIOScanner;
 }());
 ///<reference path="lib/inscore.d.ts"/>
-///<reference path="lib/libINScore.d.ts"/>
 //----------------------------------------------------------------------------
 // INScore interface
 //----------------------------------------------------------------------------
@@ -292,7 +290,7 @@ var JSObjectView = /** @class */ (function () {
             this.delete();
             return;
         }
-        if (this.fSyncManager && this.fSyncManager.updateSync(obj))
+        if (this.fSyncManager && this.fSyncManager.updateSync(obj /*, oid*/))
             return; // object is synchronized, update is done
         if (obj.newData())
             if (!this.updateSpecial(obj /*, oid*/))
@@ -1012,7 +1010,7 @@ var JSEllipseView = /** @class */ (function (_super) {
     JSEllipseView.prototype.getSVGTarget = function () { return this.fEllipse; };
     JSEllipseView.prototype.toString = function () { return "JSEllipseView"; };
     JSEllipseView.prototype.getScale = function (scale) { return scale; };
-    // getSyncRatio()	: number {  return 1; }
+    JSEllipseView.prototype.getSyncRatio = function () { return 1; };
     JSEllipseView.prototype.updateSVGDimensions = function (w, h) {
         var rx = w / 2;
         var ry = h / 2;
@@ -1863,7 +1861,7 @@ var JSImageView = /** @class */ (function (_super) {
         return img;
     };
     JSImageView.prototype.toString = function () { return "JSImageView"; };
-    // getSyncRatio()	: number    { return 1; }   // no scaling for images, appearance is already preserved 
+    JSImageView.prototype.getSyncRatio = function () { return 1; }; // no scaling for images, appearance is already preserved 
     JSImageView.prototype.getAutoSize = function () { return { x: this.fImage.naturalWidth, y: this.fImage.naturalHeight }; };
     JSImageView.prototype.getScale = function (scale) { return scale; };
     JSImageView.prototype.updateSpecial = function (obj) {
@@ -2048,7 +2046,7 @@ var JSRectView = /** @class */ (function (_super) {
         this.fRect.style.height = h + "px";
     };
     JSRectView.prototype.getScale = function (scale) { return scale; };
-    // getSyncRatio()	: number {  return 1; }
+    JSRectView.prototype.getSyncRatio = function () { return 1; };
     JSRectView.prototype.updateSpecific = function (obj) {
         var radius = obj.getRadius();
         this.fRect.setAttribute('rx', radius.x.toString());
@@ -2393,16 +2391,14 @@ var JSXMLfView = /** @class */ (function (_super) {
 ///<reference path="JSObjectView.ts"/>
 ///<reference path="interfaces.ts"/>
 var TMaster = /** @class */ (function () {
-    function TMaster(m, s, vstretch) {
+    function TMaster(m, s) {
         this.fMaster = m;
         this.fSlave = s;
         this.fClone = s.clone(m);
-        this.fVStretch = vstretch;
         m.getElement().appendChild(this.fClone.getElement());
     }
     TMaster.prototype.master = function () { return this.fMaster; };
     TMaster.prototype.slave = function () { return this.fClone; };
-    TMaster.prototype.scale = function () { return !this.fVStretch; };
     TMaster.prototype.unsync = function () {
         this.master().getElement().removeChild(this.fClone.getElement());
         this.fClone.delete();
@@ -2416,7 +2412,7 @@ var TSyncManager = /** @class */ (function () {
         this.fTarget = obj;
     }
     TSyncManager.prototype.toString = function () { return "TSyncManager"; };
-    TSyncManager.prototype.updateSync = function (obj) {
+    TSyncManager.prototype.updateSync = function (obj /*, oid: number*/) {
         var _this = this;
         var m = obj.getMasters();
         var n = m.size() + this.countMasters();
@@ -2435,7 +2431,7 @@ var TSyncManager = /** @class */ (function () {
         var updated = 0;
         this.fSync.forEach(function (m, index) {
             if (m) {
-                m.slave().updateView(obj, m.master().getIObject(), false, m.scale());
+                m.slave().updateView(obj, /*oid,*/ m.master().getIObject(), false, true);
                 updated++;
             }
         });
@@ -2457,8 +2453,8 @@ var TSyncManager = /** @class */ (function () {
     TSyncManager.prototype.masters2Objects = function (vec) {
         var m = new Array();
         for (var i = 0; i < vec.size(); i++) {
-            var master = vec.get(i);
-            m[master.viewid] = { view: JSObjectView.getVObject(master.viewid), vstretch: master.vstretch };
+            var id = vec.get(i);
+            m[id] = JSObjectView.getVObject(id);
         }
         return m;
     };
@@ -2471,8 +2467,8 @@ var TSyncManager = /** @class */ (function () {
         return count;
     };
     TSyncManager.prototype.add = function (obj) {
-        var m = new TMaster(obj.view, this.fTarget, obj.vstretch);
-        this.fSync[obj.view.getId()] = m;
+        var m = new TMaster(obj, this.fTarget);
+        this.fSync[obj.getId()] = m;
     };
     TSyncManager.prototype.remove = function (index) {
         var master = this.fSync[index];
