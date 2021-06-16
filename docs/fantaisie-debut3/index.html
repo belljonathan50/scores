@@ -32,10 +32,8 @@
 /ITL/scene/title scale 3;
 /ITL/scene/title y -0.6;
 
-/ITL/scene/echo set faust 'import("stdfaust.lib"); process =  ef.echo1s, ef.echo1s;';
-/ITL/scene/echo/echo__1000/feedback 80;
-/ITL/scene/echo/echo__1000/millisecond 80;
-
+/ITL/scene/echo set faust 'import("stdfaust.lib"); 
+process = vgroup("Oscillator", os.osc(440) * 1);
 
 </div>
 </body>
