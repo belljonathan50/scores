@@ -32,8 +32,10 @@
 /ITL/scene/title scale 3;
 /ITL/scene/title y -0.6;
 
-/ITL/scene/echo set faust 'import("stdfaust.lib"); 
-process = vgroup("Oscillator", os.osc(440) * 1);
+/ITL/scene/ring set faust 'import("stdfaust.lib"); 
+frequency = 100;
+dpth = 13;
+ringMod(freq,depth) = *(modSig)with{    modSig = 1 - (os.osc(freq)+1)*0.5*depth;};process = ringMod(frequency,dpth)* 2;
 
 </div>
 </body>
