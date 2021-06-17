@@ -35,7 +35,8 @@
 /ITL/scene/ring set faust 'import("stdfaust.lib"); 
 frequency = 100;
 dpth = 13;
-ringMod(freq,depth) = *(modSig)with{    modSig = 1 - (os.osc(freq)+1)*0.5*depth;};process = ringMod(frequency,dpth)* 2;
+volring = 2; 
+ringMod(freq,depth) = *(modSig)with{    modSig = 1 - (os.osc(freq)+1)*0.5*depth;};process = ringMod(frequency,dpth)* volring;
 
 </div>
 </body>
