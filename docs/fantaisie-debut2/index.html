@@ -47,6 +47,17 @@ yb = $yt * -1;
 /ITL/scene/layer/button penWidth 1;
 /ITL/scene/layer/button xorigin -10;
 /ITL/scene/layer/button yorigin -10;
+
+
+/ITL/scene/layer/button2 watch mouseDown (
+	/ITL/scene/echo connect audioOutput,
+	/ITL/scene/audio connect echo,
+);
+
+
+
+
+
 <!-- /ITL/scene/layer/button1 y $yt;
 /ITL/scene/layer/button2 y $yb;
 
@@ -55,6 +66,9 @@ yb = $yt * -1;
 /ITL/scene/layer/label* xorigin $xo;
 /ITL/scene/layer/label1 y $yt;
 /ITL/scene/layer/label2 y $yb;
+
+
+
 
 
 /ITL/scene/layer/button2 watch mouseDown (
