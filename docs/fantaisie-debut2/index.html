@@ -53,27 +53,6 @@ yb = $yt * -1;
 /ITL/scene/layer/label2 yorigin 20;
 
 
-/ITL/scene/layer/button2 watch mouseDown (
-	/ITL/scene/echo connect audioOutput,
-	/ITL/scene/audio connect echo,
-);
-
-
-
-
-
-<!-- /ITL/scene/layer/button1 y $yt;
-/ITL/scene/layer/button2 y $yb;
-
-/ITL/scene/layer/label1 set txt "Diagram:";
-/ITL/scene/layer/label2 set txt "Connect:";
-/ITL/scene/layer/label* xorigin $xo;
-/ITL/scene/layer/label1 y $yt;
-/ITL/scene/layer/label2 y $yb;
-
-
-
-
 
 /ITL/scene/layer/button2 watch mouseDown (
 	/ITL/scene/layer/$self push,
@@ -87,6 +66,19 @@ yb = $yt * -1;
 		/ITL/scene/layer/$self pop
 	)
 );
+
+
+
+<!-- /ITL/scene/layer/button1 y $yt;
+/ITL/scene/layer/button2 y $yb;
+
+/ITL/scene/layer/label1 set txt "Diagram:";
+/ITL/scene/layer/label2 set txt "Connect:";
+/ITL/scene/layer/label* xorigin $xo;
+/ITL/scene/layer/label1 y $yt;
+/ITL/scene/layer/label2 y $yb;
+
+
 	 -->
 
 
