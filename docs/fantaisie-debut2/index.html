@@ -35,6 +35,25 @@
 /ITL/scene/echo set faust 'import("stdfaust.lib"); process =  ef.echo1s, ef.echo1s;';
 /ITL/scene/echo/echo__1000/feedback 80;
 /ITL/scene/echo/echo__1000/millisecond 80;
+
+w = 0.055;
+yt = -0.04;
+yb = $yt * -1;
+/ITL/scene/layer set layer;
+/ITL/scene/layer/button1 set rect $w $w;
+/ITL/scene/layer/button2 set rect $w $w;
+/ITL/scene/layer/button* radius 5 5;
+/ITL/scene/layer/button* color white;
+/ITL/scene/layer/button* penWidth 1;
+/ITL/scene/layer/button* xorigin $xo * -1;
+/ITL/scene/layer/button1 y $yt;
+/ITL/scene/layer/button2 y $yb;
+
+/ITL/scene/layer/label1 set txt "Diagram:";
+/ITL/scene/layer/label2 set txt "Connect:";
+/ITL/scene/layer/label* xorigin $xo;
+/ITL/scene/layer/label1 y $yt;
+/ITL/scene/layer/label2 y $yb;
 	
 
 
