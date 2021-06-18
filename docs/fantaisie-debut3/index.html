@@ -70,8 +70,10 @@ d8 = 46.2 / 4; -->
 
 /ITL/scene/p* width 1.8;
 /ITL/scene/p* show 0; -->
-<!-- /ITL/scene/p1 show 1;
-click = (/ITL/scene/cursor date '$date', /ITL/scene/audio vdate '$date');
+
+/ITL/scene/p1 show 1;
+
+<!-- 	click = (/ITL/scene/cursor date '$date', /ITL/scene/audio vdate '$date');
 /ITL/scene/p* watch mouseMove $click;
 /ITL/scene/p* watch mouseDown $click;
 
@@ -113,10 +115,14 @@ w = 0.01;
 #==================================================
 origin = 1.2;
 alpha = 120;
+
+ -->
 rsrc = "imgs/";
 play  = $rsrc + 'play.png';
 pause = $rsrc + 'pause.png';
 stop  = $rsrc + 'stop.png';
+
+<!-- 
 w = 0.09;
 
 initplay =	(/ITL/scene/ctrlplay push,
