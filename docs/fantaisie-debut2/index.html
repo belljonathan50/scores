@@ -40,13 +40,13 @@ w = 0.055;
 yt = -0.04;
 yb = $yt * -1;
 /ITL/scene/layer set layer;
-/ITL/scene/layer/button1 set rect $w $w;
-/ITL/scene/layer/button2 set rect $w $w;
-/ITL/scene/layer/button* radius 5 5;
-/ITL/scene/layer/button* color white;
-/ITL/scene/layer/button* penWidth 1;
-/ITL/scene/layer/button* xorigin $xo * -1;
-/ITL/scene/layer/button1 y $yt;
+/ITL/scene/layer/button set rect $w $w;
+/ITL/scene/layer/button set rect $w $w;
+/ITL/scene/layer/button radius 5 5;
+/ITL/scene/layer/button color white;
+/ITL/scene/layer/button penWidth 1;
+/ITL/scene/layer/button xorigin -1;
+<!-- /ITL/scene/layer/button1 y $yt;
 /ITL/scene/layer/button2 y $yb;
 
 /ITL/scene/layer/label1 set txt "Diagram:";
@@ -68,7 +68,7 @@ yb = $yt * -1;
 		/ITL/scene/layer/$self pop
 	)
 );
-	
+	 -->
 
 
 
