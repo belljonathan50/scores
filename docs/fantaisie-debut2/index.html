@@ -54,6 +54,20 @@ yb = $yt * -1;
 /ITL/scene/layer/label* xorigin $xo;
 /ITL/scene/layer/label1 y $yt;
 /ITL/scene/layer/label2 y $yb;
+
+
+/ITL/scene/layer/button2 watch mouseDown (
+	/ITL/scene/layer/$self push,
+	/ITL/scene/layer/$self color green,
+	/ITL/scene/echo connect audioOutput,
+	/ITL/scene/audio connect echo,
+	/ITL/scene/layer/$self watch mouseDown (
+		/ITL/scene/echo disconnect audioOutput,
+		/ITL/scene/audio disconnect echo,
+		/ITL/scene/layer/$self color white,
+		/ITL/scene/layer/$self pop
+	)
+);
 	
 
 
