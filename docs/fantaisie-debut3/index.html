@@ -50,17 +50,20 @@ d6 = 36.53 / 4;
 d7 = 41.5 / 4;
 d8 = 46.2 / 4;
 
-rsrc = "https://inscoreweb.grame.fr/imgs/";
-pages = $rsrc + "bell/";
-audiorsrc = $rsrc + "bell/";
-/ITL/scene/p1 set img $pages + '1.png';
-/ITL/scene/p2 set img $pages + '2.png';
-/ITL/scene/p3 set img $pages + '3.png';
-/ITL/scene/p4 set img $pages + '4.png';
-/ITL/scene/p5 set img $pages + '5.png';
-/ITL/scene/p6 set img $pages + '6.png';
-/ITL/scene/p7 set img $pages + '7.png';
-/ITL/scene/p8 set img $pages + '8.png';
+
+/ITL/scene/sc0 set img "imgs/n00.png";
+
+
+
+
+/ITL/scene/p1 set img 'imgs/1.png';
+/ITL/scene/p2 set img 'imgs/2.png';
+/ITL/scene/p3 set img 'imgs/3.png';
+/ITL/scene/p4 set img 'imgs/4.png';
+/ITL/scene/p5 set img 'imgs/5.png';
+/ITL/scene/p6 set img 'imgs/6.png';
+/ITL/scene/p7 set img 'imgs/7.png';
+/ITL/scene/p8 set img 'imgs/8.png';
 /ITL/scene/p1 map '( [470, 540[ [280, 1684[ ) 	( [0:0:0,  0:0:81[ )
 				   ( [540, 2880[ [280, 1684[ )	( [0:0:81, 0:5:75[ )';
 /ITL/scene/p2 map '( [1, 2769[ [101, 1649[ ) 	( [0:5:75, 0:11:0[ )';
@@ -78,7 +81,7 @@ click = (/ITL/scene/cursor date '$date', /ITL/scene/audio vdate '$date');
 /ITL/scene/p* watch mouseMove $click;
 /ITL/scene/p* watch mouseDown $click;
 
-/ITL/scene/audio set audio $audiorsrc +'perspectives.mp3';
+/ITL/scene/audio set audio 'imgs/perspectives.mp3';
 /ITL/scene/audio show 0;
 /ITL/scene/audio watch ready ( /ITL/scene event READY );
 
@@ -116,6 +119,7 @@ w = 0.01;
 #==================================================
 origin = 1.2;
 alpha = 120;
+rsrc = "imgs/";
 play  = $rsrc + 'play.png';
 pause = $rsrc + 'pause.png';
 stop  = $rsrc + 'stop.png';
