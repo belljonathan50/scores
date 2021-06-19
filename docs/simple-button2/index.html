@@ -48,25 +48,21 @@ xo = 1.08;
 
 /ITL/scene/button0 set rect $w $w;
 /ITL/scene/button0 radius 5 5;
-/ITL/scene/button0 color blue;
+/ITL/scene/button0 color white;
 /ITL/scene/button0 penWidth 1;
 /ITL/scene/button0 xorigin $xo * + 3;
 /ITL/scene/button0 watch mouseDown (
 	/ITL/scene/$self push,
-	/ITL/scene/$self color green,
-	
-	/ITL/scene/dsp* show 1,
-	/ITL/scene/value* show 1,
-	/ITL/scene/echo connect audioOutput,
-	/ITL/scene/audio connect echo,
+	/ITL/scene/$self color blue,
+	/ITL/scene/audio connect echo2,
+	/ITL/scene/echo2 connect audioOutput,
+	/ITL/scene/audio play 1,
 	/ITL/scene/$self watch mouseDown (
-		
-		/ITL/scene/dsp* show 0,
-		/ITL/scene/value* show 0,
 		/ITL/scene/$self color white,
 		/ITL/scene/$self pop,
 		/ITL/scene/echo disconnect audioOutput,
-		/ITL/scene/audio disconnect echo
+		/ITL/scene/audio disconnect echo2,
+		/ITL/scene/audio play 0
 	)
 );
 
@@ -78,15 +74,12 @@ xo = 1.08;
 /ITL/scene/button1 watch mouseDown (
 	/ITL/scene/$self push,
 	/ITL/scene/$self color green,
-	
-	/ITL/scene/dsp* show 1,
-	/ITL/scene/value* show 1,
+	/ITL/scene/audio play 1,
 	/ITL/scene/echo connect audioOutput,
 	/ITL/scene/audio connect echo,
 	/ITL/scene/$self watch mouseDown (
 		
-		/ITL/scene/dsp* show 0,
-		/ITL/scene/value* show 0,
+		/ITL/scene/audio play 0,
 		/ITL/scene/$self color white,
 		/ITL/scene/$self pop,
 		/ITL/scene/echo disconnect audioOutput,
@@ -102,9 +95,6 @@ xo = 1.08;
 /ITL/scene/button2 watch mouseDown (
 	/ITL/scene/$self push,
 	/ITL/scene/$self color red,
-	
-	/ITL/scene/dsp* show 1,
-	/ITL/scene/value* show 1,
 	/ITL/scene/audio play 1,
 	/ITL/scene/$self watch mouseDown (
 		
