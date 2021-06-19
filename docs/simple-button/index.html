@@ -28,7 +28,7 @@
 	
 /ITL/scene/* del;
 
-/ITL/scene/title set txt "simple button-toto-titi";
+/ITL/scene/title set txt "simple button";
 /ITL/scene/title scale 3;
 /ITL/scene/title y -0.6;
 /ITL/scene/audio set audio 'lib/perspectives.mp3';
@@ -49,8 +49,8 @@ xo = 1.08;
 	/ITL/scene/$self push,
 	/ITL/scene/$self color green,
 	/ITL/scene/audio play 1,
-	/ITL/scene/echo connect audioOutput,
 	/ITL/scene/audio connect echo,
+	/ITL/scene/echo connect audioOutput,
 	/ITL/scene/$self watch mouseDown (
 		/ITL/scene/$self color white,
 		/ITL/scene/$self pop,
