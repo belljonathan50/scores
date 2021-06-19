@@ -36,10 +36,12 @@
 /ITL/scene/echo set faust 'import("stdfaust.lib"); process =  ef.echo1s, ef.echo1s;';
 /ITL/scene/echo/echo__1000/feedback 80;
 /ITL/scene/echo/echo__1000/millisecond 80;
+/ITL/scene/echo get ui;
 
 /ITL/scene/echo2 set faust 'import("stdfaust.lib"); process =  ef.echo1s, ef.echo1s;';
 /ITL/scene/echo2/echo__1000/feedback 90;
 /ITL/scene/echo2/echo__1000/millisecond 90;
+/ITL/scene/echo2 get ui;
 
 w = 0.055;
 xo = 1.08;
