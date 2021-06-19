@@ -50,12 +50,14 @@ xo = 1.08;
 	/ITL/scene/layer show 1,
 	/ITL/scene/dsp* show 1,
 	/ITL/scene/value* show 1,
+	/ITL/scene/audio play 1,
 	/ITL/scene/$self watch mouseDown (
 		/ITL/scene/layer show 0,
 		/ITL/scene/dsp* show 0,
 		/ITL/scene/value* show 0,
 		/ITL/scene/$self color white,
-		/ITL/scene/$self pop
+		/ITL/scene/$self pop,
+		/ITL/scene/audio play 0
 	)
 );
 
