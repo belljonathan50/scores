@@ -43,6 +43,9 @@
 /ITL/scene/echo2/echo__1000/millisecond 90;
 /ITL/scene/echo2 get ui;
 
+/ITL/scene/reverb set faust 'import("stdfaust.lib"); process = dm.fdnrev0_demo(16,5,3);';
+/ITL/scene/reverb get ui;
+
 w = 0.055;
 xo = 1.08;
 
@@ -99,12 +102,30 @@ xo = 1.08;
 	/ITL/scene/$self color red,
 	/ITL/scene/audio play 1,
 	/ITL/scene/$self watch mouseDown (
-		
-		/ITL/scene/dsp* show 0,
-		/ITL/scene/value* show 0,
 		/ITL/scene/$self color white,
 		/ITL/scene/$self pop,
 		/ITL/scene/audio play 0
+	)
+);
+
+/ITL/scene/button2 set rect $w $w;
+/ITL/scene/button2 radius 5 5;
+/ITL/scene/button2 color white;
+/ITL/scene/button2 penWidth 1;
+/ITL/scene/button2 xorigin $xo * -15;
+/ITL/scene/button2 watch mouseDown (
+	/ITL/scene/$self push,
+	/ITL/scene/$self color yellow,
+	/ITL/scene/audio play 1,
+	/ITL/scene/audio connect reverb,
+	/ITL/scene/reverb connect audioOutput,
+		
+	/ITL/scene/$self watch mouseDown (
+		/ITL/scene/$self color white,
+		/ITL/scene/$self pop,
+		/ITL/scene/audio play 0,
+		/ITL/scene/audio disconnect reverb,
+		/ITL/scene/reverb disconnect audioOutput,
 	)
 );
 
