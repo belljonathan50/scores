@@ -37,51 +37,27 @@
 /ITL/scene/echo/echo__1000/feedback 80;
 /ITL/scene/echo/echo__1000/millisecond 80;
 
-w = 0.085;
-yt = -0.04;
-yb = $yt * -1;
-
-/ITL/scene/button set rect $w $w;
-/ITL/scene/button radius 5 5;
-/ITL/scene/button color white;
-/ITL/scene/button penWidth 3;
-/ITL/scene/button xorigin 20;
-/ITL/scene/button yorigin 20;
-
-/ITL/scene/label set txt "Connect:";
-/ITL/scene/label xorigin 8;
-/ITL/scene/label yorigin 17;
-/ITL/scene/label color black;
-
-/ITL/scene/button watch mouseDown (
+w = 0.055;
+xo = 1.08;
+/ITL/scene/button1 set rect $w $w;
+/ITL/scene/button1 radius 5 5;
+/ITL/scene/button1 color white;
+/ITL/scene/button1 penWidth 1;
+/ITL/scene/button1 xorigin $xo * -1;
+/ITL/scene/button1 watch mouseDown (
 	/ITL/scene/$self push,
 	/ITL/scene/$self color green,
-	/ITL/scene/echo connect audioOutput,
- 	/ITL/scene/audio connect echo, 
-	 /ITL/scene/audio play 1, 
+	/ITL/scene/layer show 1,
+	/ITL/scene/dsp* show 1,
+	/ITL/scene/value* show 1,
 	/ITL/scene/$self watch mouseDown (
-		/ITL/scene/echo disconnect audioOutput,
-		/ITL/scene/audio disconnect echo,
+		/ITL/scene/layer show 0,
+		/ITL/scene/dsp* show 0,
+		/ITL/scene/value* show 0,
 		/ITL/scene/$self color white,
-		/ITL/scene/$self pop,
-		 /ITL/scene/audio play 0, 
+		/ITL/scene/$self pop
 	)
-); 
-
-
-
-<!-- /ITL/scene/layer/button1 y $yt;
-/ITL/scene/layer/button2 y $yb;
-
-/ITL/scene/layer/label1 set txt "Diagram:";
-/ITL/scene/layer/label2 set txt "Connect:";
-/ITL/scene/layer/label* xorigin $xo;
-/ITL/scene/layer/label1 y $yt;
-/ITL/scene/layer/label2 y $yb;
-
-
-	 -->
-
+);
 
 
 </div>
