@@ -53,20 +53,20 @@ yb = $yt * -1;
 /ITL/scene/label yorigin 17;
 /ITL/scene/label color black;
 
-<!-- /ITL/scene/layer/button watch mouseDown (
-	/ITL/scene/layer/$self push,
-	/ITL/scene/layer/$self color green,
+/ITL/scene/button watch mouseDown (
+	/ITL/scene/$self push,
+	/ITL/scene/$self color green,
 	/ITL/scene/echo connect audioOutput,
  	/ITL/scene/audio connect echo, 
 	 /ITL/scene/audio play 1, 
-	/ITL/scene/layer/$self watch mouseDown (
+	/ITL/scene/$self watch mouseDown (
 		/ITL/scene/echo disconnect audioOutput,
 		/ITL/scene/audio disconnect echo,
-		/ITL/scene/layer/$self color white,
-		/ITL/scene/layer/$self pop,
+		/ITL/scene/$self color white,
+		/ITL/scene/$self pop,
 		 /ITL/scene/audio play 0, 
 	)
-); -->
+); 
 
 
 
