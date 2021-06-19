@@ -44,18 +44,16 @@ xo = 1.08;
 /ITL/scene/button1 color white;
 /ITL/scene/button1 penWidth 1;
 /ITL/scene/button1 xorigin $xo * -1;
-/ITL/scene/button1 watch mouseDown (
-	/ITL/scene/$self push,
-	/ITL/scene/$self color green,
-	/ITL/scene/layer show 1,
-	/ITL/scene/dsp* show 1,
-	/ITL/scene/value* show 1,
-	/ITL/scene/$self watch mouseDown (
-		/ITL/scene/layer show 0,
-		/ITL/scene/dsp* show 0,
-		/ITL/scene/value* show 0,
-		/ITL/scene/$self color white,
-		/ITL/scene/$self pop
+/ITL/scene/layer/button1 watch mouseDown (
+	/ITL/scene/layer/$self push,
+	/ITL/scene/layer/$self color green,
+	/ITL/scene/echo connect audioOutput,
+	/ITL/scene/audio connect echo,
+	/ITL/scene/layer/$self watch mouseDown (
+		/ITL/scene/echo disconnect audioOutput,
+		/ITL/scene/audio disconnect echo,
+		/ITL/scene/layer/$self color white,
+		/ITL/scene/layer/$self pop
 	)
 );
 
