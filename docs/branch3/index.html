@@ -29,38 +29,39 @@
 /ITL/scene/* del;
 
 
-/ITL/scene/* del;
 
 /ITL/scene/htitle set txt "Perspectives Temporelles";
 /ITL/scene/htitle fontSize 24;
 /ITL/scene/htitle y -0.8;
-/ITL/scene/hcomposer set txt "Jonathan Bell";
+/ITL/scene/hcomposer set txt "Jonathan Bell haya";
 /ITL/scene/hcomposer fontSize 18;
 /ITL/scene/hcomposer y -0.73;
 /ITL/scene/h* fontFamily Helvetica;
 /ITL/scene/h* color darkgrey;
 
-# the variables below represent the end date of each page
+/ITL/log write "hello";
+
+
+
 d1 = 5.75 / 4;
+<!-- 	# the variables below represent the end date of each page -->
 d2 = 11.0 / 4;
 d3 = 16.66 / 4;
 d4 = 23.00 / 4;
 d5 = 28.60 / 4;
 d6 = 36.53 / 4;
 d7 = 41.5 / 4;
-d8 = 46.2 / 4;
+d8 = 46.2 / 4; 
 
-rsrc = "https://inscoreweb.grame.fr/imgs/";
-pages = $rsrc + "bell/";
-audiorsrc = $rsrc + "bell/";
-/ITL/scene/p1 set img $pages + '1.png';
-/ITL/scene/p2 set img $pages + '2.png';
-/ITL/scene/p3 set img $pages + '3.png';
-/ITL/scene/p4 set img $pages + '4.png';
-/ITL/scene/p5 set img $pages + '5.png';
-/ITL/scene/p6 set img $pages + '6.png';
-/ITL/scene/p7 set img $pages + '7.png';
-/ITL/scene/p8 set img $pages + '8.png';
+
+/ITL/scene/p1 set img 'imgs/1.png';
+/ITL/scene/p2 set img 'imgs/2.png';
+/ITL/scene/p3 set img 'imgs/3.png';
+/ITL/scene/p4 set img 'imgs/4.png';
+/ITL/scene/p5 set img 'imgs/5.png';
+/ITL/scene/p6 set img 'imgs/6.png';
+/ITL/scene/p7 set img 'imgs/7.png';
+/ITL/scene/p8 set img 'imgs/8.png';
 /ITL/scene/p1 map '( [470, 540[ [280, 1684[ ) 	( [0:0:0,  0:0:81[ )
 				   ( [540, 2880[ [280, 1684[ )	( [0:0:81, 0:5:75[ )';
 /ITL/scene/p2 map '( [1, 2769[ [101, 1649[ ) 	( [0:5:75, 0:11:0[ )';
@@ -71,28 +72,30 @@ audiorsrc = $rsrc + "bell/";
 /ITL/scene/p7 map '( [567, 2880[ [210, 1745[ ) 	( [0:36:53, 0:41:50[ )';
 /ITL/scene/p8 map '( [1, 2825[ [190, 1570[ ) 	( [0:41:50, 0:46:20[ )';
 
-/ITL/scene/p* width 1.8;
-/ITL/scene/p* show 0;
-/ITL/scene/p1 show 1;
-click = (/ITL/scene/cursor date '$date', /ITL/scene/audio vdate '$date');
+/ITL/scene/p* width 1.8; 
+/ITL/scene/p* xorigin 0; 
+/ITL/scene/p* yorigin 0; 
+/ITL/scene/p* show 1;
+
+	click = (/ITL/scene/cursor date '$date', /ITL/scene/audio vdate '$date');
 /ITL/scene/p* watch mouseMove $click;
 /ITL/scene/p* watch mouseDown $click;
 
-/ITL/scene/audio set audio $audiorsrc +'perspectives.mp3';
+/ITL/scene/audio set audio 'imgs/perspectives.mp3';
 /ITL/scene/audio show 0;
 /ITL/scene/audio watch ready ( /ITL/scene event READY );
 
-#==================================================
+<!-- #==================================================
 # cursor and synchronisation
-#==================================================
+#================================================== -->
 w = 0.01;
 /ITL/scene/cursor set rect $w 0.9;
 /ITL/scene/cursor color 0xff0000aa;
 /ITL/scene/sync cursor p* v; 
 
-#==================================================
+<!-- #==================================================
 # time events
-#==================================================
+#================================================== -->
 /ITL/scene/vnext set txt "next page";
 /ITL/scene/vprev set txt "prev page";
 /ITL/scene/v* show 0;
@@ -111,14 +114,19 @@ w = 0.01;
 /ITL/scene/cursor watch timeEnter $d7 $d8 	( /ITL/scene/p* show 0, /ITL/scene/p8 show 1, /ITL/scene event PAGECHGE $d6 $d8 );
 /ITL/scene/cursor watch timeEnter $d8 100 	( /ITL/scene event END, /ITL/scene event PAGECHGE $d7 0 );
 
-#==================================================
+<!-- #==================================================
 # play control
-#==================================================
+#================================================== -->
 origin = 1.2;
 alpha = 120;
+
+
+rsrc = "imgs/";
 play  = $rsrc + 'play.png';
 pause = $rsrc + 'pause.png';
 stop  = $rsrc + 'stop.png';
+
+
 w = 0.09;
 
 initplay =	(/ITL/scene/ctrlplay push,
@@ -172,9 +180,9 @@ initplay =	(/ITL/scene/ctrlplay push,
 	/ITL/scene/audio play 0
 );
 
-#==================================================
+<!-- #==================================================
 # browsing
-#==================================================
+#================================================== -->
 next = $rsrc + 'next.png';
 prev = $rsrc + 'prev.png';
 x = 0.2;
@@ -196,17 +204,17 @@ x = 0.2;
 	/ITL/scene/audio vdate '$(/ITL/scene/vprev get date)'
 );
 
-#==================================================
+<!-- #==================================================
 # faust part
-#==================================================
+#================================================== -->
 /ITL/scene/echo set faust 'import("stdfaust.lib"); process =  ef.echo1s, ef.echo1s;';
 /ITL/scene/echo/echo__1000/feedback 80;
 /ITL/scene/echo/echo__1000/millisecond 80;
 /ITL/scene/echo show 0;
 
-#==================================================
+<!-- #==================================================
 # faust control part
-#==================================================
+#================================================== -->
 w = 0.055;
 xo = 1.08;
 /ITL/scene/button1 set rect $w $w;
@@ -339,10 +347,10 @@ feedback = (
 /ITL/scene/dspfeedback watch mouseMove $feedback;
 
 
-__END__
+<!-- __END__
 
 /ITL/scene/sync cursor;
-/ITL/scene/sync cursor p1;
+/ITL/scene/sync cursor p1;  -->
 
 
 </div>
