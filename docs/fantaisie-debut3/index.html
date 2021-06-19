@@ -85,17 +85,17 @@ d8 = 46.2 / 4;
 /ITL/scene/audio show 0;
 /ITL/scene/audio watch ready ( /ITL/scene event READY );
 
-#==================================================
+<!-- #==================================================
 # cursor and synchronisation
-#==================================================
+#================================================== -->
 w = 0.01;
 /ITL/scene/cursor set rect $w 0.9;
 /ITL/scene/cursor color 0xff0000aa;
 /ITL/scene/sync cursor p* v; 
 
-#==================================================
+<!-- #==================================================
 # time events
-#==================================================
+#================================================== -->
 /ITL/scene/vnext set txt "next page";
 /ITL/scene/vprev set txt "prev page";
 /ITL/scene/v* show 0;
@@ -114,9 +114,9 @@ w = 0.01;
 /ITL/scene/cursor watch timeEnter $d7 $d8 	( /ITL/scene/p* show 0, /ITL/scene/p8 show 1, /ITL/scene event PAGECHGE $d6 $d8 );
 /ITL/scene/cursor watch timeEnter $d8 100 	( /ITL/scene event END, /ITL/scene event PAGECHGE $d7 0 );
 
-#==================================================
+<!-- #==================================================
 # play control
-#==================================================
+#================================================== -->
 origin = 1.2;
 alpha = 120;
 
@@ -180,9 +180,9 @@ initplay =	(/ITL/scene/ctrlplay push,
 	/ITL/scene/audio play 0
 );
 
-#==================================================
+<!-- #==================================================
 # browsing
-#==================================================
+#================================================== -->
 next = $rsrc + 'next.png';
 prev = $rsrc + 'prev.png';
 x = 0.2;
@@ -204,17 +204,17 @@ x = 0.2;
 	/ITL/scene/audio vdate '$(/ITL/scene/vprev get date)'
 );
 
-#==================================================
+<!-- #==================================================
 # faust part
-#==================================================
+#================================================== -->
 /ITL/scene/echo set faust 'import("stdfaust.lib"); process =  ef.echo1s, ef.echo1s;';
 /ITL/scene/echo/echo__1000/feedback 80;
 /ITL/scene/echo/echo__1000/millisecond 80;
 /ITL/scene/echo show 0;
 
-#==================================================
+<!-- #==================================================
 # faust control part
-#==================================================
+#================================================== -->
 w = 0.055;
 xo = 1.08;
 /ITL/scene/button1 set rect $w $w;
@@ -347,10 +347,10 @@ feedback = (
 /ITL/scene/dspfeedback watch mouseMove $feedback;
 
 
-__END__
+<!-- __END__
 
 /ITL/scene/sync cursor;
-/ITL/scene/sync cursor p1; 
+/ITL/scene/sync cursor p1;  -->
 
 
 </div>
