@@ -31,7 +31,7 @@
 /ITL/scene/title set txt "wasm??";
 /ITL/scene/title scale 3;
 /ITL/scene/title y -0.6;
-/ITL/scene/audio set audio 'perspectives.mp3';
+<!-- /ITL/scene/audio set audio 'perspectives.mp3'; -->
 
 /ITL/scene/echo set faust 'import("stdfaust.lib"); process =  ef.echo1s, ef.echo1s;';
 /ITL/scene/echo/echo__1000/feedback 80;
@@ -61,13 +61,13 @@ yb = $yt * -1;
 	/ITL/scene/layer/$self color green,
 	/ITL/scene/echo connect audioOutput,
 	/ITL/scene/audio connect echo,
-	/ITL/scene/audio play 1,
+	<!-- /ITL/scene/audio play 1, -->
 	/ITL/scene/layer/$self watch mouseDown (
 		/ITL/scene/echo disconnect audioOutput,
 		/ITL/scene/audio disconnect echo,
 		/ITL/scene/layer/$self color white,
 		/ITL/scene/layer/$self pop,
-		/ITL/scene/audio play 0,
+		<!-- /ITL/scene/audio play 0, -->
 	)
 );
 
