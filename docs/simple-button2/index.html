@@ -28,7 +28,7 @@
 	
 /ITL/scene/* del;
 
-/ITL/scene/title set txt "simple button";
+/ITL/scene/title set txt "simple buttons";
 /ITL/scene/title scale 3;
 /ITL/scene/title y -0.6;
 /ITL/scene/audio set audio 'lib/perspectives.mp3';
@@ -39,23 +39,49 @@
 
 w = 0.055;
 xo = 1.08;
-/ITL/scene/button set rect $w $w;
-/ITL/scene/button radius 5 5;
-/ITL/scene/button color white;
-/ITL/scene/button penWidth 1;
-/ITL/scene/button xorigin $xo * -1;
-/ITL/scene/button watch mouseDown (
+/ITL/scene/button1 set rect $w $w;
+/ITL/scene/button1 radius 5 5;
+/ITL/scene/button1 color white;
+/ITL/scene/button1 penWidth 1;
+/ITL/scene/button1 xorigin $xo * -1;
+/ITL/scene/button1 watch mouseDown (
 	/ITL/scene/$self push,
 	/ITL/scene/$self color green,
 	/ITL/scene/layer show 1,
 	/ITL/scene/dsp* show 1,
 	/ITL/scene/value* show 1,
+	/ITL/scene/echo connect audioOutput,
+	/ITL/scene/audio connect echo
 	/ITL/scene/$self watch mouseDown (
 		/ITL/scene/layer show 0,
 		/ITL/scene/dsp* show 0,
 		/ITL/scene/value* show 0,
 		/ITL/scene/$self color white,
-		/ITL/scene/$self pop
+		/ITL/scene/$self pop,
+		/ITL/scene/echo disconnect audioOutput,
+		/ITL/scene/audio disconnect echo,
+	)
+);
+
+/ITL/scene/button2 set rect $w $w;
+/ITL/scene/button2 radius 5 5;
+/ITL/scene/button2 color white;
+/ITL/scene/button2 penWidth 1;
+/ITL/scene/button2 xorigin $xo * -1;
+/ITL/scene/button2 watch mouseDown (
+	/ITL/scene/$self push,
+	/ITL/scene/$self color red,
+	/ITL/scene/layer show 1,
+	/ITL/scene/dsp* show 1,
+	/ITL/scene/value* show 1,
+	/ITL/scene/audio play 1
+	/ITL/scene/$self watch mouseDown (
+		/ITL/scene/layer show 0,
+		/ITL/scene/dsp* show 0,
+		/ITL/scene/value* show 0,
+		/ITL/scene/$self color white,
+		/ITL/scene/$self pop,
+		/ITL/scene/audio play 0
 	)
 );
 
