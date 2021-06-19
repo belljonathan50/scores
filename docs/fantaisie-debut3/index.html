@@ -72,12 +72,12 @@ d8 = 46.2 / 4;
 /ITL/scene/p7 map '( [567, 2880[ [210, 1745[ ) 	( [0:36:53, 0:41:50[ )';
 /ITL/scene/p8 map '( [1, 2825[ [190, 1570[ ) 	( [0:41:50, 0:46:20[ )';
 
-/ITL/scene/p1 width 1.8; 
-/ITL/scene/p1 xorigin 0; 
-/ITL/scene/p1 yorigin 0; 
-/ITL/scene/p1 show 1;
+/ITL/scene/p* width 1.8; 
+/ITL/scene/p* xorigin 0; 
+/ITL/scene/p* yorigin 0; 
+/ITL/scene/p* show 1;
 
-<!-- 	click = (/ITL/scene/cursor date '$date', /ITL/scene/audio vdate '$date');
+	click = (/ITL/scene/cursor date '$date', /ITL/scene/audio vdate '$date');
 /ITL/scene/p* watch mouseMove $click;
 /ITL/scene/p* watch mouseDown $click;
 
@@ -120,7 +120,7 @@ w = 0.01;
 origin = 1.2;
 alpha = 120;
 
- -->
+
 rsrc = "imgs/";
 play  = $rsrc + 'play.png';
 pause = $rsrc + 'pause.png';
