@@ -54,13 +54,11 @@ yb = $yt * -1;
 /ITL/scene/layer/label2 yorigin 17;
 /ITL/scene/layer/label2 color black;
 
-
-
 /ITL/scene/layer/button watch mouseDown (
 	/ITL/scene/layer/$self push,
 	/ITL/scene/layer/$self color green,
 	/ITL/scene/echo connect audioOutput,
-	/ITL/scene/audio connect echo,
+<!-- 	/ITL/scene/audio connect echo, -->
 	<!-- /ITL/scene/audio play 1, -->
 	/ITL/scene/layer/$self watch mouseDown (
 		/ITL/scene/echo disconnect audioOutput,
