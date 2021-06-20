@@ -56,7 +56,7 @@ xo = 1.08;
 	/ITL/scene/$self push,
 	/ITL/scene/$self color blue,
 	/ITL/scene/audio connect echo,
-	/ITL/scene/echo2 connect audioOutput,
+	/ITL/scene/echo connect audioOutput,
 	/ITL/scene/audio play 1,
 	/ITL/scene/echo/echo__1000/feedback 90;
 /ITL/scene/echo/echo__1000/millisecond 90;
@@ -64,7 +64,7 @@ xo = 1.08;
 		/ITL/scene/$self color white,
 		/ITL/scene/$self pop,
 		/ITL/scene/echo disconnect audioOutput,
-		/ITL/scene/audio disconnect echo2,
+		/ITL/scene/audio disconnect echo,
 		/ITL/scene/audio play 0
 	)
 );
