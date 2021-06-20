@@ -37,16 +37,15 @@
 /ITL/scene/echo/echo__1000/feedback 80;
 /ITL/scene/echo/echo__1000/millisecond 80;
 /ITL/scene/echo get ui;
+/ITL/scene/echo get in;
+/ITL/scene/echo get out;
 
-/ITL/scene/echo2 set faust 'import("stdfaust.lib"); process =  ef.echo1s, ef.echo1s;';
-/ITL/scene/echo2/echo__1000/feedback 90;
-/ITL/scene/echo2/echo__1000/millisecond 90;
-/ITL/scene/echo2 get ui;
+
+
+
 
 w = 0.055;
 xo = 1.08;
-
-
 
 /ITL/scene/button0 set rect $w $w;
 /ITL/scene/button0 radius 5 5;
@@ -56,9 +55,11 @@ xo = 1.08;
 /ITL/scene/button0 watch mouseDown (
 	/ITL/scene/$self push,
 	/ITL/scene/$self color blue,
-	/ITL/scene/audio connect echo2,
+	/ITL/scene/audio connect echo,
 	/ITL/scene/echo2 connect audioOutput,
 	/ITL/scene/audio play 1,
+	/ITL/scene/echo/echo__1000/feedback 90;
+/ITL/scene/echo/echo__1000/millisecond 90;
 	/ITL/scene/$self watch mouseDown (
 		/ITL/scene/$self color white,
 		/ITL/scene/$self pop,
@@ -79,8 +80,9 @@ xo = 1.08;
 	/ITL/scene/audio play 1,
 	/ITL/scene/echo connect audioOutput,
 	/ITL/scene/audio connect echo,
+	/ITL/scene/echo/echo__1000/feedback 90;
+/ITL/scene/echo/echo__1000/millisecond 70;
 	/ITL/scene/$self watch mouseDown (
-		
 		/ITL/scene/audio play 0,
 		/ITL/scene/$self color white,
 		/ITL/scene/$self pop,
