@@ -20,6 +20,8 @@
 /ITL/scene/cursor color 255 0 0;
 /ITL/scene color 0 0 0;
 
+/ITL/scene/audio set audio 'lib/perspectives.mp3';
+
 sc0start 	= -0.025;
 sc0end 		= 8;
 sc1start 	= 8;
@@ -88,11 +90,7 @@ sc100duree = $sc100end - $sc100start;
 );
 
 
-/ITL/scene/sc100 watch show (
-	/ITL/scene/sc100 watch show,
-	/ITL/scene event MAP,
-	/ITL/scene event START
-);
+
 
 
 /ITL/scene/sc* show 0;
@@ -211,10 +209,7 @@ bottom = yorigin -1.1;
 
 /ITL/scene/cursor watch timeEnter $sc10start $sc10end (
 	/ITL/scene/sc* show 0,
-	/ITL/scene/sc10 show 1,
-	/ITL/scene/sc11 show 1,
-	/ITL/scene/sc10 $top,
-	/ITL/scene/sc11 $bottom
+	/ITL/scene/sc10 show 1
 );
 
 
