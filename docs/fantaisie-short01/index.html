@@ -338,7 +338,7 @@ w = 0.055;
 xo = 1.08;
 /ITL/scene/button1 set rect $w $w;
 /ITL/scene/button1 radius 5 5;
-/ITL/scene/button1 color white;
+/ITL/scene/button1 color blue;
 /ITL/scene/button1 penWidth 1;
 /ITL/scene/button1 xorigin $xo * -1;
 /ITL/scene/button1 watch mouseDown (
@@ -356,6 +356,7 @@ xo = 1.08;
 	)
 );
 /ITL/scene/label1 set txt "Dsp control:";
+/ITL/scene/label1 color green;
 /ITL/scene/label1 xorigin $xo;
 /ITL/scene/label1 	x -0.8;
 /ITL/scene/button1  x -0.8;
@@ -370,7 +371,7 @@ yb = $yt * -1;
 /ITL/scene/layer/button1 set rect $w $w;
 /ITL/scene/layer/button2 set rect $w $w;
 /ITL/scene/layer/button* radius 5 5;
-/ITL/scene/layer/button* color white;
+/ITL/scene/layer/button* color red;
 /ITL/scene/layer/button* penWidth 1;
 /ITL/scene/layer/button* xorigin $xo * -1;
 /ITL/scene/layer/button1 y $yt;
@@ -379,6 +380,7 @@ yb = $yt * -1;
 /ITL/scene/layer/label1 set txt "Diagram:";
 /ITL/scene/layer/label2 set txt "Connect:";
 /ITL/scene/layer/label* xorigin $xo;
+/ITL/scene/layer/label* color red;
 /ITL/scene/layer/label1 y $yt;
 /ITL/scene/layer/label2 y $yb;
 
