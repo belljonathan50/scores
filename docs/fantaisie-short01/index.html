@@ -323,6 +323,69 @@ alpha = 150;
 	/ITL/scene/ctrlplay pop
 );
 
+<!-- #==================================================
+# faust part
+#================================================== -->
+/ITL/scene/echo set faust 'import("stdfaust.lib"); process =  ef.echo1s, ef.echo1s;';
+/ITL/scene/echo/echo__1000/feedback 80;
+/ITL/scene/echo/echo__1000/millisecond 80;
+/ITL/scene/echo show 0;
+
+<!-- #==================================================
+# faust control part
+#================================================== -->
+w = 0.055;
+xo = 1.08;
+/ITL/scene/button1 set rect $w $w;
+/ITL/scene/button1 radius 5 5;
+/ITL/scene/button1 color white;
+/ITL/scene/button1 penWidth 1;
+/ITL/scene/button1 xorigin $xo * -1;
+/ITL/scene/button1 watch mouseDown (
+	/ITL/scene/$self push,
+	/ITL/scene/$self color green,
+	/ITL/scene/layer show 1,
+	/ITL/scene/dsp* show 1,
+	/ITL/scene/value* show 1,
+	/ITL/scene/$self watch mouseDown (
+		/ITL/scene/layer show 0,
+		/ITL/scene/dsp* show 0,
+		/ITL/scene/value* show 0,
+		/ITL/scene/$self color white,
+		/ITL/scene/$self pop
+	)
+);
+/ITL/scene/label1 set txt "Dsp control:";
+/ITL/scene/label1 xorigin $xo;
+/ITL/scene/label1 	x -0.8;
+/ITL/scene/button1  x -0.8;
+/ITL/scene/label1 	y 0.8;
+/ITL/scene/button1 	y 0.8;
+
+
+w = 0.055;
+yt = -0.04;
+yb = $yt * -1;
+/ITL/scene/layer set layer;
+/ITL/scene/layer/button1 set rect $w $w;
+/ITL/scene/layer/button2 set rect $w $w;
+/ITL/scene/layer/button* radius 5 5;
+/ITL/scene/layer/button* color white;
+/ITL/scene/layer/button* penWidth 1;
+/ITL/scene/layer/button* xorigin $xo * -1;
+/ITL/scene/layer/button1 y $yt;
+/ITL/scene/layer/button2 y $yb;
+
+/ITL/scene/layer/label1 set txt "Diagram:";
+/ITL/scene/layer/label2 set txt "Connect:";
+/ITL/scene/layer/label* xorigin $xo;
+/ITL/scene/layer/label1 y $yt;
+/ITL/scene/layer/label2 y $yb;
+
+/ITL/scene/layer x -0.8;
+/ITL/scene/layer y -0.63;
+/ITL/scene/
+
 
 </div>
 </body>
