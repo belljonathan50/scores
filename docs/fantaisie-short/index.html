@@ -20,6 +20,8 @@
 /ITL/scene/cursor color 255 0 0;
 /ITL/scene color 0 0 0;
 
+/ITL/scene/audio set audio 'libs/son.mp3';
+
 sc0start 	= -0.025;
 sc0end 		= 8;
 sc1start 	= 8;
@@ -86,7 +88,8 @@ sc100duree = $sc100end - $sc100start;
 );
 
 /ITL/scene watch STOP (
-	/ITL/scene/cursor tempo 0
+	/ITL/scene/cursor tempo 0,
+	/ITL/scene/audio play 0
 );
 
 
@@ -140,7 +143,8 @@ bottom = yorigin -1.1;
 	/ITL/scene/sc* show 0,
 	/ITL/scene/sc[01] show 1,
 	/ITL/scene/sc0 $top,
-	/ITL/scene/sc1 $bottom
+	/ITL/scene/sc1 $bottom,
+	/ITL/scene/audio play 1
 );
 
 /ITL/scene/cursor watch timeEnter $sc1start $sc1end (
