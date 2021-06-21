@@ -142,8 +142,7 @@ bottom = yorigin -1.1;
 	/ITL/scene/sc* show 0,
 	/ITL/scene/sc[01] show 1,
 	/ITL/scene/sc0 $top,
-	/ITL/scene/sc1 $bottom,
-	/ITL/scene/audio play 1
+	/ITL/scene/sc1 $bottom
 );
 
 /ITL/scene/cursor watch timeEnter $sc1start $sc1end (
@@ -306,6 +305,7 @@ alpha = 150;
 
 /ITL/scene/ctrlplay watch mouseDown (
 	/ITL/scene/ctrlplay push,
+	/ITL/scene/audio play 1,
 	/ITL/scene/cursor tempo 240,
 	/ITL/scene/ctrlplay set img "imgs/pause.png", 
 	/ITL/scene/ctrlplay watch mouseDown (
@@ -318,6 +318,7 @@ alpha = 150;
 /ITL/scene/ctrlstop watch mouseDown (
 	/ITL/scene/cursor tempo 0,
 	/ITL/scene/cursor date 0,
+	/ITL/scene/audio play 0,
 	/ITL/scene/ctrlplay set img "imgs/play.png",
 	/ITL/scene/ctrlplay pop
 );
