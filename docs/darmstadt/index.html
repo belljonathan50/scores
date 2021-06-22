@@ -393,7 +393,87 @@ yb = $yt * -1;
 
 /ITL/scene/layer x -0.8;
 /ITL/scene/layer y -0.63;
-/ITL/scene/
+/ITL/scene/layer show 0;
+
+/ITL/scene/layer/button1 watch mouseDown (
+	/ITL/scene/layer/$self push,
+	/ITL/scene/layer/$self color green,
+	/ITL/scene/echo show 1,
+	/ITL/scene/layer/$self watch mouseDown (
+		/ITL/scene/echo show 0,
+		/ITL/scene/layer/$self color white,
+		/ITL/scene/layer/$self pop
+	)
+);
+
+/ITL/scene/layer/button2 watch mouseDown (
+	/ITL/scene/layer/$self push,
+	/ITL/scene/layer/$self color green,
+	/ITL/scene/echo connect audioOutput,
+	/ITL/scene/audio connect echo,
+	/ITL/scene/layer/$self watch mouseDown (
+		/ITL/scene/echo disconnect audioOutput,
+		/ITL/scene/audio disconnect echo,
+		/ITL/scene/layer/$self color white,
+		/ITL/scene/layer/$self pop
+	)
+);
+
+x = 0.30;
+y1 = -0.7;
+y2 = $y1 + 0.075;
+/ITL/scene/dspdelay set rect 0.6 0.04;
+/ITL/scene/dspfeedback set rect 0.6 0.04;
+/ITL/scene/dsp[df]* penWidth 1;
+/ITL/scene/dsp[df]* brushStyle none;
+/ITL/scene/dsp[df]* xorigin -1;
+/ITL/scene/dspdelay duration 1000 ;
+/ITL/scene/dspfeedback duration 100 ;
+
+/ITL/scene/dsplabel1 set txt "Delay:";
+/ITL/scene/dsplabel2 set txt "Feedback:";
+/ITL/scene/dsplabel* xorigin 1.1;
+/ITL/scene/dspdelay y $y1;
+/ITL/scene/dspfeedback y $y2;
+
+/ITL/scene/dsplabel1 y $y1;
+/ITL/scene/dsplabel2 y $y2;
+/ITL/scene/dsp[fdl]* x $x;
+
+/ITL/scene/dspvalue1  set txt " ";
+/ITL/scene/dspvalue2  set txt " ";
+/ITL/scene/dspvalue1  y $y1;
+/ITL/scene/dspvalue2  y $y2;
+/ITL/scene/dspvalue*  xorigin -1;
+/ITL/scene/dspvalue*  x $x + 0.62;
+
+/ITL/scene/dsp* show 0;
+
+w = 0.03;
+/ITL/scene/valuedelay set rect $w 0.5;
+/ITL/scene/valuefeedback set rect $w 0.5;
+/ITL/scene/value* color red;
+/ITL/scene/valuedelay date 80 ;
+/ITL/scene/valuefeedback date 80 ;
+/ITL/scene/sync valuedelay dspdelay v;
+/ITL/scene/sync valuefeedback dspfeedback v;
+
+delay = (
+	/ITL/scene/valuedelay date "$date",
+	/ITL/scene/dspvalue1 set txt "$date%f",
+	/ITL/scene/echo/echo__1000/millisecond "$date%f"
+);
+/ITL/scene/dspdelay watch mouseDown $delay;
+/ITL/scene/dspdelay watch mouseMove $delay;
+
+feedback = (
+	/ITL/scene/valuefeedback date "$date",
+	/ITL/scene/dspvalue2 set txt "$date%f",
+	/ITL/scene/echo/echo__1000/feedback "$date%f"
+);
+/ITL/scene/dspfeedback watch mouseDown $feedback;
+/ITL/scene/dspfeedback watch mouseMove $feedback;
+
 
 
 </div>
