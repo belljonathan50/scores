@@ -156,35 +156,45 @@ bottom = yorigin -1.1;
 	/ITL/scene/sc* show 0,
 	/ITL/scene/sc[12] show 1,
 	/ITL/scene/sc1 $bottom,
-	/ITL/scene/sc2 $top
+	/ITL/scene/sc2 $top,
+	/ITL/scene/echo/echo__1000/feedback 80,
+    /ITL/scene/echo/echo__1000/millisecond 80
 );
 
 /ITL/scene/cursor watch timeEnter $sc2start $sc2end (
 	/ITL/scene/sc* show 0,
 	/ITL/scene/sc[23] show 1,
 	/ITL/scene/sc2 $top,
-	/ITL/scene/sc3 $bottom
+	/ITL/scene/sc3 $bottom,
+	/ITL/scene/echo/echo__1000/feedback 80,
+    /ITL/scene/echo/echo__1000/millisecond 80
 );
 
 /ITL/scene/cursor watch timeEnter $sc3start $sc3end (
 	/ITL/scene/sc* show 0,
 	/ITL/scene/sc[34] show 1,
 	/ITL/scene/sc3 $bottom,
-	/ITL/scene/sc4 $top
+	/ITL/scene/sc4 $top,
+	/ITL/scene/echo/echo__1000/feedback 80,
+    /ITL/scene/echo/echo__1000/millisecond 80
 );
 
 /ITL/scene/cursor watch timeEnter $sc4start $sc4end (
 	/ITL/scene/sc* show 0,
 	/ITL/scene/sc[45] show 1,
 	/ITL/scene/sc4 $top,
-	/ITL/scene/sc5 $bottom
+	/ITL/scene/sc5 $bottom,
+	/ITL/scene/echo/echo__1000/feedback 80,
+    /ITL/scene/echo/echo__1000/millisecond 80
 );
 
 /ITL/scene/cursor watch timeEnter $sc5start $sc5end (
 	/ITL/scene/sc* show 0,
 	/ITL/scene/sc[56] show 1,
 	/ITL/scene/sc5 $bottom,
-	/ITL/scene/sc6 $top
+	/ITL/scene/sc6 $top,
+	/ITL/scene/echo/echo__1000/feedback 80,
+    /ITL/scene/echo/echo__1000/millisecond 80
 );
 
 /ITL/scene/cursor watch timeEnter $sc6start $sc6end (
@@ -192,7 +202,9 @@ bottom = yorigin -1.1;
 	/ITL/scene/sc6 show 1,
 	/ITL/scene/sc7 show 1,
 	/ITL/scene/sc6 $top,
-	/ITL/scene/sc7 $bottom
+	/ITL/scene/sc7 $bottom,
+	/ITL/scene/echo/echo__1000/feedback 80,
+    /ITL/scene/echo/echo__1000/millisecond 80
 );
 
 /ITL/scene/cursor watch timeEnter $sc7start $sc7end (
@@ -200,7 +212,9 @@ bottom = yorigin -1.1;
 	/ITL/scene/sc7 show 1,
 	/ITL/scene/sc8 show 1,
 	/ITL/scene/sc7 $bottom,
-	/ITL/scene/sc8 $top
+	/ITL/scene/sc8 $top,
+	/ITL/scene/echo/echo__1000/feedback 80,
+    /ITL/scene/echo/echo__1000/millisecond 80
 );
 
 /ITL/scene/cursor watch timeEnter $sc8start $sc8end (
@@ -208,7 +222,9 @@ bottom = yorigin -1.1;
 	/ITL/scene/sc8 show 1,
 	/ITL/scene/sc9 show 1,
 	/ITL/scene/sc8 $top,
-	/ITL/scene/sc9 $bottom
+	/ITL/scene/sc9 $bottom,
+	/ITL/scene/echo/echo__1000/feedback 80,
+    /ITL/scene/echo/echo__1000/millisecond 80
 );
 
 /ITL/scene/cursor watch timeEnter $sc9start $sc9end (
@@ -216,7 +232,9 @@ bottom = yorigin -1.1;
 	/ITL/scene/sc9 show 1,
 	/ITL/scene/sc10 show 1,
 	/ITL/scene/sc9 $bottom,
-	/ITL/scene/sc10 $top
+	/ITL/scene/sc10 $top,
+	/ITL/scene/echo/echo__1000/feedback 80,
+    /ITL/scene/echo/echo__1000/millisecond 80
 );
 
 
@@ -225,7 +243,9 @@ bottom = yorigin -1.1;
 	/ITL/scene/sc10 show 1,
 	/ITL/scene/sc11 show 1,
 	/ITL/scene/sc10 $top,
-	/ITL/scene/sc11 $bottom
+	/ITL/scene/sc11 $bottom,
+	/ITL/scene/echo/echo__1000/feedback 80,
+    /ITL/scene/echo/echo__1000/millisecond 80
 );
 
 
@@ -394,6 +414,9 @@ yb = $yt * -1;
 /ITL/scene/layer x -0.8;
 /ITL/scene/layer y -0.63;
 /ITL/scene/layer show 0;
+
+/ITL/scene/echo connect audioOutput;
+/ITL/scene/audio connect echo;
 
 /ITL/scene/layer/button1 watch mouseDown (
 	/ITL/scene/layer/$self push,
