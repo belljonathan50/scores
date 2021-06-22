@@ -104,14 +104,22 @@ w = 0.01;
 	/ITL/scene/vnext date '$2'
 );
 /ITL/scene event PAGECHGE 0. $d1;
-/ITL/scene/cursor watch timeEnter 0 $d1 	( /ITL/scene/p* show 0, /ITL/scene/p1 show 1, /ITL/scene event PAGECHGE 0. $d1);
-/ITL/scene/cursor watch timeEnter $d1 $d2 	( /ITL/scene/p* show 0, /ITL/scene/p2 show 1, /ITL/scene event PAGECHGE 0  $d2 );
-/ITL/scene/cursor watch timeEnter $d2 $d3 	( /ITL/scene/p* show 0, /ITL/scene/p3 show 1, /ITL/scene event PAGECHGE $d1 $d3 );
-/ITL/scene/cursor watch timeEnter $d3 $d4 	( /ITL/scene/p* show 0, /ITL/scene/p4 show 1, /ITL/scene event PAGECHGE $d2 $d4 );
-/ITL/scene/cursor watch timeEnter $d4 $d5 	( /ITL/scene/p* show 0, /ITL/scene/p5 show 1, /ITL/scene event PAGECHGE $d3 $d5 );
-/ITL/scene/cursor watch timeEnter $d5 $d6 	( /ITL/scene/p* show 0, /ITL/scene/p6 show 1, /ITL/scene event PAGECHGE $d4 $d6 );
-/ITL/scene/cursor watch timeEnter $d6 $d7 	( /ITL/scene/p* show 0, /ITL/scene/p7 show 1, /ITL/scene event PAGECHGE $d5 $d7 );
-/ITL/scene/cursor watch timeEnter $d7 $d8 	( /ITL/scene/p* show 0, /ITL/scene/p8 show 1, /ITL/scene event PAGECHGE $d6 $d8 );
+/ITL/scene/cursor watch timeEnter 0 $d1 	( /ITL/scene/p* show 0, /ITL/scene/p1 show 1, /ITL/scene event PAGECHGE 0. $d1, /ITL/scene/echo/echo__1000/feedback 80,
+/ITL/scene/echo/echo__1000/millisecond 60);
+/ITL/scene/cursor watch timeEnter $d1 $d2 	( /ITL/scene/p* show 0, /ITL/scene/p2 show 1, /ITL/scene event PAGECHGE 0  $d2, /ITL/scene/echo/echo__1000/feedback 90,
+/ITL/scene/echo/echo__1000/millisecond 1234 );
+/ITL/scene/cursor watch timeEnter $d2 $d3 	( /ITL/scene/p* show 0, /ITL/scene/p3 show 1, /ITL/scene event PAGECHGE $d1 $d3, /ITL/scene/echo/echo__1000/feedback 70,
+/ITL/scene/echo/echo__1000/millisecond 30 );
+/ITL/scene/cursor watch timeEnter $d3 $d4 	( /ITL/scene/p* show 0, /ITL/scene/p4 show 1, /ITL/scene event PAGECHGE $d2 $d4, /ITL/scene/echo/echo__1000/feedback 80,
+/ITL/scene/echo/echo__1000/millisecond 45 );
+/ITL/scene/cursor watch timeEnter $d4 $d5 	( /ITL/scene/p* show 0, /ITL/scene/p5 show 1, /ITL/scene event PAGECHGE $d3 $d5, /ITL/scene/echo/echo__1000/feedback 90,
+/ITL/scene/echo/echo__1000/millisecond 234 );
+/ITL/scene/cursor watch timeEnter $d5 $d6 	( /ITL/scene/p* show 0, /ITL/scene/p6 show 1, /ITL/scene event PAGECHGE $d4 $d6, /ITL/scene/echo/echo__1000/feedback 90,
+/ITL/scene/echo/echo__1000/millisecond 345 );
+/ITL/scene/cursor watch timeEnter $d6 $d7 	( /ITL/scene/p* show 0, /ITL/scene/p7 show 1, /ITL/scene event PAGECHGE $d5 $d7, /ITL/scene/echo/echo__1000/feedback 80,
+/ITL/scene/echo/echo__1000/millisecond 12 );
+/ITL/scene/cursor watch timeEnter $d7 $d8 	( /ITL/scene/p* show 0, /ITL/scene/p8 show 1, /ITL/scene event PAGECHGE $d6 $d8, /ITL/scene/echo/echo__1000/feedback 90,
+/ITL/scene/echo/echo__1000/millisecond 2345 );
 /ITL/scene/cursor watch timeEnter $d8 100 	( /ITL/scene event END, /ITL/scene event PAGECHGE $d7 0 );
 
 <!-- #==================================================
