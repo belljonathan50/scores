@@ -22,7 +22,7 @@
 <body>
 
 <div class="inscore" id="scene">
-
+<pre>
 /ITL/scene/cursor set rect 0.03 0.6;
 /ITL/scene/cursor color 255 0 0;
 /ITL/scene color 0 0 0;
@@ -400,10 +400,9 @@ sc100duree = $sc100end - $sc100start;
 /ITL/scene/sc* watch mouseMove $click;
 /ITL/scene/sc* watch mouseDown $click;
 
-<!-- #==================================================
+#==================================================
 # events declaration
-#================================================== -->
-
+#==================================================
 /ITL/scene watch START (
 	/ITL/scene/sync cursor sc* v relative
 );
@@ -453,10 +452,9 @@ sc100duree = $sc100end - $sc100start;
 );
 
 
-<!-- #==================================================
+#==================================================
 # SHIFT 1/ shifting -24 24 2/ window 50 10000 3/ xfade 1 10000 
-#================================================== -->
-
+#==================================================
 /ITL/scene watch SHIFT (
 	/ITL/scene/audioInput connect shift,
     /ITL/scene/shift connect audioOutput,
@@ -466,10 +464,9 @@ sc100duree = $sc100end - $sc100start;
 );
 
 
-<!-- #==================================================
+#==================================================
 # REVERB 1/ damps 0. 1. 2/ roomsize 0. 1. 3/ wet 0. 1.
-#================================================== -->
-
+#==================================================
 /ITL/scene watch REVERB (
 /ITL/scene/audioInput connect reverb,
 /ITL/scene/reverb connect audioOutput,
@@ -478,11 +475,9 @@ sc100duree = $sc100end - $sc100start;
 /ITL/scene/reverb/Freeverb/Wet '$3'
 );
 
-<!-- #==================================================
-# SHIFTREVERB 1/ shifting -24 24 2/ window 50 10000 3/ xfade 1 10000 
-4/ damps 0. 1. 5/ roomsize 0. 1. 6/ wet 0. 1.
-#================================================== -->
-
+#==================================================
+# SHIFTREVERB 1/ shifting -24 24 2/ window 50 10000 3/ xfade 1 10000 4/ damps 0. 1. 5/ roomsize 0. 1. 6/ wet 0. 1.
+#==================================================
 /ITL/scene watch SHIFTREVERB (
 /ITL/scene/audioInput connect shift,
 /ITL/scene/shift connect reverb,
@@ -504,9 +499,9 @@ sc100duree = $sc100end - $sc100start;
 );
 
 
-<!-- #==================================================
+#==================================================
 # RADIOECHO 1/ Q 20s good 2/ freq 0< 0.5 <1 3/ milliseconds 4/ feedback 0 100
-#================================================== -->
+#==================================================
 
 /ITL/scene watch RADIOECHO (
 /ITL/scene/audioInput connect echo,
@@ -598,11 +593,11 @@ bottom = y 0.2;
 /ITL/scene/sc30 date 	$sc30start;
 /ITL/scene/sc30 duration $sc30duree;
 
-<!-- #================================================================================================
+#================================================================================================
 # the score
-/ITL/scene event SAMPLER 'homme/v31.wav',
-/ITL/scene event SAMPLER 'homme/v34.wav',
-#================================================================================================ -->
+#/ITL/scene event SAMPLER 'homme/v31.wav',
+#/ITL/scene event SAMPLER 'homme/v34.wav',
+#================================================================================================
 /ITL/scene/cursor watch timeEnter $sc0start$sc0end (
    /ITL/scene/sc* show 0,
    /ITL/scene/sc0 show 1,
@@ -1059,13 +1054,7 @@ bottom = y 0.2;
 
 
 
-
-
-
-
-
-
-<!-- ## last system -->
+## last system
 /ITL/scene/cursor watch timeEnter $sc100start $sc100end (
 	/ITL/scene/sc99 show 0,
 	/ITL/scene/end show 0
@@ -1086,7 +1075,7 @@ bottom = y 0.2;
 
 
 
-<!-- user interface settings -->
+# user interface settings
 /ITL/scene/title set txt "Listen (top line) and repeat (bottom line)";
 /ITL/scene/title fontSize 12;
 /ITL/scene/title y -0.55;
@@ -1135,8 +1124,7 @@ alpha = 150;
 /ITL/scene/ctrl* watch mouseEnter ( /ITL/scene/$self alpha 255); 
 /ITL/scene/ctrl* watch mouseLeave ( /ITL/scene/$self alpha $alpha); 
 
-/ITL/scene/ctrlplay watch mouseDown (
-	/ITL/scene/ctrlplay push,
+CTRLPLAY = (/ITL/scene/ctrlplay push,
 	/ITL/log write 'ctrplay-push',
 	/ITL/scene/cursor tempo 240,
 	/ITL/scene/ctrlplay set img "imgs/pause.png", 
@@ -1149,20 +1137,22 @@ alpha = 150;
 	)
 );
 
+/ITL/scene/ctrlplay watch mouseDown $CTRLPLAY;
+
 /ITL/scene/ctrlstop watch mouseDown (
-/ITL/scene/ctrlstop push,
 	/ITL/scene/cursor tempo 0,
 	/ITL/scene/cursor date 0,
 	/ITL/scene/audio play 0,
 	/ITL/scene/audio vdate 0,
 	/ITL/scene/ctrlplay pop,
+	/ITL/scene/ctrlplay watch mouseDown $CTRLPLAY,
 	/ITL/scene/ctrlplay set img "imgs/play.png",
 	/ITL/scene event CUT 
 );
 
-<!-- #==================================================
+#==================================================
 # faust part
-#================================================== -->
+#==================================================
 /ITL/scene/echo set faust 'import("stdfaust.lib"); process =  ef.echo1s,ef.echo1s;';
 /ITL/scene/echo/echo__1000/feedback 80;
 /ITL/scene/echo/echo__1000/millisecond 80;
@@ -1220,17 +1210,12 @@ process = _,_ :> ve.diodeLadder(normFreq,Q) &lt;:_,_;
 
 
 
-
-
-<!--
-
- #==================================================
+#==================================================
 # /ITL/scene/cursor date 5;
-
-#================================================== -->
-
+#==================================================
 
 
+</pre>
 
 </div>
 </body>
