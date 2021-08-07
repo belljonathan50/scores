@@ -2489,8 +2489,8 @@ CTRLPLAY = (/ITL/scene/ctrlplay push,
 	/ITL/scene event CUT 
 );
 
-/ITL/ssl cert 	"inscorejs.grame.fr/certificate.crt";
-/ITL/ssl key 	"inscorejs.grame.fr/private.key";
-/ITL/ssl cacert "inscorejs.grame.fr/ca_bundle.crt";
-/ITL/filter reject "/ITL" "/ITL/scene"  load ddate quit event;
+/ITL/ssl cert 	"inscore/certificate.crt";
+/ITL/ssl key 	"inscore/private.key";
+/ITL/ssl cacert "inscore/ca_bundle.crt";
+/ITL/filter reject "/ITL" "/ITL/ssl"  "/ITL/scene"  load ddate quit event;
 /ITL forward  "https://localhost:7200";
