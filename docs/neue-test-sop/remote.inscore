@@ -1,53 +1,4 @@
-<html>
-
-<head>
-  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-  <title>State of Guts</title>
-
-  <link href="libs/fonts/fonts.css" rel="stylesheet">
-  <script src="libs/libINScore.js"></script>
-  <script src="libs/libGUIDOEngine.js"></script>
-  <script src="libs/libfaust-wasm.js"></script>
-  <script src="libs/FaustLibrary.js"></script>
-  <script src="libs/inscoreview.js"></script>
-  <script src="libs/inscoreglue.js"></script>
-  <script src="libs/libmusicxml.js"></script>
-
-
-  <style>
-    body {
-      margin: 20;
-      background-color: black;
-      color: white
-    }
-
-    .inscore {
-      background-color: white;
-      border-color: grey;
-      width: 100%;
-      height: 100%;
-      font-size: 1px;
-    }
-  </style>
-</head>
-
-<body>
-
-  <div class="inscore" id="scene">
-    <pre>
-
-
-#==================================================
-#lets add the audio
-#==================================================
-
-
-
-
-
-
-
-
+/ITL/scene/* del;
 
 /ITL/scene/cursor set rect 0.03 0.6;
 /ITL/scene/cursor color 255 0 0;
@@ -351,114 +302,56 @@ sc100duree = $sc100end - $sc100start;
 	/ITL/scene/cursor tempo 0
 );
 
-
 /ITL/scene/sc100 watch show (
 	/ITL/scene/sc100 watch show,
 	/ITL/scene event START
 );
 
-
-
-
-
-
-
 /ITL/scene watch CUT (
-	/ITL/scene/shift disconnect audioOutput,
-	/ITL/scene/echo disconnect audioOutput,
-	/ITL/scene/vocoder disconnect audioOutput,
-	/ITL/scene/reverb disconnect audioOutput,
-	/ITL/scene/radio disconnect audioOutput
+	/ITL/log write CUT
 );
 
 /ITL/scene watch VOCODER (
-	/ITL/scene/audioInput connect vocoder,
-    /ITL/scene/vocoder connect audioOutput,
-	/ITL/scene/vocoder/My_Vocoder/Excitation/Freq '$1',
-	/ITL/scene/vocoder/My_Vocoder/Excitation/Gain '$2',
-	/ITL/scene/vocoder/My_Vocoder/Vocoder/Attack '$3',
-	/ITL/scene/vocoder/My_Vocoder/Vocoder/BW '$4',
-	/ITL/scene/vocoder/My_Vocoder/Vocoder/Release '$5'
+	/ITL/log write VOCODER 
 );
 
 /ITL/scene watch ECHO (
-/ITL/scene/audioInput connect echo,
-/ITL/scene/echo connect audioOutput,
-/ITL/scene/echo/echo__1000/feedback '$1',
-/ITL/scene/echo/echo__1000/millisecond '$2'
+	/ITL/log write ECHO 
 );
 
 
 #==================================================
 # SHIFT 1/ shifting -24 24 2/ window 50 10000 3/ xfade 1 10000 
 #================================================== 
-
-
 /ITL/scene watch SHIFT (
-	/ITL/scene/audioInput connect shift,
-    /ITL/scene/shift connect audioOutput,
-	/ITL/scene/shift/Pitch_Shifter/shifting '$1',
-	/ITL/scene/shift/Pitch_Shifter/window '$2',
-	/ITL/scene/shift/Pitch_Shifter/xfade '$3'
+	/ITL/log write SHIFT 
 );
 
 
 #==================================================
 # REVERB 1/ damps 0. 1. 2/ roomsize 0. 1. 3/ wet 0. 1.
 #================================================== 
-
-
 /ITL/scene watch REVERB (
-/ITL/scene/audioInput connect reverb,
-/ITL/scene/reverb connect audioOutput,
-/ITL/scene/reverb/Freeverb/0x00/Damp '$1',
-/ITL/scene/reverb/Freeverb/0x00/RoomSize '$2',
-/ITL/scene/reverb/Freeverb/Wet '$3'
+	/ITL/log write REVERB 
 );
 
 #==================================================
 # SHIFTREVERB 1/ shifting -24 24 2/ window 50 10000 3/ xfade 1 10000 4/ damps 0. 1. 5/ roomsize 0. 1. 6/ wet 0. 1.
 #================================================== 
-
-
 /ITL/scene watch SHIFTREVERB (
-/ITL/scene/audioInput connect shift,
-/ITL/scene/shift connect reverb,
-/ITL/scene/reverb connect audioOutput,
-/ITL/scene/shift/Pitch_Shifter/shifting '$1',
-/ITL/scene/shift/Pitch_Shifter/window 10000,
-/ITL/scene/shift/Pitch_Shifter/xfade 10000,
-/ITL/scene/reverb/Freeverb/0x00/Damp 0.9,
-/ITL/scene/reverb/Freeverb/0x00/RoomSize 0.9,
-/ITL/scene/reverb/Freeverb/0x00/Stereo_Spread 0.9,
-/ITL/scene/reverb/Freeverb/Wet '$2'
+	/ITL/log write SHIFTREVERB 
 );
 
 /ITL/scene watch RADIO (
-/ITL/scene/audioInput connect radio,
-/ITL/scene/radio connect audioOutput,
-/ITL/scene/radio/FaustDSP/Q  '$1',
-/ITL/scene/radio/FaustDSP/freq  '$2'
+	/ITL/log write RADIO 
 );
-
-
-
 
 #==================================================
 # RADIOECHO 1/ Q 20s good     2/ freq 0 - 0.5  -  1      3/ milliseconds     4/ feedback 0 100
 #==================================================
-
 /ITL/scene watch RADIOECHO (
-/ITL/scene/audioInput connect echo,
-/ITL/scene/echo connect radio,
-/ITL/scene/radio connect audioOutput,
-/ITL/scene/radio/FaustDSP/Q  '$1',
-/ITL/scene/radio/FaustDSP/freq  '$2',
-/ITL/scene/echo/echo__1000/millisecond '$3',
-/ITL/scene/echo/echo__1000/feedback '$4'
+	/ITL/log write RADIOECHO 
 );
-
-
 
 
 /ITL/scene/sc* show 0;
@@ -653,14 +546,9 @@ bottom = y 0.2;
 /ITL/scene/sc18 date $sc18start ;
 /ITL/scene/sc18 duration $sc18duree ;
 
-
-
-/ITL/log write "debug-inn";
-
 #================================================================================================
 # the score
 #================================================================================================
-
 
 /ITL/scene/cursor watch timeEnter $sc0start$sc0end (
    /ITL/scene/sc* show 0,
@@ -2524,26 +2412,7 @@ bottom = y 0.2;
 );
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # UI UI UI UI UI UI UI user interface settings
-
 
 /ITL/scene/title set txt "Machine à sons - Soprano";
 /ITL/scene/title fontSize 12;
@@ -2620,140 +2489,8 @@ CTRLPLAY = (/ITL/scene/ctrlplay push,
 	/ITL/scene event CUT 
 );
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#==================================================
-# faust part
-#================================================== 
-
-/ITL/scene/echo set faustw 'wasm/echo.wasm' 'wasm/echo.json';
-/ITL/scene/echo/echo__1000/feedback 80;
-/ITL/scene/echo/echo__1000/millisecond 80;
-/ITL/scene/echo show 0;
-
-
-/ITL/scene/shift set faustw 'wasm/shift.wasm' 'wasm/shift.json';
-/ITL/scene/shift show 0;
-
-/ITL/scene/vocoder set faustw 'wasm/vocoder.wasm' 'wasm/vocoder.json';
-/ITL/scene/vocoder show 0;
-/ITL/scene/vocoder/My_Vocoder/Excitation/Freq 50;
-/ITL/scene/vocoder/My_Vocoder/Excitation/Gain 1;
-/ITL/scene/vocoder/My_Vocoder/Vocoder/Attack 0.1;
-/ITL/scene/vocoder/My_Vocoder/Vocoder/BW 0.13;
-/ITL/scene/vocoder/My_Vocoder/Vocoder/Release 0.1;
-
-/ITL/scene/reverb set faustw 'wasm/reverb.wasm' 'wasm/reverb.json';
-/ITL/scene/reverb show 0;
-
-/ITL/scene/eq set faustw  'wasm/eq.wasm' 'wasm/eq.json';
-/ITL/scene/eq show 0;
-
-/ITL/scene/radio set faustw 'wasm/radio.wasm' 'wasm/radio.json';
-/ITL/scene/radio show 0;
-
-
-
-
-
-
-
-
-
-
-
-#==================================================
-# for brozsing
-
-
-
-
-
-
-click = (/ITL/scene/cursor date '$date');
-
-#==================================================
-
-
-#==================================================
-#/ITL/scene/cursor date 5;
-#
-# /ITL/scene/sc100 watch show ( /ITL/scene/sc100 watch show, /ITL/scene event START );
-#
-#
-#================================================== 
-
-
-
-
-
-</pre>
-
-  </div>
-
-
-  <!--   /ITL/scene/bnext watch mouseDown ( 
-    /ITL/scene/cursor date '$(/ITL/scene/vnext get date)', 
-    /ITL/scene/audio vdate '$(/ITL/scene/vnext get date)'
-  );
-  /ITL/scene/bprev watch mouseDown ( 
-    /ITL/scene/cursor date '$(/ITL/scene/vprev get date)', 
-    /ITL/scene/audio vdate '$(/ITL/scene/vprev get date)'
-  ); 
-
-/ITL/scene/cursor watch timeLeave $sc100end 100000000 (
-	/ITL/scene/end show 0
-);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/ITL/log write "debug-outtttt";
-
-
-
-
-
-
-
-
-
--->
-
-
-
-
-
-
-
-
-</body>
-
-</html>
+/ITL/ssl cert 	"inscorejs.grame.fr/certificate.crt";
+/ITL/ssl key 	"inscorejs.grame.fr/private.key";
+/ITL/ssl cacert "inscorejs.grame.fr/ca_bundle.crt";
+/ITL/filter reject "/ITL" "/ITL/scene"  load ddate quit event;
+/ITL forward  "https://localhost:7200";
