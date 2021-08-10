@@ -1,0 +1,92 @@
+/* cmmr_colors */
+
+/* --- COULEURS --- */
+
+/* Général */
+html {
+  background-color: #FFFFFF;
+}
+body {
+  background: #FFFFFF;
+  color: #000000;}
+
+strong {
+	color: #000000;
+}
+
+/* Conteneur central */
+#centre {
+	/* background: url(images/) repeat-y left top; */
+}
+#centre-bis {
+	/* background: url(images/) repeat-y right top; */
+}
+
+/* Navigation */
+#navigation {
+	background: #FFFFFF;
+	color: #000000;
+}
+#navigation a {
+	color: #000000;
+}
+
+#navigation a:hover {
+	color: mediumblue;
+}
+
+#disabled {
+    font-color: #ccc;
+}
+
+/* Contenu principal */
+#principal {
+	color: #000000;
+	background: #FFFFFF;
+}
+#principal a {
+	color: #009BD6;
+}
+#principal a:hover, #principal a:focus {
+	color: mediumblue;
+}
+#principal strong {
+	color: #000000;
+}
+#principal strong:a{
+	color: #009BD6;
+}
+#principal strong:a:hover {
+	color: #mediumblue;
+}
+
+/* Contenu secondaire */
+#secondaire {
+	background: #FFFFFF;
+}
+#secondaire strong {
+	color: #000000;
+}
+#secondaire a {
+	color: #009BD6;
+}
+#secondaire a:hover {
+	color: mediumblue;
+}
+.titre {
+	color: #000000;
+}
+
+#copyright a {
+	color: #848F63;
+}
+
+h1,h2 {
+  color: #009BD6;
+}
+
+/* Site en construction */
+#navigation a[class]
+{
+	color: #a4a4a4;
+}
