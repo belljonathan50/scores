@@ -1,8 +1,8 @@
 document.write('<div id=navigation>');
 document.write('<ul>');
-document.write('<li><img class="bullet" src="images/bullets/green.gif">  &nbsp; <a href ="main.html">    Welcome !             </a></li>');
-document.write('<li><img class="bullet" src="images/bullets/orange.gif"> &nbsp; <a href ="http://localhost:8000/news.html">     News                  </a></li>');
-document.write('<li><img class="bullet" src="images/bullets/pink.gif">   &nbsp; <a href ="http://localhost:8000/contribution.html">    Call for contributions</a></li>');
+document.write('<li><img class="bullet" src="images/bullets/green.gif">  &nbsp; <a href ="index.html">    Welcome !             </a></li>');
+document.write('<li><img class="bullet" src="images/bullets/orange.gif"> &nbsp; <a href ="news.html">     News                  </a></li>');
+document.write('<li><img class="bullet" src="images/bullets/pink.gif">   &nbsp; <a href ="contribution.html">    Call for contributions</a></li>');
 document.write('<li><img class="bullet" src="images/bullets/green.gif">   &nbsp; <a  href ="sponsors.html">     Call for sponsors</a></li>');
 document.write('<li><img class="bullet" src="images/bullets/yellow.gif"> &nbsp; <a  href ="committee.html">Committee             </a></li>');
 document.write('<li><img class="bullet" src="images/bullets/purple.gif"> &nbsp; <a  href ="keynotes.html"> Keynotes               </a></li>');
