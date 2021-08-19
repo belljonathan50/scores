@@ -1,0 +1,11 @@
+Model Information:
+* title:	prism
+* source:	https://sketchfab.com/3d-models/prism-ae572de202e343f58eac67fd3bbc0590
+* author:	LAL-LAL Inc. (https://sketchfab.com/LAL-LAL)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "prism" (https://sketchfab.com/3d-models/prism-ae572de202e343f58eac67fd3bbc0590) by LAL-LAL Inc. (https://sketchfab.com/LAL-LAL) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
