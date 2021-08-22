@@ -7,35 +7,44 @@
     <script src="https://unpkg.com/aframe-gradient-sky@1.0.4/dist/gradientsky.min.js"></script>
   </head>
   <body>
-    <a-scene>
+    <a-scene background="color: black">
 
 
 
      
         <a-assets>
-          <a-asset-item id="tree" src="/prism/assets/scene.gltf"></a-asset-item>
+          <a-asset-item id="prism" src="/prism/assets/scene.gltf"></a-asset-item>
         </a-assets>
       
-        <a-entity gltf-model="#tree"></a-entity>
-   
-      <!-- <a-asset-item id="object" src="scene.gltf"> </a-asset-item> -->
-      <!-- <a-entity id="rain" particle-system="preset: rain; color: #24CAFF; particleCount: 5000"></a-entity>
+        <a-entity gltf-model="#prism" position=" 5 25 -55" rotation="615" scale="5 5 5" animation="property: rotation; easing: easeInOutQuad; dir: alternate; dur: 12992; to: 235; loop: true; "></a-entity>
 
+      <!--   <a-entity gltf-model="#prism"  animation="position: rotation; easing: easeInOutQuad; dir: alternate; dur: 2992; to: 333 333 33; loop: true; "></a-entity> -->
+   <!-- 
+      <a-asset-item id="object" src="scene.gltf"> </a-asset-item> -->
+
+    <!--   <a-entity id="rain" particle-system="preset: rain; color: #24CAFF; particleCount: 5000"></a-entity>
+ -->
       <a-entity id="sphere" geometry="primitive: sphere"
-                material="color: #EFEFEF; shader: flat"
-                position="1 0.15 -5"
-                light="type: point; intensity: 5"
-              animation="property: position; easing: easeInOutQuad; dir: alternate; dur: 1992; to: 0 -0.10 -12; loop: true"></a-entity>
+                material="color: #110101; shader: flat"
+                position="1 0 -5"
+                light="type: point; intensity: 2"
+              animation="property: position; easing: easeInOutQuad; dir: alternate; dur: 12992; to: 112 -112.10 -13; loop: true"></a-entity>
 
-      <a-entity id="ocean" ocean="density: 20; width: 50; depth: 50; speed: 4"
-                material="color: #9CE3F9; opacity: 0.75; metalness: 0; roughness: 1"
-                rotation="-90 0 0"></a-entity> -->
 
       <!-- <a-entity id="sky" geometry="primitive: sphere; radius: 5000"
                 material="shader: gradient; topColor: 235 235 245; bottomColor: 185 185 210"
-                scale="-1 1 1"></a-entity>
+                scale="-1 1 1"></a-entity> -->
 
-      <a-entity id="light" light="type: ambient; color: #888"></a-entity> -->
+<!--       <a-entity id="light" light="type: ambient; color: #888"></a-entity>
+
+ -->
+
+
+
+
     </a-scene>
+
+
+
   </body>
 </html>
