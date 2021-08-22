@@ -1,0 +1,117 @@
+/* cmmr_colors */
+
+/* --- COULEURS --- */
+
+
+
+
+/* Général */
+html {
+  background-color: #ffffff;
+}
+body {
+  /* background: #FFFFFF; */
+  color: #000000;}
+
+strong {
+	color: #000000;
+}
+
+/* Conteneur central */
+#centre {
+	/* background: url(images/) repeat-y left top; */
+}
+#centre-bis {
+	/* background: url(images/) repeat-y right top; */
+}
+
+/* Navigation */
+#navigation {
+	/* background: #FFFFFF; */
+	color: #000000;
+	border-radius: 25px;
+}
+#navigation a {
+	color: #000000;
+	background: #ffffff;
+	transition: font-size 3.5s;
+	transition: background 0.6s;
+	font-size: 0.9em;
+	border-radius: 25px;
+}
+
+#navigation a:hover {
+	color: rgb(255, 0, 0);
+	background: #5360d6;
+	border-radius: 25px;
+	
+}
+
+#disabled {
+    font-color: #ccc;
+}
+
+/* Contenu principal */
+#principal {
+	color: #000000;
+	/* background: #FFFFFF; */
+}
+#principal a {
+	color: #009BD6;
+}
+#principal a:hover, #principal a:focus {
+	color: rgb(0, 205, 44);
+}
+#principal strong {
+	color: #000000;
+}
+#principal strong:a{
+	color: #009BD6;
+}
+#principal strong:a:hover {
+	color: #mediumblue;
+}
+
+/* Contenu secondaire */
+#secondaire {
+	/* background: #FFFFFF; */
+}
+#secondaire strong {
+	color: #000000;
+}
+
+
+
+
+
+
+#secondaire a {
+	color: #009BD6;
+	transition: font-size 3.5s;
+	transition: background 2.6s;
+	font-size: 0.9em;
+	border-radius: 25px;
+}
+/* #secondaire a:hover {
+	color: rgb(0, 205, 137);
+	font-size: 1.9em;
+	background: #5360d6;
+	border-radius: 25px;
+} */
+.titre {
+	color: #000000;
+}
+
+#copyright a {
+	color: #848F63;
+}
+
+h1,h2 {
+  color: #009BD6;
+}
+
+/* Site en construction */
+#navigation a[class]
+{
+	color: #a4a4a4;
+}

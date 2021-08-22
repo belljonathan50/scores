@@ -1,0 +1,347 @@
+/* cmmr_pos */
+
+/* --- POSITIONNEMENT --- */
+
+/* Page */
+body {
+	/* padding: 20px 5px; */
+}
+#globale {
+	width: 100%;
+		/* 90em; */
+	min-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* videos */
+
+
+#rrrdiv {
+	 
+	position: relative;
+	/* left: 10px; */
+	width: 50%;
+	bottom: 1000px;
+	/* /* width: 510px; */
+	z-index: -1;
+	opacity: 1; */
+
+	
+
+/* z-index: 1; */
+
+}
+
+#rrr {
+	 
+	width: 200%;
+
+	
+
+/* z-index: 1; */
+
+}
+
+#hope {
+	 
+	position: fixed;
+	
+	bottom: -600px;
+	
+	z-index: -1;
+	opacity: 0.8;
+	/* width: 520px; 
+	height: 740px; */
+
+}
+
+
+
+
+#hell {
+	 
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	z-index: 1;
+	opacity: 0.5;
+
+
+	width:300px;
+	 height: 300px;
+
+}
+
+#bach {
+	 
+	
+	left: 10px;
+	bottom: 1050px;
+	width: 510px;
+	z-index: 10;
+	opacity: 1;
+
+	/* position: relative; */
+
+/* z-index: 1; */
+
+}
+
+
+
+
+#InscoreIDE{
+
+	width: 350px;
+
+}
+
+#trailer {
+	 
+	animation-name: opa;
+	animation-duration: 3s;
+
+}
+
+
+
+#myVideoDraw {
+	 
+	/* position: relative;
+	left: -500px;
+	bottom: 400px; */
+	width: 1200px;
+	padding: 5px;
+z-index: -1;
+opacity: 1;
+
+}
+
+
+
+
+/* En-tête */
+
+
+
+#ent {
+	position: relative;
+	width: 800px;
+	opacity: 100%;
+	animation-name: opa;
+	animation-duration: 20s;
+}
+
+@keyframes opa {
+	from {opacity: 0%;}
+	to {opacity: 100%;}
+  }
+  
+/* iframes */
+
+#meta {
+	 
+	position: relative;
+	width: 100%;
+	height: 3000px;
+	z-index: -1;
+	bottom: 1940px;
+}
+
+
+
+#prism3d {
+	 
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+#meta2 {
+	 
+	position: relative;
+	width: 100%;
+	height: 3000px;
+	z-index: -1;
+	bottom: 1240px;
+}
+
+#prism3d2 {
+	 
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+/* Images */
+/* /news */
+#digitalscore {
+	 
+	padding: 15px;
+	/* position: absolute;
+	width: 400px;
+	height: 620px;
+	right: 250px;
+	top: 325px; */
+
+
+}
+
+#europe {
+	 
+	/* position: absolute;
+	left: 240px;
+	bottom: -150px; 
+	width: 710px;
+	height: 500px;
+	border-style: inset; */
+
+}
+
+#feller {
+
+	width: 1105px;
+	height: 800px;
+	z-index: -1; */
+
+
+	width: 100%;
+
+}
+
+
+
+
+ #enteteban {
+	width: 1000px;
+}
+
+
+
+/* Bloc central */
+#centre-bis {
+	width: 100%;
+	overflow: hidden;
+}
+
+/* Menu de navigation */
+#navigation {
+	float: left;
+	margin-top: 20px;
+	width: 220px;
+	line-height: 1.5em;
+}
+#navigation ul {
+  	list-style-type: none;
+}
+#navigation a {
+	/* display: block;
+	height: 1%;
+	padding: 4px 5px 3px 5px; */
+}
+
+
+/* Contenu principal */
+#principal {
+	margin-left: 220px;
+	margin-right: 180px;
+	padding: 10px 20px;
+	text-align: justify;
+}
+#principal li {
+	margin-left: -30px;
+	list-style-type: none;
+	line-height: 1.5;
+	text-align: left;
+}
+
+
+
+
+
+  
+
+/* svg dans principal */
+
+
+
+#svg {
+	position: relative;
+	left: 0px;
+	top: 200px;
+}
+
+
+/* #clef {
+	position: relative;
+	left: -80px;
+	top: -800px;
+} */
+
+
+
+
+
+/* Colonne de droite */
+
+#prismlogo {
+	position: relative;
+	width: 130px;
+	opacity: 100%;
+	animation-name: pris;
+	animation-duration: 3s;
+}
+
+ @keyframes pris {
+	from {opacity: 0%;
+		width: 730px;
+		transform: rotate3d(3.7, 22.5, -10.2, -3.2turn);
+	}
+	to {opacity: 100%;
+		transform: rotate3d(0);
+		/* width: 430px; */
+	}
+  } 
+
+@keyframes pri {
+	from {opacity: 0%;
+		width: 300px;
+		transform: rotate3d(0.2, 0.5, 0.4, 195deg);
+	}
+	to {opacity: 100%;
+		width: 130px;
+		transform: rotate3d(0);
+	}
+  }
+
+
+
+#secondaire {
+	float: right;
+	width: 180px;
+	margin-top: 35px;
+	/* padding: 12px 20px; */
+}
+.titre	{
+	text-align: center;
+}
+
+/* Pied de page */
+#pied {
+	text-align: center;
+	font-size: .85em; */
+}
+  /* craig */
+#cv0 {
+	font-size: 1.2em;
+}
+
+/* Mention de copyright */
+#copyright {
+	margin: -20px;
+	font-size: 1em;
+	text-align: center;
+}

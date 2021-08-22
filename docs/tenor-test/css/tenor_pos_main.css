@@ -1,0 +1,234 @@
+/* cmmr_pos */
+
+/* --- POSITIONNEMENT --- */
+
+/* Page */
+body {
+	/* padding: 20px 5px; */
+}
+#global {
+	width: 100%;
+	max-width: 1000px;	/* 90em; */
+	min-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* videos */
+#rrr {
+	 
+		position: fixed;
+		right: 0px;
+		bottom: -250px;
+		z-index: -1;
+		opacity: 0.5;
+
+}
+
+
+#hell {
+	 
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	z-index: 1;
+	opacity: 0.5;
+
+
+	width:300px;
+	 height: 300px;
+
+}
+
+#bach {
+	 
+	position: fixed;
+	right: 0px;
+	bottom: 1650px;
+	z-index: -1;
+	opacity: 0.2;
+
+}
+
+#trailer {
+	 
+	animation-name: opa;
+	animation-duration: 3s;
+
+}
+
+
+
+#myVideoDraw {
+	 
+	position: relative;
+	right: -510px;
+	bottom: 1260px;
+	width: 500px;
+	height: 400px;
+z-index: -1;
+
+}
+
+#bach {
+	 
+	position: relative;
+	/* right: 0px;
+	bottom: 0px;
+	width: 500px;
+	height: 400px; */
+z-index: 1;
+
+}
+
+
+/* En-tête */
+
+
+
+#ent {
+	position: relative;
+	width: 1000px;
+	opacity: 100%;
+	animation-name: opa;
+	animation-duration: 3s;
+}
+
+@keyframes opa {
+	from {opacity: 0%;}
+	to {opacity: 100%;}
+  }
+  
+
+
+
+
+
+/* #entete {
+	position: relative;
+	width: 500px;
+}
+#entete h1 {
+}
+#entete h1 img {
+	float: left;
+} */
+
+/* Bloc central */
+#centre-bis {
+	width: 100%;
+	overflow: hidden;
+}
+
+/* Menu de navigation */
+#navigation {
+	float: left;
+	margin-top: 20px;
+	width: 220px;
+	line-height: 1.5em;
+}
+#navigation ul {
+  	list-style-type: none;
+}
+#navigation a {
+	/* display: block;
+	height: 1%;
+	padding: 4px 5px 3px 5px; */
+}
+
+
+/* Contenu principal */
+#principal {
+	margin-left: 220px;
+	margin-right: 180px;
+	padding: 10px 20px;
+	text-align: justify;
+}
+#principal li {
+	margin-left: -30px;
+	list-style-type: none;
+	line-height: 1.5;
+	text-align: left;
+}
+
+
+
+
+
+  
+
+/* svg dans principal */
+
+
+
+#svg {
+	position: relative;
+	left: 0px;
+	top: 200px;
+}
+
+
+#clef {
+	position: relative;
+	left: -80px;
+	top: -800px;
+}
+
+
+
+
+
+/* Colonne de droite */
+
+#prismlogo {
+	position: relative;
+	width: 130px;
+	opacity: 100%;
+	animation-name: pri;
+	animation-duration: 3s;
+}
+
+/* @keyframes pri {
+	from {opacity: 0%;
+		transform: rotate3d(3.7, 2.5, -1.2, -0.2turn);
+	}
+	to {opacity: 100%;
+		transform: rotate3d(0);
+	}
+  } */
+
+@keyframes pri {
+	from {opacity: 0%;
+		width: 300px;
+		transform: rotate3d(0.2, 0.5, 0.4, 195deg);
+	}
+	to {opacity: 100%;
+		width: 130px;
+		transform: rotate3d(0);
+	}
+  }
+
+
+
+#secondaire {
+	float: right;
+	width: 180px;
+	margin-top: 35px;
+	/* padding: 12px 20px; */
+}
+.titre	{
+	text-align: center;
+}
+
+/* Pied de page */
+#pied {
+	text-align: center;
+	font-size: .85em; */
+}
+
+/* Mention de copyright */
+#copyright {
+	margin: -20px;
+	font-size: 1em;
+	text-align: center;
+}
