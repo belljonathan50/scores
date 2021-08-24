@@ -12,8 +12,8 @@ gsap.from("#gmemlogo", { ease:Expo. easeIn, delay :4.2, opacity: 0});
 
 
 
-gsap.to(".marge", { ease:
-    Expo. easeIn, delay :3, marginRight: 400});
+// gsap.to(".marge", { ease:
+ //    Expo. easeIn, delay :3, marginRight: 400});
 
 
 
