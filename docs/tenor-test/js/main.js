@@ -3,6 +3,10 @@ tl.to("#svg0", {delay: 3, duration: 0.3,x: 340, y:60});
 tl.to("#svg0", {duration: 0.3, rotation: -90,x: 1100, y:-500, scale: 
 1.3 });
 
+gsap.to(".marge", { ease:
+    Expo. easeIn, delay :3, marginRight: 1500});
+
+
 
 gsap.from("#hope", {ease:
     Expo. easeIn, delay: 1, duration: 3, opacity: 0});
