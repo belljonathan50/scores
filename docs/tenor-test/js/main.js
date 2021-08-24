@@ -4,7 +4,7 @@ tl.to("#svg0", {duration: 0.3, rotation: -90,x: 1100, y:-500, scale:
 1.3 });
 
 // logos
-gsap.from("#prismlogo", { ease:Expo. easeIn, delay :0.7, opacity: 0});
+gsap.from("#prismlogo", { ease:Expo. easeIn, delay :2, opacity: 0});
 gsap.from("#cnrslogo", { ease:Expo. easeIn, delay :3.3, opacity: 0});
 gsap.from("#amulogo", { ease:Expo. easeIn, delay :3.6, opacity: 0});
 gsap.from("#inciamlogo", { ease:Expo. easeIn, delay :3.9, opacity: 00});
