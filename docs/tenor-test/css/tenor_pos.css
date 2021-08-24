@@ -130,7 +130,7 @@ opacity: 1;
 	width: 800px;
 	opacity: 100%;
 	animation-name: opa;
-	animation-duration: 20s;
+	animation-duration: 10s;
 }
 
 @keyframes opa {
@@ -294,6 +294,7 @@ opacity: 1;
 	opacity: 100%;
 	animation-name: pris;
 	animation-duration: 3s;
+	animation-delay: 2s;
 }
 
  @keyframes pris {
