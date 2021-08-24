@@ -3,6 +3,12 @@ tl.to("#svg0", {delay: 3, duration: 0.3,x: 340, y:60});
 tl.to("#svg0", {duration: 0.3, rotation: -90,x: 1100, y:-500, scale: 
 1.3 });
 
+// logos
+
+gsap.to("#prismlogo", { ease:Expo. easeIn, delay :3, marginRight: 400});
+
+
+
 gsap.to(".marge", { ease:
     Expo. easeIn, delay :3, marginRight: 400});
 
