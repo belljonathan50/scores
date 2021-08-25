@@ -11,8 +11,7 @@ gsap.from("#amulogo", { ease:Expo. easeIn, delay :3.6, opacity: 0});
 gsap.from("#inciamlogo", { ease:Expo. easeIn, delay :3.9, opacity: 00});
 gsap.from("#gmemlogo", { ease:Expo. easeIn, delay :4.2, opacity: 0});
 
-// background vid main
-gsap.from("#rrr", { ease:Expo. easeIn, delay :8, duration: 1, opacity: 0});
+// background vid main  gsap.from("#rrr", { ease:Expo. easeIn, delay :8, duration: 1, opacity: 0});
 
 // gsap.to(".marge", { ease:
  //    Expo. easeIn, delay :3, marginRight: 400});
