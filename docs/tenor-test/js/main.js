@@ -1,7 +1,8 @@
 var tl = gsap.timeline();
 tl.to("#svg0", {delay: 3, duration: 0.3,x: 340, y:60});
-tl.to("#svg0", {duration: 0.3, rotation: -90,x: 1100, y:-500, scale: 
-1.3 });
+tl.to("#svg0", {duration: 0.3, rotation: -90,x: 1000, y:-200, scale: 
+0.9});
+
 
 // logos
 gsap.from("#prismlogo", { ease:Expo. easeIn, delay :2, opacity: 0});
@@ -11,7 +12,7 @@ gsap.from("#inciamlogo", { ease:Expo. easeIn, delay :3.9, opacity: 00});
 gsap.from("#gmemlogo", { ease:Expo. easeIn, delay :4.2, opacity: 0});
 
 // background vid main
-gsap.from("#rrr", { ease:Expo. easeIn, delay :5, duration: 1, opacity: 0});
+gsap.from("#rrr", { ease:Expo. easeIn, delay :7, duration: 1, opacity: 0});
 
 // gsap.to(".marge", { ease:
  //    Expo. easeIn, delay :3, marginRight: 400});
