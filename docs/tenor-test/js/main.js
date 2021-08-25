@@ -3,9 +3,14 @@ tl.to("#svg0", {delay: 3, duration: 0.3,x: 340, y:60});
 tl.to("#svg0", {duration: 0.3, rotation: -90,x: 850, y:-200, scale: 
 0.9});
 
-
+var pri = gsap.timeline();
 // logos
-gsap.to("#prismlogo", { ease:Expo. easeIn, delay :2, duration:10,5, opacity: 1});
+pri.to("#prismlogo", { ease:Expo. easeIn, delay :2, duration:3,5, opacity: 1});
+pri.to("#prismlogo", { duration:10000, opacity: 1});
+
+
+
+
 gsap.from("#cnrslogo", { ease:Expo. easeIn, delay :3.3, opacity: 0});
 gsap.from("#amulogo", { ease:Expo. easeIn, delay :3.6, opacity: 0});
 gsap.from("#inciamlogo", { ease:Expo. easeIn, delay :3.9, opacity: 00});
