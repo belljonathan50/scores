@@ -128,15 +128,8 @@ opacity: 1;
 #ent {
 	position: relative;
 	width: 800px;
-	opacity: 100%;
-	animation-name: opa;
-	animation-duration: 10s;
 }
 
-@keyframes opa {
-	from {opacity: 0%;}
-	to {opacity: 100%;}
-  }
   
 /* iframes */
 
@@ -330,10 +323,6 @@ opacity: 1;
 #pied {
 	text-align: center;
 	font-size: .85em; */
-}
-  /* craig */
-#cv0 {
-	font-size: 1.2em;
 }
 
 /* Mention de copyright */
