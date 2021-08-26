@@ -3,7 +3,7 @@ tl.to("#svg0", {delay: 3, duration: 0.3,x: 340, y:60});
 tl.to("#svg0", {duration: 0.3, rotation: -90,x: 850, y:-200, scale: 
 0.9});
 
-gsap.from("#logoEU", {duration: 1,  opacity: O});
+gsap.from("#logoEU", {duration: 2,  opacity: O});
 
 var pri = gsap.timeline();
 // // logos
