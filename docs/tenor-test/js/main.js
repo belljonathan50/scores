@@ -22,7 +22,9 @@ gsap.to("#rrrdiv", { ease:Expo. easeIn, delay :5, duration: 3, opacity: 1});
 
 
  gsap.from("#ent", {ease:
-    Expo. easeIn, duration: 2, opacity: 0});
+    Expo. easeIn, duration: 1, opacity: 0});
+    gsap.from("#logoEU", {ease:
+        Expo. easeIn, duration: 1, opacity: 0});
 
  gsap.from("#trailerframe", {ease:
     Expo. easeIn, delay: 1, duration: 2, opacity: 0});
