@@ -1,17 +1,14 @@
+console.log("gsap works very well");
+
+
 var tl = gsap.timeline();
 tl.to("#svg0", {delay: 3, duration: 0.3,x: 340, y:60});
 tl.to("#svg0", {duration: 0.3, rotation: -90,x: 850, y:-200, scale: 
 0.9});
 
-gsap.from("#logoEU", {duration: 2,  opacity: O});
+// var pri = gsap.timeline();
 
-var pri = gsap.timeline();
-// // logos
-pri.to("#prismlogo", { ease:Expo. easeIn, delay :1, duration:3, opacity: 1});
-// pri.to("#prismlogo", { ease:Expo. easeIn,  duration:1, opacity: 0});
-// pri.to("#prismlogo", { ease:Expo. easeIn,  duration:1, opacity: 1});
-// pri.to("#prismlogo", { duration:10000, opacity: 1});
-
+gsap.to("#prismlogo", { ease:Expo. easeIn, delay :1, duration:3, opacity: 1});
 
 
 
@@ -23,8 +20,6 @@ gsap.to("#gmemlogo", { ease:Expo. easeIn, delay :5.9, duration: 1,  opacity: 1})
 // background vid main  
 gsap.to("#rrrdiv", { ease:Expo. easeIn, delay :5, duration: 3, opacity: 1});
 
-// gsap.to(".marge", { ease:
- //    Expo. easeIn, delay :3, marginRight: 400});
 
  gsap.from("#ent", {ease:
     Expo. easeIn, duration: 2, opacity: 0});
