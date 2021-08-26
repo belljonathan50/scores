@@ -291,21 +291,16 @@ opacity: 1;
 #prismlogo {
 	position: relative;
 	width: 130px;
-	opacity: 100%;
 	animation-name: pris;
 	animation-duration: 3s;
 	animation-delay: 2s;
 }
 
  @keyframes pris {
-	from {opacity: 0%;
-		width: 730px;
+	from {width: 730px;
 		transform: rotate3d(3.7, 22.5, -10.2, -3.2turn);
 	}
-	to {opacity: 100%;
-		transform: rotate3d(0);
-		/* width: 430px; */
-	}
+	to {transform: rotate3d(0);}
   } 
 
 @keyframes pri {
