@@ -5,8 +5,10 @@ tl.to("#svg0", {duration: 0.3, rotation: -90,x: 850, y:-200, scale:
 
 var pri = gsap.timeline();
 // logos
-pri.to("#prismlogo", { ease:Expo. easeIn, delay :2, duration:5, opacity: 1});
-pri.to("#prismlogo", { duration:10000, opacity: 1});
+// pri.to("#prismlogo", { ease:Expo. easeIn, delay :2, duration:5, opacity: 1});
+// pri.to("#prismlogo", { ease:Expo. easeIn,  duration:1, opacity: 0});
+// pri.to("#prismlogo", { ease:Expo. easeIn,  duration:1, opacity: 1});
+// pri.to("#prismlogo", { duration:10000, opacity: 1});
 
 
 
