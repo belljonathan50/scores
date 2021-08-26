@@ -49,7 +49,19 @@ strong {
 
 #InscoreIDE:hover {
     /* background: #e1e1e1; */
-    border: 1px solid #1ef32f;
+    border: 2px solid #ca7718;
+}
+
+#europe:hover {
+    background: #ff0000;
+    border: 5px solid #2772e4;
+}
+
+#digitalscore:hover {
+	
+    border: 1px solid #2772e4;
+	border-radius: 3px;
+    /* border: 1px solid #ca7718; */
 }
 
 #disabled {
