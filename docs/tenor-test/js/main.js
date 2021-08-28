@@ -8,14 +8,14 @@ tl.to("#svg0", {duration: 0.3, rotation: -90,x: 850, y:-200, scale:
 
 // var pri = gsap.timeline();
 
-gsap.to("#prismlogo", { ease:Expo. easeIn, delay :1, duration:3, opacity: 1});
+gsap.to("#prismlogo", { ease:Expo. easeIn, duration:2, opacity: 1});
+gsap.from("#prismlogo", {delay: 1.5, duration:2, rotateX: "random(-100,100)", rotateY: "random(-100,200)", rotateZ: "random(-200,100)"});
 
 
-
-gsap.to("#cnrslogo", { ease:Expo. easeIn, delay :5, duration: 1,  opacity: 1});
-gsap.to("#amulogo", { ease:Expo. easeIn, delay :5.3, duration: 1,  opacity: 1});
-gsap.to("#inciamlogo", { ease:Expo. easeIn, delay :5.6, duration: 1,  opacity: 1});
-gsap.to("#gmemlogo", { ease:Expo. easeIn, delay :5.9, duration: 1,  opacity: 1});
+gsap.to("#cnrslogo", { ease:Expo. easeIn, duration: 1,  opacity: 1});
+gsap.to("#amulogo", { ease:Expo. easeIn, delay :0.3, duration: 1,  opacity: 1});
+gsap.to("#inciamlogo", { ease:Expo. easeIn, delay :0.6, duration: 1,  opacity: 1});
+gsap.to("#gmemlogo", { ease:Expo. easeIn, delay :0.9, duration: 1,  opacity: 1});
 
 // background vid main  
 gsap.to("#rrrdiv", { ease:Expo. easeIn, delay :5, duration: 3, opacity: 1});
@@ -23,8 +23,8 @@ gsap.to("#rrrdiv", { ease:Expo. easeIn, delay :5, duration: 3, opacity: 1});
 
  gsap.from("#ent", {ease:
     Expo. easeIn, duration: 1, opacity: 0});
-    gsap.from("#logoEU", {ease:
-        Expo. easeIn, duration: 1, opacity: 0});
+
+
 
  gsap.from("#trailerframe", {ease:
     Expo. easeIn, delay: 1, duration: 2, opacity: 0});
@@ -59,29 +59,7 @@ gsap.from("#digit", {duration: 4, opacity: 0});
 
 
 
-gsap.from("#note", {delay: 0.5, duration: 1,  x: 600, ease: "bounce"});
-gsap.to("#note", { opacity: 0, delay: 1});
 
-gsap.from("#note2", {duration: 1,  x: 600, delay: 1, ease: "bounce"});
-gsap.to("#note2", { opacity: 0, delay: 1.5});
 
-gsap.from("#note3", {duration: 1,  x: 600, delay: 2, ease: "bounce"});
-gsap.to("#note3", { opacity: 0, delay: 2.5});
-
-gsap.from("#note4", {duration: 1,  x: 600, delay: 2.4, ease: "bounce"});
-gsap.to("#note4", { opacity: 0, delay: 3});
-
-gsap.from("#note5", {duration: 3,  x: 600, y: 50, scale:8, delay: 4, ease: "bounce"});
-gsap.to("#note5", { opacity: 0, delay: 5.5});
-
-gsap.from("#note6", {duration: 1,  x: 600, delay: 6, ease: "bounce"});
-gsap.to("#note6", { opacity: 0, delay: 6.5});
-
-gsap.from("#note7", {duration: 1,  x: 600, delay: 7, ease: "bounce"});
-gsap.to("#note7", { opacity: 0, delay: 7.5});
-
-gsap.from("#note8", {duration: 1,  x: 600, delay: 8, ease: "bounce"});
-gsap.to("#note8", { opacity: 0, delay: 8.5});
-
-gsap.from(".bullet", {delay: 4, duration: .2, opacity: 0, x:-80, stagger: 0.2});
+gsap.from(".bullet", {duration: 0.3, opacity: 0, x: -200, stagger: -0.06});
 gsap.from(".bull", {delay: 4, duration: 1, opacity: 1, r:30, stagger: -1});
