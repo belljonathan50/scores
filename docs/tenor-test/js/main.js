@@ -6,28 +6,25 @@ tl.to("#svg0", {delay: 3, duration: 0.3,x: 340, y:60});
 tl.to("#svg0", {duration: 0.3, rotation: -90,x: 850, y:-200, scale: 
 0.9});
 
-// var pri = gsap.timeline();
 
-gsap.to("#prismlogo", { ease:Expo. easeIn, duration:2, opacity: 1});
-gsap.from("#prismlogo", {delay: 1.5, duration:2, rotateX: "random(-100,100)", rotateY: "random(-100,200)", rotateZ: "random(-200,100)"});
+gsap.to("#prismlogo", { ease:Expo. easeIn, duration: 1, opacity: 1});
+gsap.from("#prismlogo", {duration:1, rotateX: "random(-100,300)", rotateY: "random(-300,700)", rotateZ: "random(-200,400)"});
 
 
-gsap.to("#cnrslogo", { ease:Expo. easeIn, duration: 1,  opacity: 1});
-gsap.to("#amulogo", { ease:Expo. easeIn, delay :0.3, duration: 1,  opacity: 1});
-gsap.to("#inciamlogo", { ease:Expo. easeIn, delay :0.6, duration: 1,  opacity: 1});
-gsap.to("#gmemlogo", { ease:Expo. easeIn, delay :0.9, duration: 1,  opacity: 1});
+gsap.to("#cnrslogo", { ease:Expo. easeIn, delay :0.5, duration: 0.5,  opacity: 1});
+gsap.to("#amulogo", { ease:Expo. easeIn, delay :0.7, duration: 0.5,  opacity: 1});
+gsap.to("#inciamlogo", { ease:Expo. easeIn, delay :0.9, duration: 0.5,  opacity: 1});
+gsap.to("#gmemlogo", { ease:Expo. easeIn, delay :1.1, duration: 0.5,  opacity: 1});
 
-// background vid main  
-gsap.to("#rrr", { ease:Expo. easeIn, duration: 5});
 
 
  gsap.from("#ent", {ease:
-    Expo. easeIn, duration: 1, opacity: 0});
+    Expo. easeIn, duration: 0.5, opacity: 0});
 
 
 
  gsap.from("#trailerframe", {ease:
-    Expo. easeIn, delay: 1, duration: 2, opacity: 0});
+    Expo. easeIn, duration: 1, opacity: 0});
 
 
     
@@ -39,10 +36,10 @@ gsap.from("#hope", {ease:
 
 
 gsap.from("#camille", {ease:
-    Expo. easeIn, delay: 8, duration: 5, opacity: 0});
+    Expo. easeIn, delay: 3, duration: 3, opacity: 0});
 
 gsap.from("#prism3d", { ease:
-    Expo. easeIn, duration: 12, opacity: 0});
+    Expo. easeIn, duration: 3, opacity: 0});
 
 
     gsap.to("#clef", {duration: 0.2 ,x: -700, y: -840});
