@@ -1,5 +1,5 @@
 document.write('<div class = "titre">latest news</div><br />');
-document.write('<p id="cv0">    <a id="cv" href="https://score.jonathanbell.eu/tenor-test/news.html"> </a>_  </p>');
+document.write('<p id="cv0">    <a id="cv" href="https://score.jonathanbell.eu/tenor-test/news.html"> </a> </p>');
 
 let a = document.getElementById("cv");
 let b = document.getElementById("cv2");
