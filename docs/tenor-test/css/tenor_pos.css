@@ -130,11 +130,17 @@ opacity: 1;
 	width: 800px;
 }
 
-#logoEU {
+/* #logoEU {
 	position: absolute;
 	right: 10px;
 	top: 10px;
 }
+
+#logoEUnews {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+} */
 
   
 /* iframes */
@@ -297,7 +303,7 @@ opacity: 1;
 
 /* Colonne de droite */
 
-#prismlogo {
+/* #prismlogo {
 	position: relative;
 	width: 130px;
 	animation-name: pris;
@@ -321,7 +327,7 @@ opacity: 1;
 		width: 130px;
 		transform: rotate3d(0);
 	}
-  }
+  } */
 
 
 
