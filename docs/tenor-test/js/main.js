@@ -61,5 +61,5 @@ gsap.from("#digit", {duration: 4, opacity: 0});
 
 
 
-gsap.from(".bullet", {duration: 0.3, opacity: 0, x: -200, stagger: -0.06});
-gsap.from(".bull", {delay: 4, duration: 1, opacity: 1, r:30, stagger: -1});
+// gsap.from(".bullet", {duration: 0.3, opacity: 0, x: -200, stagger: -0.06});
+// gsap.from(".bull", {delay: 4, duration: 1, opacity: 1, r:30, stagger: -1});
