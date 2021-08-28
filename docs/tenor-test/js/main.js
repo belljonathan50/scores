@@ -18,7 +18,7 @@ gsap.to("#inciamlogo", { ease:Expo. easeIn, delay :0.6, duration: 1,  opacity: 1
 gsap.to("#gmemlogo", { ease:Expo. easeIn, delay :0.9, duration: 1,  opacity: 1});
 
 // background vid main  
-gsap.to("#rrrdiv", { ease:Expo. easeIn, delay :5, duration: 3, opacity: 1});
+gsap.to("#rrr", { ease:Expo. easeIn, duration: 5});
 
 
  gsap.from("#ent", {ease:
