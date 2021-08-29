@@ -1,6 +1,3 @@
-console.log("gsap works very well");
-
-
 var tl = gsap.timeline();
 tl.to("#svg0", {delay: 3, duration: 0.3,x: 340, y:60});
 tl.to("#svg0", {duration: 0.3, rotation: -90,x: 850, y:-200, scale: 
@@ -8,7 +5,7 @@ tl.to("#svg0", {duration: 0.3, rotation: -90,x: 850, y:-200, scale:
 
 
 gsap.to("#prismlogo", { ease:Expo. easeIn, duration: 1, opacity: 1});
-gsap.from("#prismlogo", {duration:1, rotateX: "random(-100,300)", rotateY: "random(-300,700)", rotateZ: "random(-200,400)"});
+gsap.from("#prismlogo", {duration:2, rotateX: "random(-100,300)", rotateY: "random(-300,700)", rotateZ: "random(-200,400)"});
 
 
 gsap.to("#cnrslogo", { ease:Expo. easeIn, delay :0.5, duration: 0.5,  opacity: 1});
