@@ -14,7 +14,8 @@ body {
 	margin-right: auto;
 }
 
-/* videos */
+/* videos / / / / / / / / / / / / / / / / / / / / / / / / / / / /  */
+
 
 
 #rrrdiv {
@@ -34,15 +35,12 @@ body {
 #hope {
 	 
 	position: fixed;
-	
 	bottom: -700px;
 	left: 192px;
-	
 	z-index: -1;
 	opacity: 0.8;
 	/* width: 520px; 
 	height: 740px; */
-
 }
 
 
@@ -55,8 +53,6 @@ body {
 	top: 0px;
 	z-index: 1;
 	opacity: 0.5;
-
-
 	width:300px;
 	 height: 300px;
 
@@ -183,16 +179,19 @@ opacity: 1;
 /* Images */
 /* /news */
 #digitalscore {
-	 
 	padding: 15px;
 	width: 300px;
+	border:2px;
 	/* position: absolute;
 	width: 400px;
 	height: 620px;
 	right: 250px;
 	top: 325px; */
+}
 
-
+#digitalscore:hover {
+	border: 50px;
+	border-color: rgb(0, 255, 136);
 }
 
 #europe {
@@ -216,9 +215,6 @@ opacity: 1;
 	width: 100%;
 
 }
-
-
-
 
  #enteteban {
 	width: 1000px;
@@ -279,7 +275,6 @@ opacity: 1;
 	line-height: 1.5;
 	text-align: left;
 }
-
 
 
 
