@@ -20,16 +20,16 @@ body {
 
 #rrrdiv {
 	position: relative;
-	left: 0px;
+	left: 100px;
 	width: 100px;
-	bottom: 1000px;
+	bottom: 700px;
 	z-index: 1;
 	opacity: 1; 
 	border: 5px;
 }
 
   #rrr { 
-	height: 900px;
+	height: 600px;
 }   
 
 #hope {
@@ -127,6 +127,16 @@ opacity: 1;
 	top: 10px;
 } */
 
+#gme {
+	 
+	position: absolute;
+	/* width: 100%;
+	height: 3000px;
+	z-index: -1; */
+	top: 300px;
+	right: 180px;
+}
+
   
 /* iframes */
 
@@ -136,7 +146,7 @@ opacity: 1;
 	width: 100%;
 	height: 3000px;
 	z-index: -1;
-	bottom: 1200px;
+	bottom: 1300px;
 }
 
 #metahistory {
