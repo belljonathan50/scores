@@ -28,7 +28,7 @@
 		<div id="centre">
 			<div id="centre-bis">
 				<div id="navigation">
-				<script type="text/javascript" src="./js/menu.js"></script>
+				<script type="text/javascript" src="./js/menucall.js"></script>
 				</div><br><br><center></center></div> <!-- navigation -->
 				<div id="secondaire">
 					<script type="text/javascript" src="./js/news.js"></script>
@@ -43,8 +43,7 @@
 
 					<p>TENOR2021 welcomes contributions from artists, software developers, performers, researchers, members of industry, educators...</p>
 						
-										<br>
-
+									
 			
 									
 
@@ -54,15 +53,14 @@
 										
 											<p>Original contributions are encouraged in, but not limited to, the following topics:</p>
 										<ul>
-											<li><svg  width="20" height="30"><circle class="bull" cx="10" cy="25" r="4"  fill="yellow"/></svg> &nbsp; New interfaces for music notation</li>
+											<li><svg  width="20" height="30"><circle class="bull" cx="10" cy="25" r="4"  fill="orange"/></svg> &nbsp; New interfaces for music notation</li>
 											<li><svg  width="20" height="30"><circle class="bull" cx="10" cy="25" r="4"  fill="red"/></svg>&nbsp; <a href="https://tenor2021.prism.cnrs.fr/specialSessions.html#computer-aided-composition">Notation and AR/VR</a> <strong>(special session)</strong></li>
-											<li><svg  width="20" height="30"><circle class="bull" cx="10" cy="25" r="4"  fill="blue"/></svg>&nbsp; <a href="https://tenor2021.prism.cnrs.fr/specialSessions.html#history-and-aesthetics">History and aesthetics of notation : from sound to sign, sign to sound.</a> <strong>(special session)</strong></li>
 											<li><svg  width="20" height="30"><circle class="bull" cx="10" cy="25" r="4"  fill="green"/></svg>&nbsp; <a href="https://tenor2021.prism.cnrs.fr/specialSessions.html#comprovisation">Comprovisation</a> <strong>(special session)</strong></li>
-											<li><svg  width="20" height="30"><circle class="bull" cx="10" cy="25" r="4"  fill="green"/></svg>&nbsp; <a href="https://tenor2021.prism.cnrs.fr/specialSessions.html#comprovisation">Computer-Aided composition</a> <strong>(special session)</strong></li>
+											<li><svg  width="20" height="30"><circle class="bull" cx="10" cy="25" r="4"  fill="BLUE"/></svg>&nbsp; <a href="https://tenor2021.prism.cnrs.fr/specialSessions.html#comprovisation">Computer-Aided composition</a> <strong>(special session)</strong></li>
 											
 										</ul>
 										<br>
-										<iframe id="camille" src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FCIRM06%2Fvideos%2F896450260912382%2F&show_text=false&width=560&t=0" width="400" height="300" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+										<iframe id="camille" src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FCIRM06%2Fvideos%2F896450260912382%2F&show_text=false&width=560&t=0" width="480" height="300" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
 
 
 
@@ -90,11 +88,24 @@
 		<iframe id="prism3d"
 	   title="Inline Frame Example2"
 	   z-index="-1"
-	   src="./prism/index.html"   ></iframe>
+	   src="https://score.jonathanbell.eu/tenor-test/prism/index.html"   ></iframe>
 
    </div>
 
-	<script src="./js/main.js"></script>
+	<script>
+
+
+gsap.from("#camille", {ease:
+    Expo. easeIn, delay: 1, duration: 2, opacity: 0, width: 300, x: 250, y: 340, height :400});
+
+gsap.from("#prism3d", { ease:
+    Expo. easeIn, duration: 3, opacity: 0});
+
+gsap.from("#prismlogo", {duration:2, rotateX: "random(-100,300)", rotateY: "random(-300,700)", opacity: 0, rotateZ: "random(-200,400)"});
+
+
+
+	</script>
 	
 	
 	
