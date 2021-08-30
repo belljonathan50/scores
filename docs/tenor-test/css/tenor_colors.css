@@ -102,3 +102,35 @@ h1,h2 {
 {
 	color: #a4a4a4;
 }
+
+
+
+
+/* my hovers */
+
+
+#navigation a:hover {
+	color: rgb(255, 0, 0);
+	background: #5360d6;
+	border-radius: 25px;
+	
+}
+
+#InscoreIDE:hover {
+    /* background: #e1e1e1; */
+    border: 2px solid #ca7718;
+}
+
+/* #europe:hover {
+	border: 2px solid #2772e4;
+	border-radius: 3px;
+	width: 260px;
+} */
+
+#digitalscore:hover {
+	
+    border: 2px solid #576272;
+	border-radius: 1px;
+	width: 296px;
+    /* border: 1px solid #ca7718; */
+}
