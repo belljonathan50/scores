@@ -1,0 +1,123 @@
+/* cmmr_colors */
+
+/* --- COULEURS --- */
+
+
+
+
+/* Général */
+html {
+  background-color: #000000;
+}
+body {
+  /* background: #FFFFFF; */
+  color: #000000;}
+
+strong {
+	color: #000000;
+}
+
+/* Conteneur central */
+#centre {
+	/* background: url(images/) repeat-y left top; */
+}
+#centre-bis {
+	/* background: url(images/) repeat-y right top; */
+}
+
+/* Navigation */
+#navigation {
+	/* background: #FFFFFF; */
+	color: #ffffff;
+	border-radius: 25px;
+}
+#navigation a {
+	color: #ffffff;
+	background: #000000;
+	transition: font-size 3.5s;
+	transition: background 0.6s;
+	font-size: 0.9em;
+	border-radius: 25px;
+}
+
+#navigation a:hover {
+	color: rgb(255, 0, 0);
+	background: #5360d6;
+	border-radius: 25px;
+	
+}
+
+#InscoreIDE:hover {
+    /* background: #e1e1e1; */
+    border: 2px solid #ca7718;
+}
+
+#europe:hover {
+	border: 2px solid #2772e4;
+	border-radius: 3px;
+	width: 260px;
+}
+
+#digitalscore:hover {
+	
+    border: 2px solid #2772e4;
+	border-radius: 3px;
+	width: 296px;
+    /* border: 1px solid #ca7718; */
+}
+
+#disabled {
+    font-color: #ccc;
+}
+
+/* Contenu principal */
+#principal {
+	color: #b2c5b6;
+	/* background: #FFFFFF; */
+}
+#principal a {
+	color: #009BD6;
+}
+#principal a:hover, #principal a:focus {
+	color: rgb(0, 205, 44);
+}
+#principal strong {
+	color: #168488;
+}
+#principal strong:a{
+	color: #009BD6;
+}
+#principal strong:a:hover {
+	color: #mediumblue;
+}
+
+/* Contenu secondaire */
+#secondaire {
+	/* background: #FFFFFF; */
+}
+#secondaire strong {
+	color: #742323;
+}
+#secondaire a {
+	color: #009BD6;
+}
+#secondaire a:hover {
+	color: mediumblue;
+}
+.titre {
+	color: #ffffff;
+}
+
+#copyright a {
+	color: #848F63;
+}
+
+h1,h2 {
+  color: #009BD6;
+}
+
+/* Site en construction */
+#navigation a[class]
+{
+	color: #a4a4a4;
+}
