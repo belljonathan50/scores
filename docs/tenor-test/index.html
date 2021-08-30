@@ -82,14 +82,33 @@
 
 
 
-	<script src="./js/main.js">
+	<!-- <script src="./js/main.js"> -->
 
 	</script>
 		
 	
 
 		<script>
-			console.log("my script works until here---");
+			
+ gsap.from("#ent", {ease:
+    Expo. easeIn, duration: 0.5, opacity: 0});
+
+	gsap.from("#trailerframe", {ease:
+    Expo. easeIn, duration: 1, opacity: 0});
+
+	// gsap.to("#prismlogo", { ease:Expo. easeIn, duration: 0, opacity: 1});
+gsap.from("#prismlogo", {duration:2, rotateX: "random(-100,300)", rotateY: "random(-300,700)", opacity: 0, rotateZ: "random(-200,400)"});
+
+
+gsap.to("#cnrslogo", { delay: 0.5,  duration: 0.4,  opacity: 1});
+gsap.to("#amulogo", { delay: 0.7,  duration: 0.4,  opacity: 1});
+gsap.to("#inciamlogo", { delay: 0.9, duration: 0.4,  opacity: 1});
+gsap.to("#gmemlogo", { delay: 1.1,  duration: 0.4,  opacity: 1});
+
+
+
+
+
 		</script>
 	
 
