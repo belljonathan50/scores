@@ -10,7 +10,7 @@ gsap.to("#note3", { opacity: 0, delay: 2.5});
 gsap.from("#note4", {duration: 1,  x: 600, delay: 2.4, ease: "bounce"});
 gsap.to("#note4", { opacity: 0, delay: 3});
 
-gsap.from("#note5", {duration: 3,  x: 600, y: 50, scale:8, delay: 4, ease: "bounce"});
+gsap.from("#note5", {duration: 3,  x: 600, delay: 4, ease: "bounce"});
 gsap.to("#note5", { opacity: 0, delay: 5.5});
 
 gsap.from("#note6", {duration: 1,  x: 600, delay: 6, ease: "bounce"});
