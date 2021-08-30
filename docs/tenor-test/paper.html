@@ -24,7 +24,7 @@
 		<div id="centre">
 			<div id="centre-bis">
 				<div id="navigation">
-				<script type="text/javascript" src="./js/menu.js"></script>
+				<script type="text/javascript" src="./js/menucall.js"></script>
 				</div><br><br><center></center></div> <!-- navigation -->
 				<div id="secondaire">
 					<script type="text/javascript" src="./js/news.js"></script>
@@ -112,7 +112,9 @@ Download the Word template 	<a href="http://localhost:8000/templates/TENOR-templ
 			</div> <!-- centre-bis -->	
 		</div> <!-- centre -->
 		<script type="text/javascript" src="./js/pied.js"></script><!-- #pied -->
-		<script src="./js/main.js"></script>
+		<script>
+			gsap.from("#inciamlogo", {duration:2, rotateX: "random(-100,300)", rotateY: "random(-300,700)", rotateZ: "random(-200,400), opacity: 0"});
+		</script>
 	</div> <!-- global -->
 	
 
