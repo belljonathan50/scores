@@ -1,9 +1,9 @@
 document.write('<br />');
 document.write('<div class="titre" style="color:green;font-size:17px;" >organisers</div>');
 document.write('<br /><center>');
-document.write('<a href="http://www.prism.cnrs.fr/" target ="_blank"><img id="prismlogo" src="img/logos_org/logo_PRISM.png" width = 140 style="opacity:0;"</img></a> <br /> <br />');
-document.write('<a href="https://www.cnrs.fr/en" target ="_blank"><img id="cnrslogo" src="img/logos_org/logo_CNRS.png"  width = 100 style="opacity:0;"</img></a> <br /> <br />');
-document.write('<a href="https://www.univ-amu.fr" target ="_blank"><img id="amulogo" src="img/logos_org/logo_AMU.png" width =  140 style="opacity:0;"</img></a> <br /> <br />');
-document.write('<a href="https://www.univ-amu.fr/en/public/institute-creativity-and-innovation-inciam" target ="_blank" ><img id="inciamlogo" src="img/logos_org/logo_InCIAM.png" style="opacity:0;"  width = 140 </img></a> <br /> <br />');
-document.write('<a href="http://gmem.org/" target ="_blank"><img id="gmemlogo" src="img/logos_org/logo_GMEM.png" style="opacity:0;" width = 160 </img></a> <br /> <br />');
+document.write('<a href="http://www.prism.cnrs.fr/" target ="_blank"><img id="prismlogo" src="img/logos_org/logo_PRISM.png" width = 140 style="opacity:1;"</img></a> <br /> <br />');
+document.write('<a href="https://www.cnrs.fr/en" target ="_blank"><img id="cnrslogo" src="img/logos_org/logo_CNRS.png"  width = 100 style="opacity:1;"</img></a> <br /> <br />');
+document.write('<a href="https://www.univ-amu.fr" target ="_blank"><img id="amulogo" src="img/logos_org/logo_AMU.png" width =  140 style="opacity:1;"</img></a> <br /> <br />');
+document.write('<a href="https://www.univ-amu.fr/en/public/institute-creativity-and-innovation-inciam" target ="_blank" ><img id="inciamlogo" src="img/logos_org/logo_InCIAM.png" style="opacity:1;"  width = 140 </img></a> <br /> <br />');
+document.write('<a href="http://gmem.org/" target ="_blank"><img id="gmemlogo" src="img/logos_org/gmem.svg" style="opacity:1;" width = 190 </img></a> <br /> <br />');
 document.write('</center>');
