@@ -307,6 +307,14 @@ opacity: 1;
 
 /* news */
 
+#digitalscore:hover {
+	
+    border: 2px solid #576272;
+	border-radius: 1px;
+	width: 176px;
+    /* border: 1px solid #ca7718; */
+}
+
 #copyright {
 	margin: -20px;
 	font-size: 1em;
@@ -316,3 +324,6 @@ opacity: 1;
 	font-size: 1em;
 	text-align: center;
 }
+
+
+
